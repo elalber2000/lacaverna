@@ -1,0 +1,83 @@
+body {
+  padding: 80px;
+  background-color: #0b0c10;
+  color: #ffffff;
+  font-family: roboto;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1 {
+  font-family: merriweather;
+  color: #407a83;
+  font-weight: bold;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 0;
+}
+  
+h2 {
+  font-family: merriweather;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-family: merriweather;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0b0c10;
+  padding: 3px;
+  text-decoration: underline;
+}
+
+p {
+  font-family: roboto;
+  font-size: 25px;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+
+
+a:link {
+  color: #ffffff;
+}
+
+a:visited {
+  color: #ffffff;
+}
+
+a:hover {
+  color: #407a83;
+}
+
+
+
+#sky {
+  margin:0;
+  padding:0;
+}
+
+#stickman1 {
+  position: absolute;
+  left: 1100px;
+  top: 190px;
+}
+
+#background {
+  height: auto;
+  width: 100%; 
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
