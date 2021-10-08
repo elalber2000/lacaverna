@@ -82,9 +82,7 @@ a:hover {
 
 #background {
   margin: 0;
-  padding: 0;
-  height: auto;
-  width: 100%;  
+  padding: 0; 
 }
 
 .container {
