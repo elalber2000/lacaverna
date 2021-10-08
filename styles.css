@@ -63,7 +63,6 @@ a:hover {
 #sky {
   margin: 0;
   padding: 0;
-  
 }
 
 #stickman1 {
@@ -73,8 +72,8 @@ a:hover {
 }
 
 #background {
-  height: auto;
-  width: 100%; 
+  margin: 0;
+  padding: 0; 
 }
 
 .container {
