@@ -8,23 +8,23 @@ body {
 }
 
 h1 {
-  font-family: merriweather;
+  font-family: 'Roboto Slab';
   color: #407a83;
   font-weight: bold;
   text-align: center;
-  font-size: 80px;
+  font-size: 100px;
   margin-top: 0;
 }
   
 h2 {
-  font-family: merriweather;
+  font-family: 'Roboto Slab';
   text-align: center;
   font-size: 50px;
   margin-bottom: 0;
 }
 
 h3 {
-  font-family: merriweather;
+  font-family: 'Roboto Slab';
   text-align: center;
   font-size: 50px;
   position: absolute;
@@ -61,8 +61,9 @@ a:hover {
 
 
 #sky {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
+  
 }
 
 #stickman1 {
