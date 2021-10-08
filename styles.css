@@ -82,11 +82,17 @@ a:hover {
 
 #background {
   margin: 0;
-  padding: 0; 
+  padding: 0;
+  height: auto;
+  width: 100%;
 }
 
 .container {
   position: relative;
   text-align: center;
   color: white;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 100%;
 }
