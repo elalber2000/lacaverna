@@ -1,3 +1,10 @@
+html {
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
 body {
   padding: 80px;
   background-color: #0b0c10;
@@ -5,6 +12,11 @@ body {
   font-family: roboto;
   margin-top: 0;
   padding-top: 0;
+
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
 }
 
 h1 {
