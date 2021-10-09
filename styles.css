@@ -75,14 +75,12 @@ a:hover {
 #sky {
   margin: 0;
   padding: 0;
-  height: 50%;
-  width: 100%;
 }
 
 #stickman1 {
   position: absolute;
   left: 1100px;
-  top: 190px;
+  top: 15px;
 }
 
 #background {
