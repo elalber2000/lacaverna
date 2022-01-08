@@ -1,101 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
-
-html {
-  min-width: 1000px;
-  align-content: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&display=swap');
 
 body {
-  padding: 80px;
-  background-color: #0b0c10;
-  color: #ffffff;
-  font-family: roboto;
-  margin-top: 0;
-  padding-top: 0;
-
-  text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  -ms-text-size-adjust: none;
+    background-color: #060b19;
+    width: 100%;
 }
 
-h1 {
-  font-family: 'Roboto Slab';
-  color: #407a83;
-  font-weight: bold;
-  text-align: center;
-  font-size: 100px;
-  margin-top: 0;
-}
-  
-h2 {
-  font-family: 'Roboto Slab';
-  text-align: center;
-  font-size: 50px;
-  margin-bottom: 0;
+html,body{
+    overflow-x: hidden;
 }
 
-h3 {
-  font-family: 'Roboto Slab';
-  text-align: center;
-  font-size: 50px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #0b0c10;
-  padding: 3px;
-  text-decoration: underline;
+.header_img {
+    background-image: url("Images/header_fire.png");
+    background-size: cover;
+    padding-top: 30%;
+    padding-bottom: 5%;
+    line-height: 17vw;
+    margin-top: 0%;
 }
 
-p {
-  font-family: roboto;
-  font-size: 25px;
-  text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
+.header_h1 {
+    font-family: 'Roboto Slab', sans-serif;
+    text-align: center;
+    font-size: 17vw;
+    color: #060b19;
 }
 
-
-
-a:link {
-  color: #ffffff;
+.header_pink {
+    background-image: url("Images/header_pink.png");
+    background-size: cover;
+    padding: 5%;
+    padding-top: 10%;
+    margin: -1%;
 }
 
-a:visited {
-  color: #ffffff;
-}
-
-a:hover {
-  color: #407a83;
-}
-
-
-
-#sky {
-  margin: 0;
-  padding: 0;
-}
-
-#stickman1 {
-  position: absolute;
-  left: 1200px;
-  top: 40px;
-}
-
-#background {
-  margin: 0;
-  padding: 0;
-  height: auto;
-  width: 100%;
-}
-
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-  margin: 0;
-  padding: 0;
-  height: auto;
-  width: 100%;
+.header_p {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    color: #060b19;
 }
