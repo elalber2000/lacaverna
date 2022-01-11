@@ -1,41 +1,116 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&display=swap');
 
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #060b19;
-    width: 100%;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
 
 html,body{
     overflow-x: hidden;
 }
 
-.header_img {
+:root {
+    --color-dark: #060b19;
+    --color-light: #4e629b;
+    --color-highlight: #ff10f0;
+    --color-white: #e5e4e2;
+}
+
+
+
+body {
+    background-color: var(--color-dark);
+}
+
+.header-img {
+    width: 100%;
     background-image: url("Images/header_fire.png");
     background-size: cover;
     padding-top: 30%;
     padding-bottom: 5%;
-    line-height: 17vw;
-    margin-top: 0%;
+    margin-top: calc(50vh - 50vw);
 }
 
-.header_h1 {
+.header-h1 {
     font-family: 'Roboto Slab', sans-serif;
     text-align: center;
     font-size: 17vw;
-    color: #060b19;
+    color: var(--color-dark);
+    line-height: 1em;
 }
 
-.header_pink {
+.header-pink {
     background-image: url("Images/header_pink.png");
     background-size: cover;
     padding: 5%;
-    padding-top: 10%;
+    padding-bottom: 25%;
     margin: -1%;
 }
 
-.header_p {
+.header-p {
     font-family: 'EB Garamond', serif;
+    font-size: max(2em,2vw);
+    color: var(--color-dark);
+    text-align: center;
+}
+
+.highlight {
+    color: var(--color-highlight);
+    font-weight: bold;
+}
+
+.statue-p {
+    font-family: 'EB Garamond', serif;
+    color: var(--color-light);
+    font-size: max(2em,2vw);
+}
+
+.statue-img {
+    width: 50%;
+    background-size: cover;
+    position: relative;
+    float:left;
+}
+
+.wrapper {
+    padding: 5%;
+    display: inline-block;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin: 0;
+    margin-top: 30%;
+    padding: 0;
+    height: auto;
+    width: 100%;
+}
+
+.section-img {
+    margin-top: 20%;
+    padding: 0;
+    height: auto;
+    width: 100%;
+}
+
+.section-h2 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto Slab', sans-serif;
+    text-align: center;
     font-size: 3em;
-    color: #060b19;
+    color: var(--color-light);
+    line-height: 2em;
+    background-color: var(--color-dark);
+    text-decoration: none;
 }
