@@ -29,71 +29,42 @@ body {
     background-color: var(--color-dark);
     font-family: 'EB Garamond', serif;
     color: var(--color-white);
-    font-size: max(2em,2vw);
+    font-size: 2em;
     box-sizing: border-box;
 }
 
-.header-img {
-    width: 100%;
-    background-image: url("Images/header_fire.png");
-    background-size: cover;
-    padding-top: 30%;
-    padding-bottom: 5%;
-    margin-top: calc(50vh - 50vw);
+h1, h3, h4, p {
+    padding-left: 2em;
+    padding-right: 1em;
+    line-height: .3em;
 }
 
-@media (max-width: 600px) {
-    .header-img {
-        margin-top: 0;
-    }
+p {
+    padding-left: 5em;
+    padding-right: 1em;
+    font-size: 0.8em;
+    line-height: 1.3em;
 }
 
-.header-h1 {
+h4 {
+    padding-left: 4em;
+    padding-right: 1em;
+    padding-top: .7em;
+}
+
+h1 {
+    text-align: center;
+    line-height: .5em;
     font-family: 'Roboto Slab', sans-serif;
-    text-align: center;
-    font-size: 17vw;
-    color: var(--color-dark) !important;
-    line-height: 1em;
 }
 
-.header-pink {
-    background-image: url("Images/header_pink.png");
-    background-size: cover;
-    padding: 5%;
-    padding-bottom: 25%;
-    margin-top: -1%;
-}
-
-.header-p {
-    font-family: 'EB Garamond', serif;
-    font-size: max(2em,2vw);
-    color: var(--color-dark) !important;
-    text-align: center;
-}
-
-.highlight {
-    color: var(--color-highlight);
-    font-weight: bold;
-}
-
-.statue-p {
-    font-family: 'EB Garamond', serif;
+a {
     color: var(--color-white);
-    font-size: max(2em,2vw);
+    text-decoration: none;
 }
 
-.statue-img {
-    width: max(50%,800px);
-    background-size: cover;
-    position: relative;
-    float:left;
-    padding-bottom:10%;
-}
-
-.wrapper {
-    padding: 5%;
-    display: inline-block;
-    margin-top: 20%;
+a:hover {
+    color: var(--color-light);
 }
 
 .container {
@@ -101,14 +72,13 @@ body {
     text-align: center;
     color: white;
     margin: 0;
-    margin-top: 30%;
     padding: 0;
     height: auto;
     width: 100%;
 }
 
 .section-img {
-    margin-top: 20%;
+    margin-top: 3%;
     padding: 0;
     height: auto;
     width: 100%;
