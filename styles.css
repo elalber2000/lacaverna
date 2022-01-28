@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&display=swap');
 
 html:focus-within {
     scroll-behavior: smooth;
@@ -9,6 +9,10 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
 }
 
 html,body{
@@ -141,7 +145,7 @@ nav {
 
 nav ul {
     position: fixed;
-    display:flex;
+    display: flex;
     top: 0;
     right: 1em;
 }
@@ -163,5 +167,5 @@ nav ul li:hover {
 }
 
 nav ul li a:hover {
-    color: var(--color-light);
+    color: var(--color-highlight);
 }
