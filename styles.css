@@ -154,7 +154,7 @@ nav ul li {
     list-style: none;
     background-color: var(--color-dark-tr);
     padding: .7em;
-    font-size: max(2vw,2.5vh);
+    font-size: max(2vw,2vh);
     text-align: center;
 }
 

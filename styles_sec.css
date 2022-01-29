@@ -152,7 +152,7 @@ nav {
 
 nav ul {
     position: fixed;
-    display:flex;
+    display: flex;
     top: 0;
     right: 1em;
 }
@@ -161,7 +161,8 @@ nav ul li {
     list-style: none;
     background-color: var(--color-dark-tr);
     padding: .7em;
-    font-size: min(5vw,1em);
+    font-size: max(2vw,2vh);
+    text-align: center;
 }
 
 nav ul li a {
