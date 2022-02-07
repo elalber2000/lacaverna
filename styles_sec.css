@@ -122,6 +122,15 @@ a:hover {
     padding: 0 1em;
 }
 
+.gallery-elem .gallery-img {
+    opacity: 0.7;
+}
+
+.gallery-elem .gallery-img:hover {
+    opacity: 1;
+    transform: scale(1.01)
+}
+
 .gallery-img {
     margin-top: 2em;
     vertical-align: middle;
