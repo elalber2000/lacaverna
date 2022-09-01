@@ -57,12 +57,12 @@ h3 {
     border-color: var(--color-highlight);
 }
 
-.img-custom {
-    min-width: 150px;
+.hero-custom {
+    margin-top: calc(10vh - 4em);
 }
 
-.hero-custom {
-    margin-top: -2em;
+.navbar-custom {
+    background-color: var(--color-dark-tr);
 }
 
 @media screen and (max-width:991px){
