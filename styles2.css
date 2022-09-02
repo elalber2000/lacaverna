@@ -33,10 +33,6 @@ h3 {
     font-weight: 800;
 }
 
-.navbar-toggler-icon {
-  background-image: url("https://super.so/icon/light/menu.svg");
-}
-
 .nav-item a{
     color: var(--color-white)
 }
@@ -58,15 +54,21 @@ h3 {
 }
 
 .hero-custom {
-    margin-top: calc(10vh - 4em);
+    margin-top: calc(25vh - 7em);
 }
 
 .navbar-custom {
     background-color: var(--color-dark-tr);
+    font-size: .75em;
+}
+
+.custom-icon-logo {
+    min-width: 100px;
+}
+
+.custom-icon-menu {
+    min-width: 80px;
 }
 
 @media screen and (max-width:991px){
 }
-
-
-
