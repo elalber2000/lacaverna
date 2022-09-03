@@ -25,7 +25,7 @@ h3 {
     font-weight: 400;
 }
 
-.as-title {
+.custom-title {
     font-size: 5rem;
 }
 
@@ -40,6 +40,7 @@ h3 {
 .btn-custom {
     color: var(--color-highlight);
     font-weight: 700;
+    font-size: .68em;
     background-color: var(--color-dark-tr);
     border-width: 3px;
     border-color: var(--color-highlight);
@@ -54,7 +55,7 @@ h3 {
 }
 
 .hero-custom {
-    margin-top: calc(25vh - 7em);
+    margin-top: calc(16vh - 5em);
 }
 
 .navbar-custom {
@@ -62,8 +63,9 @@ h3 {
     font-size: .75em;
 }
 
-.custom-icon-logo {
+.custom-icon-logo, .custom-navitem {
     min-width: 100px;
+    font-size: 35px;
 }
 
 .custom-icon-menu {
@@ -71,4 +73,7 @@ h3 {
 }
 
 @media screen and (max-width:991px){
+    .custom-desc, .btn-custom {
+        font-size: 1em;
+    }
 }
