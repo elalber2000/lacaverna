@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 
+/* Base */
 :root {
     --color-dark: #0D0D0D;
     --color-dark-tr: #0D0D0Dbf;
@@ -25,16 +26,16 @@ h3 {
     font-weight: 500;
 }
 
+
+
+/* Hero */
+
 .custom-title {
     font-size: 5rem;
 }
 
-.as-extra-bold {
+.custom-extra-bold {
     font-weight: 800;
-}
-
-.nav-item a{
-    color: var(--color-white)
 }
 
 .btn-custom {
@@ -58,6 +59,14 @@ h3 {
     margin-top: calc(16vh - 5em);
 }
 
+
+
+/* Navbar */
+
+.nav-item a{
+    color: var(--color-white)
+}
+
 .navbar-custom {
     background-color: var(--color-dark-tr);
     font-size: .75em;
@@ -72,16 +81,9 @@ h3 {
     min-width: 80px;
 }
 
-/*@media screen and (max-width:991px){
-    .custom-title {
-        font-size: 2em;
-    }
 
-    .custom-desc, .btn-custom {
-        font-size: 1.2em;
-    }
-}*/
 
+/* Sections */
 
 .wrapper {
     position: relative;
@@ -119,7 +121,7 @@ h3 {
 
 .section-h2:hover {
     color: var(--color-highlight);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .custom-section-title {
