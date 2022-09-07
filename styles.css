@@ -1,107 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
-html:focus-within {
-    scroll-behavior: smooth;
-}
-
-body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-}
-
-h1, h2, h3, h4 {
-    font-weight: 700;
-}
-
-html,body{
-    overflow-x: hidden;
-}
 
 :root {
-    --color-dark: #060b19;
-    --color-dark-tr: #060b19bf;
+    --color-dark: #0D0D0D;
+    --color-dark-tr: #0D0D0Dbf;
     --color-light: #4e629b;
     --color-highlight: #ff10f0;
-    --color-white: #a9a7d0;
+    --color-highlight: #ff56f4;
+    --color-white: #e5e8ed;
 }
-
-
 
 body {
     background-color: var(--color-dark);
-    font-family: 'EB Garamond', serif;
+    font-family: 'Space Mono', serif;
     color: var(--color-white);
-    font-size: max(2em,2vw);
-    box-sizing: border-box;
+    font-size: max(2em, 2vw);
 }
 
-.header-img {
-    width: 100%;
-    background-image: url("Images/header_fire.png");
-    background-size: cover;
-    padding-top: 30%;
-    padding-bottom: 5%;
-    margin-top: calc(50vh - 50vw);
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', serif;
+    font-weight: 500;
 }
 
-@media (max-width: 600px) {
-    .header-img {
-        margin-top: 0;
-    }
+.custom-title {
+    font-size: 5rem;
 }
 
-.header-h1 {
-    font-family: 'Roboto Slab', sans-serif;
-    text-align: center;
-    font-size: 17vw;
-    color: var(--color-dark) !important;
-    line-height: 1em;
+.as-extra-bold {
+    font-weight: 800;
 }
 
-.header-pink {
-    background-image: url("Images/header_pink.png");
-    background-size: cover;
-    padding: 5%;
-    padding-bottom: 25%;
-    margin-top: -1%;
+.nav-item a{
+    color: var(--color-white)
 }
 
-.header-p {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.2em;
-    color: var(--color-dark) !important;
-    text-align: center;
-}
-
-.highlight {
+.btn-custom {
     color: var(--color-highlight);
-    font-weight: bold;
+    font-weight: 700;
+    font-size: .68em;
+    background-color: var(--color-dark-tr);
+    border-width: 3px;
+    border-color: var(--color-highlight);
 }
 
-.statue-p {
-    font-family: 'EB Garamond', serif;
-    color: var(--color-white);
-    font-size: 1.2em;
+.btn-custom:hover {
+    color: var(--color-dark);
+    font-weight: 700;
+    background-color: var(--color-highlight);
+    border-width: 3px;
+    border-color: var(--color-highlight);
 }
 
-.statue-img {
-    width: max(50%,800px);
-    background-size: cover;
-    position: relative;
-    float:left;
-    padding: 2%;
-    padding-bottom:10%;
+.hero-custom {
+    margin-top: calc(16vh - 5em);
 }
+
+.navbar-custom {
+    background-color: var(--color-dark-tr);
+    font-size: .75em;
+}
+
+.custom-icon-logo, .custom-navitem {
+    min-width: 100px;
+    font-size: 35px;
+}
+
+.custom-icon-menu {
+    min-width: 80px;
+}
+
+/*@media screen and (max-width:991px){
+    .custom-title {
+        font-size: 2em;
+    }
+
+    .custom-desc, .btn-custom {
+        font-size: 1.2em;
+    }
+}*/
+
 
 .wrapper {
-    padding: 5%;
-    display: inline-block;
-    margin-top: 20%;
-}
-
-.container {
     position: relative;
     text-align: center;
     color: white;
@@ -140,34 +122,7 @@ body {
     text-decoration: underline;
 }
 
-nav {
-    background-color: var(--color-dark);
-}
-
-nav ul {
-    position: fixed;
-    display: flex;
-    top: 0;
-    right: 1em;
-}
-
-nav ul li {
-    list-style: none;
-    background-color: var(--color-dark-tr);
-    padding: .7em;
-    font-size: max(2vw,2vh);
-    text-align: center;
-}
-
-nav ul li a {
-    color: var(--color-white);
-    text-decoration: none;
-}
-
-nav ul li:hover {
-    background-color: var(--color-dark);
-}
-
-nav ul li a:hover {
-    color: var(--color-highlight);
+.custom-section-title {
+    font-weight: 800;
+    font-size: 5rem;
 }
