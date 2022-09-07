@@ -89,15 +89,13 @@ h3 {
     position: relative;
     text-align: center;
     color: white;
-    margin: 0;
-    margin-top: 30%;
     padding: 0;
     height: auto;
     width: 100%;
 }
 
 .section-img {
-    margin-top: 20%;
+    margin-top: 10%;
     padding: 0;
     height: auto;
     width: 100%;
@@ -127,4 +125,11 @@ h3 {
 .custom-section-title {
     font-weight: 800;
     font-size: 5rem;
+}
+
+
+@media screen and (max-width:991px){
+    .custom-desc, .btn-custom {
+        font-size: 1em;
+    }
 }
