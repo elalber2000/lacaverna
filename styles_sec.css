@@ -116,6 +116,10 @@
     opacity: .8;
 }
 
+.carousel-control-next, .carousel-control-prev {
+    background-color: var(--color-dark-tr);
+}
+
 .mobile {
     display: none;
 }
