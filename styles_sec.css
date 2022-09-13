@@ -99,18 +99,30 @@
     border-color: var(--color-white);
 }
 
-.custom-card .card-title {
+.card-title {
     font-size: 1em;
     font-weight: 700;
 }
 
-
-.custom-card .card-text {
+.card-text {
     font-size: .6em;
 }
 
-@media screen and (max-width:991px){
-    
+.carousel-caption {
+    background-color: var(--color-dark-tr);
+    border-radius: 5%;
+}
+
+.carousel-item .d-block {
+    opacity: .8;
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width:991px) {
+
     /* Tree */
 
     .tree .btn {
@@ -125,5 +137,13 @@
 
     .carousel-card {
         width: 100% !important;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
     }
 }
