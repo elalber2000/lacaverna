@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&display=swap');
 
+
+
+/* General */
+
+.mobile {
+    display: none;
+}
+
+.custom-link {
+    color: var(--color-light);
+    font-weight: 700;
+}
+
+.custom-link:hover {
+    color: var(--color-highlight);
+    text-decoration: none;
+}
+
+
+
 /* Section */
 
 .custom-section-title {
@@ -121,14 +141,41 @@
 }
 
 .card-title:hover {
-    color: var(--color-light);
+    color: var(--color-highlight);
 }
 
-.mobile {
-    display: none;
-}
+
+.masonry-column {
+    padding: 0 1px;
+  }
+  
+  .masonry-grid > div .thumbnail {
+    margin: 5px 1px;
+  }
+  
+
 
 @media screen and (max-width:991px) {
+
+    /* General */
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+
+
+    /* Carousel */
+
+    .carousel-card {
+        width: 100% !important;
+    }
+
+
 
     /* Tree */
 
@@ -140,17 +187,5 @@
     .tree .btn:hover {
         font-size: 3rem;
         border-width: 5px;
-    }
-
-    .carousel-card {
-        width: 100% !important;
-    }
-
-    .desktop {
-        display: none;
-    }
-
-    .mobile {
-        display: block;
     }
 }
