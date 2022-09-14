@@ -145,14 +145,11 @@
 }
 
 
-.masonry-column {
-    padding: 0 1px;
-  }
+
+
   
-  .masonry-grid > div .thumbnail {
-    margin: 5px 1px;
-  }
-  
+
+
 
 
 @media screen and (max-width:991px) {
