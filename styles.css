@@ -8,6 +8,7 @@
     --color-dark-tr: #0D0D0Dbf;
     --color-light-tr: #4e629bbf;
     --color-light: #4e629b;
+    --color-light: #5e75b8;
     --color-highlight: #ff10f0;
     --color-highlight: #ff56f4;
     --color-white: #e5e8ed;
@@ -73,15 +74,6 @@ h3 {
     font-size: .75em;
 }
 
-.custom-icon-logo, .custom-navitem {
-    min-width: 100px;
-    font-size: 35px;
-}
-
-.custom-icon-menu {
-    min-width: 80px;
-}
-
 
 
 /* Sections */
@@ -125,12 +117,33 @@ h3 {
 
 .custom-section-title {
     font-weight: 800;
-    font-size: 5rem;
 }
 
 
+@media screen and (min-width:990px){
+    .custom-icon-logo, .custom-navitem {
+        min-width: 100px;
+        font-size: 35px;
+    }
+
+    .custom-icon-menu {
+        min-width: 80px;
+    }
+
+    .custom-section-title {
+        font-size: 5rem;
+    }
+}
+
+
+
 @media screen and (max-width:991px){
-    .custom-desc, .btn-custom {
-        font-size: 1em;
+    .custom-icon-logo, .custom-navitem {
+        width: 40px;
+        font-size: .7em;
+    }
+
+    .custom-icon-menu {
+        width: 32px;
     }
 }
