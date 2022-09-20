@@ -81,8 +81,12 @@
     border: 0;
 }
 
-.custom-icon-social {
-    min-width: 70px;
+.pop {
+    transition: transform .2s;
+}
+
+.pop:hover {
+    transform: scale(1.2);
 }
 
 
@@ -122,6 +126,7 @@
 .card-title {
     font-size: 1em;
     font-weight: 700;
+    color: var(--color-white);
 }
 
 .card-title-unhover {
