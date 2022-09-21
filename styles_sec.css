@@ -230,10 +230,21 @@
 
 
     /* Tree */
+    .tree .profile-pic {
+        width: 300px;
+    }
 
     .tree .btn {
         font-size: 3rem;
         border-width: 5px;
+    }
+
+    .tree .profile-pic {
+        width: 300px;
+    }
+
+    .custom-icon-social {
+        width: 100px;
     }
 
     .tree .btn:hover {
