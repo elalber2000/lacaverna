@@ -68,13 +68,22 @@
     border-color: var(--color-white);
 }
 
-.tree .btn:hover {
+/*.tree .btn:hover {
     color: var(--color-highlight);
     font-weight: 500;
     font-size: .68em;
     background-color: var(--color-dark-tr);
     border-width: 3px;
     border-color: var(--color-highlight);
+}*/
+
+.tree .pink {
+    color: var(--color-dark);
+    font-weight: 700;
+    font-size: .68em;
+    background-color: var(--color-white);
+    border-width: 3px;
+    border-color: var(--color-white);  
 }
 
 .custom-btn-social {
