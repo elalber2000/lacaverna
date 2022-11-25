@@ -214,6 +214,10 @@
     height: auto;
 }
 
+.product-description:hover {
+    color: var(--color-highlight)
+}
+
 
 
 @media screen and (max-width:991px) {
