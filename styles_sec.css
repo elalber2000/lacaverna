@@ -218,6 +218,16 @@
     color: var(--color-highlight)
 }
 
+.dark-mode {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.light-mode {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
 
 
 @media screen and (max-width:991px) {
@@ -264,4 +274,14 @@
         font-size: 3rem;
         border-width: 5px;
     }
+
+    .dark-mode {
+            background-color: black;
+            color: white;
+        }
+ 
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
 }
