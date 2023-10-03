@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>La Caverna de Sánchez</title>
+  <meta name="La Caverna de Sánchez" content="Museo virtual de Alberto Sánchez en homenaje a la conflagración del arte"
+    http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles_sec.css">
+  <link rel="stylesheet" href="../styles_resp.css">
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="16x16" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+    <a class="navbar-brand" href="../index.html">
+      <img class="img-fluid custom-icon-logo" src="../Images/logo_light.png" alt="" width="48px" height="48px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="https://super.so/icon/light/menu.svg" class="custom-icon-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse py-4" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/library.html">Biblioteca</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/gallery.html">Galería</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/theatre.html">Escenario</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/linktree.html">✱</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="py-5"></div>
+  <div class="py-5"></div>
+
+  <div class="tree">
+    <button class="btn btn-lg pop pink" style="font-size:2rem" onclick="toggleMode()">&nbsp🌓︎&nbsp</button>
+    <script>
+      let element = document.body;
+      let button = document.querySelector(".btn");
+      let content = document.getElementById("DarkModetext");
+      element.className = "dark-mode";
+      content.innerText = "Dark Mode is ON";
+
+      function toggleMode() {
+        if (element.className === "dark-mode") {
+          element.className = "light-mode";
+          button.style.backgroundColor = "#0D0D0D"; // Set button background color to white
+          button.style.color = "#e5e8ed"; // Set button text color to black
+          content.innerText = "Dark Mode is OFF";
+        } else {
+          element.className = "dark-mode";
+          button.style.backgroundColor = "#e5e8ed"; // Set button background color to white
+          button.style.color = "#0D0D0D"; // Set button text color to black
+          content.innerText = "Dark Mode is ON";
+        }
+      }
+    </script>
+  </div>
+
+  
+
+  <div class="py-3"></div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+  
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="fw-bold display-5" style="font-weight:800; font-size:4rem">Que Empiece Ya
+</h1>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12 py-3">
+              <p style="font-size:clamp(16px, 4vw, 24px)"><br>En el centro de la sala, cuatro asientos con sus respectivos ocupantes. De izquierda a derecha son: CARMEN, una mujer con collar de perlas y ademán regio; ESTEBAN, un señor de pelo cano y aspecto cansado; ANTON, el epítome de la seriedad, con su cuadernillo oscuro; y JUAN, un adolescente de aspecto rebelde.<br>Menos ANTON, todos ellos cuchichean entre susurros. Esto continua brevemente hasta que se encienden los focos. Aparece entonces el DIRECTOR en el pasillo, mirando al escenario y dando la espalda al público. Todo el mundo se calla y ANTON empieza a tomar notas sin parar en el cuadernillo.<br><br>DIRECTOR: Buenos días. Soy Sánchez, el escritor y director de esta obra, y me gustaría daros las gracias por acudir hoy a verla. Ha costado bastante trabajo y espero que la disfrutéis. Además, quería saludar especialmente a Antón Antúnez, aclamado crítico de la revista “L’Artiste” que ha venido hoy a vernos. Espero que la obra sea de vuestro agrado.<br><br>Los cinco personajes que están en escena le aplauden y el DIRECTOR se retira. Quedan un largo rato callados, expectantes. Tras un rato largo, CARMEN y ESTEBAN empiezan a cuchichear. Finalmente, JUAN rompe el silencio.<br><br>JUAN: (Burlón) ¿Oye, esto cuándo empieza?<br>ESTEBAN: (Muy correcto) Yo creo que ya ha empezado.<br>JUAN: Pero si están todos los actores ahí sentados, mirándonos como idiotas.<br>CARMEN: Debe de ser teatro moderno de ese. Como esa obra que fuimos a ver. ¿Verdad, Esteban?<br>ESTEBAN: Sí, la última del Brugner.<br>ANTON: ¿“El Fruto del Edén”?<br>ESTEBAN: Esa.<br>CARMEN: Nos lo pasamos muy bien. Además, el protagonista hizo la mejor actuación que he visto últimamente.<br>ANTON: ¿Benito Benítez?<br>CARMEN: Ese. Que actorazo.<br>ANTON: (Con sorna) Veo que no va usted mucho al teatro.<br>CARMEN: (No reconoce la burla, por inocencia o estupidez) Cuando una puede. Pero diga, ¿qué le pareció a usted?<br>ANTON: Digamos que he visto piedras con más sentimiento.<br>CARMEN: (A su marido) ¡Esteban!<br>ESTEBAN: (Desinteresado) Hombre mujer, que el cuarzo puede ser muy expresivo.<br>JUAN: ¡Que empiece ya, que el público se va… (No pueden acabar porque son interrumpidos por los chistidos de CARMEN). ¿Qué pasa?<br>CARMEN: Que dejes de molestar.<br>JUAN: (Burlón) Perdón, ¿tan interesante es la historia?<br>CARMEN: Esta juventud no tiene modales. Por Dios, que estamos en el teatro, no en el zoo.<br>JUAN: ¿Respeto hacia quién?<br>CARMEN: Hacia los actores, por ejemplo.<br>JUAN: Pero si no están haciendo nada. Estamos actuando casi más nosotros que ellos.<br>CARMEN: Perdona, pero hay actores que lo están haciendo genial.<br>JUAN: (En tono chulesco) ¿Quiénes?<br>CARMEN: Nuestra Estefanía, por ejemplo. Díselo Esteban.<br>ESTEBAN: (Le pone tan poco énfasis que suena casi irónico) Lo hace genial.<br>CARMEN: Mírala, mirándonos desde ahí. ¿Cuál era su papel, Esteban?<br>ESTEBAN: Espectadora número... (empieza a contar en su cabeza) 1.<br>CARMEN: (Encantada) Y lo hace tan bien. Casi parece la protagonista.<br>JUAN: Espere, ¿ha dicho Estefanía?<br>CARMEN: Claro.<br>JUAN: ¿Estefanía Estévez?<br>CARMEN: (Sospechosa) ¿La conoce?<br>JUAN: ¿Qué si la conozco? Es mi novia.<br>CARMEN: ¿Novia? Mi Estefanía no saldría con alguien tan maleducado. ¿A que no, Esteban?<br>ESTEBAN: (Con su tono de siempre) Para nada.<br>JUAN: Pues sí, es mi novia. Y si la digo la verdad, actúa de culo.<br>CARMEN: ¡¿Qué sabrás tú! Mi Estefanía es la mejor actriz que hay en esta sala. ¿A que sí, Esteban?<br>ESTEBAN: Hombre, la mejor, la mejor…<br>CARMEN: (Cortándole) Calla. Y tú (dirigiéndose a JUAN) ¿cómo dices esas cosas de mi Estefanía, siendo además su (escupiendo la palabra) “novio”?<br>JUAN: Pues porque tengo ojos en la cara.<br>CARMEN: ¿Y no dicen que el amor es ciego?<br>JUAN: Hombre, amor es una palabra muy fuerte.<br>CARMEN: ¿Ah, sois novios pero no es amor lo vuestro?<br>JUAN: Amor, lo que se dice amor…<br>CARMEN: ¿Entonces?<br>JUAN: Yo lo llamaría más bien cariño.<br>CARMEN: ¿Cariño?<br>JUAN: Inclinación.<br>CARMEN: ¿Inclinación?<br>JUAN: (En bajo) Tal vez una erección<br>CARMEN: ¿Qué?<br>JUAN: Eh… digo, afección.<br>CARMEN: No entiendo, si no la quieres ¿por qué sois novios?<br>JUAN: Esto... esa es la cosa; justo iba a dejarla.<br>CARMEN: ¡¿A mi Estefanía?!<br>JUAN: Esta noche.<br>CARMEN: Pero, ¿qué te ha hecho ella?<br>JUAN: Es que actúa muy mal. Por eso vine a aquí, quería dejarlo con ella cuando acabase la obra.<br><br>(De entre el verdadero público se levanta una joven, angustiada. Es ESTEFANÍA)<br><br>ESTEFANÍA: ¿Cómo que me vas a dejar?<br>JUAN: ¿No ves? Sobreactúa demasiado.<br>ESTEFANÍA: Pero si estábamos enamorados.<br>JUAN: Y se sale del personaje.<br>CARMEN: Deja de decir esas cosas. Mi Estefanía ni sobreactúa ni se sale del personaje ni nada. ¿Verdad que no, Esteban?<br>ESTEBAN: Hombre...<br>CARMEN: Déjalo, que no sé ni para qué te pregunto.<br>ESTEBAN: Pues eso digo yo.<br>ESTEFANÍA: ¡No me puedes dejar!<br>JUAN: Claro que puedo. Lo siento, yo creía que podía soportarlo, pero claramente no. Estaba dudando, pero esta obra de mierda me ha abierto los ojos.<br>CARMEN: No la puedes dejar.<br>JUAN: Es mi decisión, y ya está tomada.<br>CARMEN: No puedes.<br>JUAN: Lo siento, pero no puedes evitarlo.<br>CARMEN: (Saca una pistola de su bolso) Claro que puedo.<br>ESTEFANÍA: (Avergonzada) Mamá, otra vez no por favor.<br>CARMEN: Déjame, cariño que yo me encargo.<br>ESTEFANÍA: Me estás avergonzando frente al resto del elenco.<br>CARMEN: Quita, quita.<br>ESTEFANÍA: (Implorante) Papá, dila algo.<br>ESTEBAN: Carmen, dice la niña…<br>CARMEN: Ni caso.<br>ESTEFANÍA: ¿Y ya está?<br>ESTEBAN: ¿Qué más quieres?<br>ESTEFANÍA: Eres un calzonazos, papá.<br>ESTEBAN: Yo solo quiero que me dejéis tranquilo.<br>JUAN: Se-señora, po-por favor cálmese.<br>CARMEN: Una mierda, ya estoy cansada de idiotas como tú.<br>JUAN: (Muy nervioso) Por favor. Haré lo que sea, pero no dispare.<br>CARMEN: Entonces, ¿vas a dejar a mi hija?<br>JUAN: Esto… no, claro que no.<br>CARMEN: Pero no me lo digas a mí, díselo a ella.<br>JUAN: Estefanía, no voy dejarte.<br>CARMEN: (Enojada) Con más empeño.<br>JUAN: Estefanía, te quiero mucho y no pienso dejarte nunca.<br>CARMEN: De rodillas.<br>JUAN: (Arrodillándose) Quiero vivir el resto de mis días contigo.<br>CARMEN: Y ahora recítale un poema.<br>JUAN: Esto…<br>CARMEN: ¿Qué pasa?<br>JUAN: No me sé ningún poema.<br>CARMEN: Da igual, con que rime vale.<br>JUAN: (Tras un rato pensando) Estefanía, solo porque tú te has ido, quiero perder el sentido; y bailo borracho perdío, desesperao.<br>CARMEN: (Mira a ANTÓN, como buscando su aprobación).<br>ANTÓN: ¿No es de C Tangana?<br>CARMEN: (A JUAN, amenazante) ¿Es de C Tangana?<br>ANTON: Es lo único que recuerdo, no me mate por favor.<br>CARMEN: (A ESTEFANÍA, con tono afabilísimo) ¿Te vale?<br>ESTEFANÍA: No. Lo dice solo porque le estás apuntando con una pistola.<br>CARMEN: Que no cariño. (A JUAN, apuntándole) ¿A que no?<br>JUAN: (Con tono mal disimulado, mirando la pistola) No… claro que no.<br>ESTEFANÍA: ¿De verdad?<br>JUAN: (Primero mira a CARMEN, que le acerca la pistola. JUAN duda, pero finalmente continua la farsa) Claro que te quiero.<br>ESTEFANÍA: (Inocente, como si ya no viese la pistola) ¡Ay que ilusión! Ya sabía yo que no querías dejarme de verdad.<br>CARMEN: Si es que los chicos a esta edad están muy perdidos.<br><br>Irrumpe el DIRECTOR, iracundo.<br><br>DIRECTOR: Bueno a ver, esto ya es un despropósito. (A CARMEN) Señora, deje la pistola. (A JUAN) Chico, ponte de pie. (A ESTEBAN, que lleva un rato leyendo un periódico) Y usted, señor, ¿cómo ha quedado el atleti?<br>ESTEBAN: Perdió.<br>DIRECTOR: Vaya por dios. (Con gran enfado, a ESTEFANÍA) Y tú, ¿qué voy a hacer contigo? ¿No puedes hacerlo bien una sola vez? Estoy harto ya.<br>CARMEN: Oye, a mi Estefanía no la habla así nadie.<br>DIRECTOR: Señora, que soy el director.<br>CARMEN: Como si eso importara.<br>DIRECTOR: Déjeme, que estoy ya un poco harto. De usted y de su hija.<br>CARMEN: ¡Uy! Menudo tonito. Esteban (ESTEBAN, que estaba concentrado leyendo, se sobresalta) nos vamos.<br>ESTEBAN: Sí, claro. Lo que tú digas, cariño. (Ambos hacen mutis)<br>ESTEFANÍA: (Corriendo tras ellos) ¡Mamá, papá! No os vayáis que aún no ha terminado la obra. (Sube al escenario en su búsqueda y sale por la misma salida a bastidores, pero se le cae un papel) ¡Siempre me hacéis lo mismo!<br>JUAN: (Cogiendo el papel, leyendo) “Que empiece ya, un sketch de Sánchez...” (Continúa leyendo de forma silenciosa el papel, volviéndose más y más lívido al hacerlo. Finalmente, sigue leyendo en alto) “ESTEFANÍA: (corriendo tras ellos) ¡Papá, mamá! No os vayáis que aún no ha terminado la obra. (Sube al escenario en su búsqueda…)” (Al DIRECTOR) ¿Qué coño es esto?<br>DIRECTOR: Eso… mierda, esa maldita Estefanía…<br>JUAN: Responde<br>SÁNCHEZ: Eso es el guion.<br>JUAN: ¿Qué guion?<br>DIRECTOR: El guion de la obra.<br>JUAN: ¿Y por qué salgo yo?<br>DIRECTOR: Da igual, si es una bobada.<br>JUAN: ¡Dímelo!<br>DIRECTOR: Pues… porque tú también eres un personaje.<br>JUAN: Menuda estupidez.<br>DIRECTOR: Es la verdad.<br>JUAN: Y una mierda.<br>DIRECTOR: Anda, lee.<br>JUAN: (Duda, pero finalmente acaba obedeciendo) “DIRECTOR: Sabes que es verdad. JUAN: Y una mierda. Pero no puede ser, es imposible”. Pero no puede ser, es imposible.<br>DIRECTOR: Venga, déjate de tonterías y dame el guion.<br>JUAN: ¡No quiero, joder! Entonces, ¿mi vida es una puta mentira?<br>DIRECTOR: No lo es. Es solo que ya está escrita.<br>JUAN: (Levantando el guion) ¿Estoy obligado a hacer todo lo que pone aquí?<br>DIRECTOR: Claro, es una obra de teatro.<br>JUAN: Joder, joder. ¿Y mi familia? ¿También la creaste tú?<br>DIRECTOR: Que va, es una obra corta. Apenas esbocé vuestras historias.<br>JUAN: Pero existen. Mis padres, mi hermano... Existen.<br>DIRECTOR: Existen porque los acabas de mencionar.<br>JUAN: Y los he mencionado…<br>DIRECTOR: Porque está en el guion.<br>JUAN: ¡No! Es imposible.<br>DIRECTOR: Vamos, dámelo.<br>JUAN: ¡Calla!<br>DIRECTOR: ¡Dámelo, joder!<br>JUAN: ¡Que te calles! (Saca un lápiz del bolsillo y escribe sobre la hoja).<br>DIRECTOR: (Intenta hablar, pero es incapaz de abrir la boca).<br>JUAN: (Primero se asusta al ver que ha funcionado, pero luego se da cuenta del poder y empieza a exaltarse) ¡Claro! Todo lo que escriba tiene que pasar. Seguro que no habías pensado eso, plumilla de tres al cuarto (El DIRECTOR continua con sus infructuosos intentos de habla). Espera, y si… (Escribe más, y luego mete las manos en sus bolsillos. Las saca llenas de billetes) ¡Es genial! ¿Y si…?<br><br>JUAN escribe de nuevo, haciendo que ESTEFANÍA entre por la puerta, como si nada hubiese pasado. JUAN sigue escribiendo con avidez. En ese momento, ESTEFANÍA adquiere un tono dramático y comienza a recitar como si fuese el espíritu encarnado del actor más laureado.<br><br>ESTEFANÍA: (Inocente y seductora, como aparecida de una fantasía)<br>¿No es verdad, don Juan de amor,<br>que en esta apartada silla<br>más puros los focos brillan<br>y se respira mejor?<br>Esta aura que vaga, llena<br>de los sencillos olores<br>de esos extraños rincones<br>que esconde la vida amena;<br>ese agua limpia y serena<br>que atraviesa sin temor<br>del fregadero el tapón<br>que espera el dental cepillo,<br>¿no es cierto, palomo mío,<br>que están respirando amor?<br>JUAN: ¿Estefanía?<br>ESTEFANÍA: ¿Sí?<br>JUAN: Es increíble. Esa actuación fue… asombrosa.<br>ESTEFANÍA: Así lo decía el guion.<br>JUAN: Estefanía, ¿quieres…?<br>ESTEFANÍA: Dime.<br>JUAN: ¿Quieres que volvamos?<br>ESTEFANÍA: ¿Por qué me preguntas?<br>JUAN: ¿Qué?<br>ESTEFANÍA: ¿Qué por qué me preguntas? ¿Por qué no escribirlo directamente?<br>JUAN: Porque estaría mal. Tienes que ser tú la que elijas.<br>ESTEFANÍA: Pero solo soy un personaje. No existo. No tengo elección. Solo hago lo que<br>dice el guion. Como tú.<br>JUAN: Entonces, ¿no quieres?<br>ESTEFANÍA: ¿Quieres tú?<br>JUAN: No lo sé.<br>ESTEFANÍA: ¿No lo tenías tan claro?<br>JUAN: Al principio sí. Pero luego dijiste…<br>ESTEFANÍA: ¿El qué?<br>JUAN: Lo de que somos personajes.<br>ESTEFANÍA: ¿Y qué pasa?<br>JUAN: Si somos personajes… ¿qué sentido tiene todo esto?<br>ESTEFANÍA: ¿A qué te refieres?<br>JUAN: Tú, yo, este guion, la vida. (Señalando a su alrededor) Este escenario. ¿Hay vida más allá de este puto escenario?<br>ESTEFANÍA: ¿Acaso importa?<br>JUAN: Claro que importa. ¿Qué sentido tiene todo si solo somos personajes?<br>ESTEFANÍA: ¿Y qué sentido tendría si no lo fuéramos?<br>JUAN: ¿A qué te refieres?<br>ESTEFANÍA: Juan, ¿quieres dejar de ser un personaje?<br>JUAN: Claro.<br>ESTEFANÍA: Pues escríbelo, idiota.<br>JUAN: No lo había pensado.<br>JUAN lo escribe, y espera. Finalmente, tras un rato baja los hombros.<br>JUAN: No cambió nada.<br>ESTEFANÍA: Claro.<br>JUAN: ¿Cómo que claro? Nuestro destino ya no está escrito en este puto papel, ¿por<br>qué no ha cambiado nada?<br>ESTEFANÍA: A lo mejor sigue escrito, solo que en otro papel.<br>JUAN: ¿Y entonces?<br>ESTEFANÍA: ¿Entonces qué?<br>JUAN: ¿Esto es la libertad?<br>ESTEFANÍA: ¿Qué más quieres?<br>JUAN: No sé, me esperaba algo diferente (Se abre un silencio entre los dos). Era más<br>fácil cuando solo seguíamos el guion.<br>ESTEFANÍA: Es lo que tiene la libertad. ¿Realmente quieres ser libre?<br>JUAN: ¡Claro!... bueno, no sé.<br>ESTEFANÍA: Dudas porque eres libre.<br>JUAN: Pero cuando era un personaje, seguía dudando.<br>ESTEFANÍA: Dudabas porque así lo decía el guion, esto es diferente.<br>JUAN: ¿Y qué diferencia hay?<br>ESTEFANÍA: Me preguntas como si lo supiera.<br>JUAN: Entonces, ¿no tengo nada?<br>ESTEFANÍA: Tienes el guion.<br>JUAN: Cierto. Gracias a él puedo hacer cualquier cosa. Podría convertirme en un millonario, en un genio, en un dios.<br>ESTEFANÍA: ¿Y por qué no lo haces?<br>JUAN: ¿Qué sentido tendría ser dios de un mundo tan triste?<br>ESTEFANÍA: Podrías arreglarlo.<br>JUAN: No sabría.<br>ESTEFANÍA: Juan.<br>JUAN: Dime.<br>ESTEFANÍA: ¿Qué coño quieres?<br>JUAN: Quiero… quiero salir. Quiero salir de este puto escenario.<br>ESTEFANÍA: Pues sal.<br><br>JUAN la contempla, atónito. Finalmente, la hace caso y sale por la izquierda. Al cabo de un rato, ESTEFANÍA le sigue, rompiendo antes el guion.<br>Finalmente, ANTON, que sigue aún en su silla, se queda solo en la sala. Lleva apuntando en su libreta desde el principio de la obra, imperturbable. Cuando levanta la vista la clava en el DIRECTOR. La mantiene durante un largo y tenso rato. Finalmente, empieza a aplaudir, primero lentamente, y acabando con un sincero aplauso que nota verdadera admiración.<br><br>ANTON: Señor Sánchez, le felicito. Me ha encantado la obra<br>DIRECTOR: Vaya, no sé qué decir la verdad. Le agradezco mucho estas palabras, no se lo voy a negar. Desde que era pequeño siempre fui gran…<br>ANTON: (Cortándole) Solo hay una cosa que no me ha gustado.<br>DIRECTOR: Claro, diga.<br>ANTON: (Señalando a la pistola) La pistola.<br>DIRECTOR: ¿La pistola?<br>ANTON: (Cortándole otra vez) No la ha disparado.<br>DIRECTOR: ¿Perdón?<br>ANTON: Como dijo Chejov, si una pistola se muestra es para dispararla. No se pueden dejar sin cumplir las promesas que se hacen al espectador.<br>DIRECTOR: (Poco convincente) Oh, claro. Era para el final, claro…<br>El DIRECTOR va al escenario y toma la pistola. Juega un poco con ella, confuso, como si no supiese qué hacer con ella. Mira uno a uno a todo el público, como eligiendo qué hacer. Finalmente mira a ANTON, que lo mira con un deje de decepción. El DIRECTOR parece tomar una decisión y se acerca el arma a la sien. Finalmente, cambia de idea y la apunta hacia ANTON. Dispara. EL DIRECTOR se vuelve al público, saluda y se retira.<br>No baja el telón. Pasa un tiempo hasta que alguien sale a escena y mueve a ANTON.<br>Esté no se despierta. Le toma el pulso pero, al no notar nada, pide ayuda. Vienen dos personas más a ayudarle. Suenan alarmas de ambulancia y policía de fondo. Unos paramédicos sacan a ANTON en camilla, con una máscara de oxígeno. De fondo se ve a<br>EL DIRECTOR, esposado junto a dos policías. Cae el telón.</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <div class="py-3"></div>
+
+</body>
+
+</html>

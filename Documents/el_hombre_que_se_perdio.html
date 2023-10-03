@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>La Caverna de Sánchez</title>
+  <meta name="La Caverna de Sánchez" content="Museo virtual de Alberto Sánchez en homenaje a la conflagración del arte"
+    http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles_sec.css">
+  <link rel="stylesheet" href="../styles_resp.css">
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="16x16" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+    <a class="navbar-brand" href="../index.html">
+      <img class="img-fluid custom-icon-logo" src="../Images/logo_light.png" alt="" width="48px" height="48px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="https://super.so/icon/light/menu.svg" class="custom-icon-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse py-4" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/library.html">Biblioteca</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/gallery.html">Galería</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/theatre.html">Escenario</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/linktree.html">✱</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="py-5"></div>
+  <div class="py-5"></div>
+
+  <div class="tree">
+    <button class="btn btn-lg pop pink" style="font-size:2rem" onclick="toggleMode()">&nbsp🌓︎&nbsp</button>
+    <script>
+      let element = document.body;
+      let button = document.querySelector(".btn");
+      let content = document.getElementById("DarkModetext");
+      element.className = "dark-mode";
+      content.innerText = "Dark Mode is ON";
+
+      function toggleMode() {
+        if (element.className === "dark-mode") {
+          element.className = "light-mode";
+          button.style.backgroundColor = "#0D0D0D"; // Set button background color to white
+          button.style.color = "#e5e8ed"; // Set button text color to black
+          content.innerText = "Dark Mode is OFF";
+        } else {
+          element.className = "dark-mode";
+          button.style.backgroundColor = "#e5e8ed"; // Set button background color to white
+          button.style.color = "#0D0D0D"; // Set button text color to black
+          content.innerText = "Dark Mode is ON";
+        }
+      }
+    </script>
+  </div>
+
+  
+
+  <div class="py-3"></div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+  
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="fw-bold display-5" style="font-weight:800; font-size:4rem">El Hombre que se Perdió en una Biblioteca
+</h1>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12 py-3">
+              <p style="font-size:clamp(16px, 4vw, 24px)"><br>«El otro día paseando por la Latina acabé deambulando por uno de esos callejones del centro cuya fluvial condición hace ilocalizables a futuro —nunca son los mismos de la misma manera que no lo es el hombre que se sumerge en ellos—. Me ha costado tiempo aprender a navegarlos, no dejando que la desorientación me ciegue de la apreciación de sus maravillas: esos muros que aprietan pero no ahogan, que crecen los unos sobre los otros como flores germinando en un cielo de coloridas tejas. Ante aquel botánico paisaje acabé encontrando un sitio que me llamó la atención lo suficiente como para entrar, una pequeña biblioteca de aspecto petricoso, de nombre elegante (que no recuerdo) pintado en blanco sobre fondo oscuro y expositor hasta el tope de libros, sin más decoración que un esquelético vagabundo aferrado a un libro en estado de semiinconsciencia. Dentro, un polvo dorado bañaba de calor el interior, evocando las leyendas antiguas que ningún libro fue jamás capaz de encerrar. El librero a cargo era un señor enjuto y cordial que se escondía, ligeramente encorvado, tras un enorme mostrador de roble. Le saludé con gesto quedo y decidí esconderme de aquella mirada tras alguno de los estantes. Una vez a salvo del contacto visual me embarqué en esa extraña afición que tengo dentro de las librerías. Todo el mundo sabe que leer libros y comprarlos son dos aficiones totalmente diferentes; sin duda existe gente en este mundo que atesora cientos de miles de líneas sobre las que jamás posaron la vista y también aquellos que, aunque ávidos lectores, rehuyen el pago que su pasión entraña —ladrones, herederos, pedidores... —. Yo, por mi parte, me relamo ante la idea de comprar libros como el comprador se relame ante la idea de leerlos, contentándome con echar un corto vistazo a su portada y hojear su interior. Gracias a esta afición mía, que nadie que yo sepa comparte, he logrado conocer más tomos que nadie, pues al comprador le acota la cartera y al lector, el reloj; a mí, en cambio, no me acota más que el entusiasmo, que lo tengo ilimitado.<br><br>Aquella biblioteca parecía hecha a mi medida, con la dosis justa de novedades acompañada de algún que otro título conocido. Pude apreciar, además, que aquellas no eran ediciones al uso; cuando por curiosidad buscaba los datos de impresión no encontraba más que sinsentidos, como impresiones previas a la escritura o imprentas en países inexistentes. Según me adentraba más y más en las inmensidades de aquella biblioteca, el número de ejemplares desconocidos empezó a ir en aumento, plagándose además las estanterías de libros en otros idiomas, que comenzaron como un par de casos anecdóticos y terminaron por convertirse en norma. Otra cosa que me sorprendió fue la borgiana cualidad del espacio, compuesto por laberínticos pasillos no euclídeos que se desdoblaban en inusuales formas. Sin embargo, de estas profundas reflexiones me acabó despertando uno de tantos libros, que me sorprendió por su anómala cotidianeidad. Todos los libros de la biblioteca tenían algo que los distinguía del resto —portadas de colores octarinos, títulos en lenguajes inexistentes o formas disidentes a la norma—, haciendo que este, de tan normal, acabara destacando. Lo tomé con curiosidad, esperando algo maravilloso, pero en su interior no encontré nada fuera de lo común, si acaso que no tenía título ni autor. Pasé por todas y cada una de sus hojas, todas ellas en blanco, hasta que encontré, cerca del final, una larga anotación que ocupaba varias hojas. Con curiosidad, leí aquella meticulosa caligrafía que, hasta cierto punto, me acabó recordando a la mía misma. Era un relato escrito en primera persona sobre un hombre perdido en una fascinante biblioteca que mutaba de forma fantasiosa. Dejé el libro en su lugar de reposo y llegué a tantear incluso la idea de formalizar aquella historieta en un relato — se ve que el destino tiene sentido de la ironía—. Al dejarlo me di cuenta que la dorada luz del atardecer había desaparecido y no quedaba en aquel lugar nada más que una extraña claridad semiazulada. Decidí entonces que ya era hora de volver y, guiado por algún libro de los que había visto, traté de recomponer la ruta que me había llevado a aquel lugar. Sin embargo, los libros empezaron a gastarme jugarretas: se me aparecían más de una vez o se escondían de mi vista, haciendo que dudara de lo que acababan de ver mis ojos. Pronto los lugares conocidos empezaron a ser más escasos y tuve que rendirme ante la evidencia, estaba perdido. Nunca he sido desconocedor de lo asombroso, y mi vida ha transcurrido ligada hasta cierto punto a lo inexplicable, por lo que no me pareció cosa tan extraña aquel desdoble espacial. Aún con todo, no por ello dejaba de fastidiarme. Decidí, tras largo rato de andanza, que lo mejor sería tomar descanso y continuar la búsqueda al día siguiente.<br><br>El día siguiente amaneció con la misma luz eterna pero en tonos ligeramente más cálidos, como el de la luz diurna filtrada a través de una cortina. Bostecé con cansancio, pero el rugido de mi estómago y la sed de mi boca me impedía pensar con claridad. La sed no fue muy difícil de saciar, habiendo como había pequeñas fuentecillas escondidas por las esquinas. Alguna había de agua estancada y pútrida, otras incluso secas; aún con todo, no tardé en encontrar una cuyo aspecto no terminó de disgustarme. La comida, por otro lado, parecía una tarea mucho más complicada. Tras un largo rato de reflexión acabé por encontrar una solución. Con algo de maña logré quitarle el lomo a un par de libros. Una vez despiezados, hice una pequeña fogata con librillos sueltos en los que calenté el cuero hasta que se empezó a ablandar. No era un manjar, valga la sorpresa, pero mi estómago lo agradeció con ganas y por fin pude parte en busca de una salida.<br><br>Aunque sabía —acaso instintivamente— que no llegaría a encontrar en vida la salida de aquel lugar, eso no hizo ceder en mi empeño. Adopté una vida errante, caminando cada día lo que permitían mis piernas. Aunque de primeras traté de mantener algún rumbo definido pronto la fútil naturaleza de la biblioteca nubló mi sentido de la orientación, otorgando a mi viaje un rumbo errático que al principio me desesperaba pero que acabé apreciando, pues me otorgaba cierta libertad dentro de la limitación de los estantes. Dice la gente sabia que en las bibliotecas se esconden todo tipo de maravillas y gracias a mi viaje he aprendido la literalidad que puede encerrar la aseveración. La biblioteca cambia de vez en cuando, siempre de acuerdo a su susceptible naturaleza, ora estable ora caprichosa. A veces son cambios leves, como el tipo de madera de los almacenes, su disposición, la geometría de los pasillos o el aspecto de los libros. Otras, las estanterías desaparecen, dejando en su lugar el papiro de Alejandría o las tablillas de Asurbanipal, se inundan los pasillos de una fina arena, el techo sube hasta confundirse con un cielo abierto y el agua empezaba a escasear. Recuerdo haber escuchado alertas de bombarderos junto al estruendo de la pólvora, siempre acompañado de ese peculiar olor a papel quemado, o aquella vez que el agua, acompañada de algas y líquenes, inundó los pasillos y me recluyó una semana a las bolsas de aire que formaban los estantes. Por mis manos han pasado libros de todo tipo: grandes, medianos, pequeños, coloridos, sobrios, de papel, de pulpa, de pergamino, de arcilla, de hierro... y he leído todos aquellos cuyo trazado era capaz de reconocer. Ello se lo debo al descubrimiento de «Le Grand Dictionnaire de Toutes les Langues», un pequeño tomo que oculta en su interior un innatural número de páginas gracias a las cuales fui capaz de traducir todo aquello que caía en mis manos. He leído cosas que llevan quemadas años, otras que nunca llegaron a ser leídas por el ser humano, si acaso escritas, y estas lecturas me han convertido en otra persona, me han hecho apreciar el ya voluntario cautiverio al que me rijo. A ratos me siento solo, pero ¿acaso puede decirse que lo estoy? A veces pienso que estaría más solo en un mundo lleno de gente y sin libros. Me nutre tanto su tinta que el lomo que los envuelve ya me empacha, por lo que llevo ya años esquelético de apenas comer. Sin embargo, hoy ha ocurrido lo peor que me podría haber pasado nunca, acabo de llegar a una estantería que no he sabido reconocer hasta que fue demasiado tarde. La he reconocido porque hay un libro tan normal que contrasta con el resto. He recordado mi primer día en esta biblioteca y, por condiciones azarosas, he descubierto que todo este tiempo guardaba una pluma junto a mí. Me dispongo, porque temo contrariar al destino, a escribir la carta que leí hace tanto tiempo».<br>Cuando terminó de leer, contempló a su alrededor y le recorrió un escalofrío al darse cuenta de que ya apenas quedaba luz. Se había perdido dentro de aquella biblioteca.</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <div class="py-3"></div>
+
+</body>
+
+</html>

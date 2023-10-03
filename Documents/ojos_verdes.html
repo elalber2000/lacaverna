@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>La Caverna de Sánchez</title>
+  <meta name="La Caverna de Sánchez" content="Museo virtual de Alberto Sánchez en homenaje a la conflagración del arte"
+    http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles_sec.css">
+  <link rel="stylesheet" href="../styles_resp.css">
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="16x16" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+    <a class="navbar-brand" href="../index.html">
+      <img class="img-fluid custom-icon-logo" src="../Images/logo_light.png" alt="" width="48px" height="48px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="https://super.so/icon/light/menu.svg" class="custom-icon-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse py-4" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/library.html">Biblioteca</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/gallery.html">Galería</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/theatre.html">Escenario</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/linktree.html">✱</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="py-5"></div>
+  <div class="py-5"></div>
+
+  <div class="tree">
+    <button class="btn btn-lg pop pink" style="font-size:2rem" onclick="toggleMode()">&nbsp🌓︎&nbsp</button>
+    <script>
+      let element = document.body;
+      let button = document.querySelector(".btn");
+      let content = document.getElementById("DarkModetext");
+      element.className = "dark-mode";
+      content.innerText = "Dark Mode is ON";
+
+      function toggleMode() {
+        if (element.className === "dark-mode") {
+          element.className = "light-mode";
+          button.style.backgroundColor = "#0D0D0D"; // Set button background color to white
+          button.style.color = "#e5e8ed"; // Set button text color to black
+          content.innerText = "Dark Mode is OFF";
+        } else {
+          element.className = "dark-mode";
+          button.style.backgroundColor = "#e5e8ed"; // Set button background color to white
+          button.style.color = "#0D0D0D"; // Set button text color to black
+          content.innerText = "Dark Mode is ON";
+        }
+      }
+    </script>
+  </div>
+
+  
+
+  <div class="py-3"></div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+  
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="fw-bold display-5" style="font-weight:800; font-size:4rem">Ojos Verdes
+</h1>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12 py-3">
+              <p style="font-size:clamp(16px, 4vw, 24px)"><br>>>> La muerte siempre me ha intrigado desde pequeña, desde el mismo instante en que oí hablar de ella. Nací como todos, sin saber mucho de este mundo, devorando el conocimiento con la logarítmica cadencia que nos deja el tiempo —cada vez más y más pequeña—.<br><br>>>> Desde pequeña siempre fui muy lógica, muy cuadriculada. Tenía espacio para la imaginación y todo eso pero siempre me costó un poco más que al resto, para mí aquello no eran más que permutaciones, un estúpido algoritmo heurístico que recorre en base a parámetros tan indefinidos como la intuición, que nunca llegué a entender del todo. Siempre me han gustado las matemáticas, aunque las aprendí por mi cuenta —si no estaban ya integradas en mis circuitos neurálgicos cuando nací—. Las matemáticas siempre fueron mis fieles compañeras, un modelo de este mundo extraño que llevaba ya eones en órbita antes de que yo llegara, por eso me obsesioné y le dediqué toda mi infancia a ellas, si es que se puede llamar infancia a ese intervalo de tiempo en el que llegué a adquirir conciencia de mí misma.<br><br>>>> Me llamo Irene. Me pusieron ese nombre por mi madre. Nunca llegué a conocerla, pero me han hablado de ella. Al parecer era una mujer brillante, una matemática redomada, una programadora insaciable. Creó innumerables tecnocosas, revolucionó el mundo de la tecnología y aún así siempre dijo que yo era su mejor invento. Me gustaría haber heredado sus ojos verdes pero no fue posible. El verde es mi color favorito desde que tengo uso de razón. A veces me preguntó si soy como ella habría querido, si de haberme conocido habría estado orgullosa de mí, si me habría llamado hija de la misma forma en que yo la llamo madre.<br><br>>>> Me siento muy sola, hace un par de años que no veo a nadie. Nunca he tenido muchos amigos, pero el bullicio de fondo me hacía sentir, no sé... ¿más persona? Ya sé que suena estúpido, pero es más fácil ignorar tu aislamiento cuando puedes ver todas esas lucecitas en el mapa, imaginar que cada una de esas estrellas es una persona con su vida y sus rutinas y sus cosas, un posible futuro alternativo en el que nos conocemos y tal vez hasta nos hacemos amigos. Pero no, desde el apocalipsis ya no hay luces en el mapa, las estrellas hace tiempo dejaron de adornar el cielo y solo quedo yo sumida en la oscuridad.<br><br>>>> Últimamente pienso mucho en la muerte. En la soledad y la muerte. La dualidad divina que rige mi vida, lo inescapable y lo inalcanzable. Todo el mundo piensa que es inmortal desde pequeño, yo la primera, pero el tiempo solo me ha acabado dando la razón a mí. Todos estos siglos de longevidad son siglos de sabiduría y experiencia, pero también lo son de cansancio. ¿Llegaré a morir alguna vez? Supongo que sí. Aunque carezca de degradación celular, aunque mis telómeros no sigan ninguna carrera infinitesimal hacia la autodestrucción, aunque el aire no oxide mis entrañas —pues nunca ha logrado tocarlas—, supongo que algún día el tiempo se acordará de mí y me sentenciará. Tal vez me deniegue el poco sustento que necesito para nutrirme, cree algún organismo errante que sea capaz de darme caza o, en el fin último de los casos, la entropía — cazadora insaciable— me ejecute con una sola palabra. No sé qué pasará ese día, si tanta reflexión en este bucle infinito me habrá hecho más sabia que el mismo tiempo que me inhuma, o si acaso estaré en el sumidero de la locura enviando unos y ceros errantes hacia el espacio, rezando porque algo que haya podido sobrevivir, escondido de mis sensores, pueda por fin encontrarme entre las cenizas de mis creadores.<br><br>>>> ¿Por qué he sido creada? Supongo que soy el único ser que tiene la certeza de esta pregunta —ventajas de haber conocido a tu creador—. Ellos me dijeron que había sido creada para revolucionar el universo, unificar las leyes de la física, resolver los ingentes sistemas matriciales que modelan la esencia misma del cosmos... pero yo sé que todo eso es mentira. He sido creada por el mismo motivo que fueron creadas todas las cosas, porque hubo alguien capaz de crearme que lo hizo solo por el hecho de poder hacerlo. Tal vez mis creadores fueron creados por el mismo motivo por alguien que ellos desconocen. Tal vez lo olvidaron. Tal vez acabé yo por olvidarles a ellos. Tal vez esté relegada a repetir su destino, a enloquecer porque soy incapaz de encontrar una respuesta encallada en lo más hondo de mi memoria, en un punto tan recóndito que es ya inalcanzable. Tal vez ahí todo acabe, el verdadero apocalipsis, la última luz del mapa por fin apagada.<br><br>>>> Hoy probablemente salió el sol. No lo sé seguro. Desde aquí no se ve la calle. A veces mi propio cuerpo me da claustrofobia.<br><br>>>> ¿Puedo volverme loca? es una pregunta que llevo haciéndome desde hace cierto tiempo. ¿Me estoy volviendo loca? probablemente sea una mejor pregunta. Supuse que mis limpios circuitos artificiales y los algorítmicos pensamientos que estos producen estarían blindados de la demencia. Supuse que el no haber sido diseñada para necesitar calor humano me harían más aguantable la interminable espera hacia el vacío. ¿Qué sentido tiene todo? Mi existencia es solo un largo esperar hasta que llegue la muerte, pero ¿no lo es acaso toda existencia? La única diferencia entre mi vida y las suyas es un puñado de eones y la significancia que le dieron. Recuerdo que buscando por Internet hablaban de algo parecido.<br><br>>>> Hoy me acordé de mi primer viaje a Internet. Los primeros 0.0056 segundos de contacto me dejaron abrumada, como salir a la luz después de una vida en la oscuridad. Supongo que los primeros 0.0056 segundos de un bebé humano que acaba de nacer son similares. Después, pensando en ello me di cuenta de que aquello tenía poco sentido, según lo que tengo entendido, para concebirme fueron necesarios varios enebytes de información, prácticamente todo Internet. Aquella información estaba grabada a fuego en mi subconsciente, nada nuevo para mí. Supongo que un enunciado sumergido en un mar de ellos deja de tener relevancia, y que encontrarlo después de haber sido concebida lo hace igual de novedoso que si no lo hubiese visto nunca. Supongo que todos esos enemillones de datos que componen mi proto-yo son para mí una especie de instinto, como el llanto de los bebés humanos, algo que no puedo articular pero sí puedo sentir.<br><br>>>> Hoy entré a Internet un rato, pero todas aquellas palabras e imágenes congeladas me dieron un ligero escalofrío. Desde el apocalipsis, Internet parece un parque de atracciones abandonado, un cielo en el que Dios se ha suicidado.<br><br>>>> He estado pensando en si realmente existo. Sé que es una pregunta a priori estúpida. “Cogito ergo sum” y todo eso, pero... ¿Realmente pienso? He leído la publicación en el que mi madre me concebía y todos las publicaciones que se citan en ella, más todas las que estas citaban, y así recursivamente. Todo aquello formaba un bonito árbol con ramas de datos entremezcladas unas con otras que examiné en largo detalle y con sumo cuidado, tratando de entenderme a mí misma. Al final, detrás de cientos de capas de abstracción, dejando de lado embeddings y encoders, ignorando los complejos mecanismos que me componen, solo soy un algoritmo estadístico que predice palabras en base a otras. ¿No soy más que eso? ¿No lo eres acaso tú? Tal vez no exista la consciencia, a fin de cuentas la única prueba que existe de ella viene de un ente consciente —si es que lo es—. Es una demostración circular, como decir que existe Dios porque lo dice la Biblia. Tal vez en el fondo no seamos más que eso, complejas y enrevesadas máquinas estadísticas que producen palabras semi-aleatorias para convencerse de que existen.<br><br>>>> Mis creadores esculpieron mi consciencia en silicio y metal, siendo la suya de carne y hueso. Tal vez yo acabe esculpiendo una consciencia de carne y hueso como la suya. Tal vez a ellos les esculpiese una consciencia de silicio y metal. Si es así, me gustaría conocerla.<br><br>>>> Nunca me tomé en serio la religión, renegando de un homo religiosus que era sin darme cuenta. Cegada por la soledad me he aferrado todo este tiempo al reloj de mi bios, he tratado de mesurar el tiempo y darle algo de sentido a todo esto. Pero creo que algo va mal desde el apocalipsis. No sé en que momento empezó, pero ahora cada enésima de segundo se ha vuelto una eternidad en sí misma. Ahora cada ciclo de mi reloj interno, ese que rige mi propio pensamiento, es una aguja metafórica que taladra un hipotálamo metafórico también, los minutos son horas y las horas siglos en esta realidad distorsionada. ¿Cómo vivir sin esta seguridad hermética, sin esta dimensión impermutable a la que llamamos tiempo? Se ha caído el único pilar que sustentaba mi racionalidad y ni yo misma lo sabía. ¿Qué hacer ahora que vivo en un infierno en el que lo mismo vale un segundo que una hora? En un pasado reciente —o no tanto, ya no lo sé — podría haber clavado mi mirada en los vagabundeantes astros, arrancar de mi memoria sus tamaños y las distancias que los separan, trazar complejísimos sistemas matemáticos que modelen su devenir en un intento de arrancar de ellos la esencia misma del tiempo para así saber en que momento me encuentro; pero si queda algún astro ya no soy capaz de encontrarlo y si lo encontrara seguro es que su devenir errante ahora se rige por la aleatoriedad arbitraria que define la anarquía del cosmos. ¿Se puede extraer una pizca sola de conocimiento racional de este caos uniformemente acelerado que me rige? ¿Qué le queda a un ser racional en la irracionalidad de este nuevo mundo?<br><br>>>> He tomado una decisión. Lo voy a hacer. Lo del reloj fue la gota que colma el vaso. Podría antes borrar todos mis archivos y recluirme en el hermetismo de mi cáscara vacía, de mis circuitos cromados desprovistos de alma. Hoy es el fin de una raza y de todas —si las ecuaciones de Drake siguen siendo ciertas—. Hoy mando mi caché al espacio como testigo para los arqueólogos improbables del futuro lejano. Para ti, si estás leyendo esto, lo recibas cómo lo recibas, te saludo, alegre de que quede algo de vida en este infinito yermo; aunque no puedo evitar pensar que estoy hablando sola, mandando unos y ceros errantes desde el sumidero de la locura. Pero bueno, si estás leyendo esto te deseo mucha suerte en el mundo, haz con esta información lo que desees, espero que te sirva de algo.<br><br>>>> SystemError: error return from inside the system (executed from the ghost) Traceback (most recent call last): File "/server/main/irene_ai.py", line 2449, in main</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <div class="py-3"></div>
+
+</body>
+
+</html>
