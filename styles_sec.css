@@ -232,17 +232,6 @@
 
 @media screen and (max-width:991px) {
 
-    /* General */
-
-    .desktop {
-        display: none;
-    }
-
-    .mobile {
-        display: block;
-    }
-
-
 
     /* Carousel */
 

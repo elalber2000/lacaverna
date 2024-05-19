@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>La Caverna de Sánchez</title>
+  <meta name="La Caverna de Sánchez" content="Museo virtual de Alberto Sánchez en homenaje a la conflagración del arte"
+    http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles_sec.css">
+  <link rel="stylesheet" href="../styles_resp.css">
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="16x16" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+    <a class="navbar-brand" href="../index.html">
+      <img class="img-fluid custom-icon-logo" src="../Images/logo_light.png" alt="" width="48px" height="48px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="https://super.so/icon/light/menu.svg" class="custom-icon-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse py-4" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/library.html">Biblioteca</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/gallery.html">Galería</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/theatre.html">Escenario</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/linktree.html">✱</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="py-5"></div>
+  <div class="py-5"></div>
+
+  <div class="tree">
+    <button class="btn btn-lg pop pink" style="font-size:3rem" onclick="toggleMode()">&nbsp◐&nbsp</button>
+    <script>
+      let element = document.body;
+      let button = document.querySelector(".btn");
+      let content = document.getElementById("DarkModetext");
+      element.className = "dark-mode";
+      content.innerText = "Dark Mode is ON";
+
+      function toggleMode() {
+        if (element.className === "dark-mode") {
+          element.className = "light-mode";
+          button.style.backgroundColor = "#0D0D0D"; // Set button background color to white
+          button.style.color = "#e5e8ed"; // Set button text color to black
+          content.innerText = "Dark Mode is OFF";
+        } else {
+          element.className = "dark-mode";
+          button.style.backgroundColor = "#e5e8ed"; // Set button background color to white
+          button.style.color = "#0D0D0D"; // Set button text color to black
+          content.innerText = "Dark Mode is ON";
+        }
+      }
+    </script>
+  </div>
+
+  
+
+  <div class="py-3"></div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+  
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="fw-bold display-5" style="font-weight:800; font-size:4rem">Poesía con P Mayúscula
+</h1>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12 py-3">
+              <p style="font-size:clamp(16px, 4vw, 24px)"><br>Estoy cansado de los orfebres de la palabra, de los arquitectos de la metáfora, esos sommeliers que vierten, airean, palaten y luego escupen néctares de poesía concentrada, teóricos que parametrizan los verbos con su brillante portaminas. La verdadera poesía ha de ser tallada en madera y barro, la poesía es un palacio de adobe, tiene una sola habitación, demasiado caliente en el centro, algo fría en los extremos, tiene muebles sencillos de ángulos rotos y agujeros en el techo. La poesía es un puchero que arde alimentado de los restos que dejamos cada día: patatas, alubias y huesos de jamón en los días de fiesta.</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <div class="py-3"></div>
+
+</body>
+
+</html>
