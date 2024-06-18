@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>La Caverna de Sánchez</title>
+  <meta name="La Caverna de Sánchez" content="Museo virtual de Alberto Sánchez en homenaje a la conflagración del arte"
+    http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles_sec.css">
+  <link rel="stylesheet" href="../styles_resp.css">
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="16x16" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+    <a class="navbar-brand" href="../index.html">
+      <img class="img-fluid custom-icon-logo" src="../Images/logo_light.png" alt="" width="48px" height="48px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="https://super.so/icon/light/menu.svg" class="custom-icon-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse py-4" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/library.html">Biblioteca</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/gallery.html">Galería</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/theatre.html">Escenario</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/linktree.html">✱</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="py-5"></div>
+  <div class="py-5"></div>
+
+  <div class="tree">
+    <button class="btn btn-lg pop pink" style="font-size:3rem" onclick="toggleMode()">&nbsp◐&nbsp</button>
+    <script>
+      let element = document.body;
+      let button = document.querySelector(".btn");
+      let content = document.getElementById("DarkModetext");
+      element.className = "dark-mode";
+      content.innerText = "Dark Mode is ON";
+
+      function toggleMode() {
+        if (element.className === "dark-mode") {
+          element.className = "light-mode";
+          button.style.backgroundColor = "#0D0D0D"; // Set button background color to white
+          button.style.color = "#e5e8ed"; // Set button text color to black
+          content.innerText = "Dark Mode is OFF";
+        } else {
+          element.className = "dark-mode";
+          button.style.backgroundColor = "#e5e8ed"; // Set button background color to white
+          button.style.color = "#0D0D0D"; // Set button text color to black
+          content.innerText = "Dark Mode is ON";
+        }
+      }
+    </script>
+  </div>
+
+  
+
+  <div class="py-3"></div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+  
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="fw-bold display-5" style="font-weight:800; font-size:4rem">Almizcle y Tabaco
+</h1>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12 py-3">
+              <p style="font-size:clamp(16px, 4vw, 24px)"><br>María supo que algo pasaba cuando vio el polvo. Decían las malas lenguas que aquel era un pueblo de polvo y sangre y que sus habitantes habían sabido hacer un arte de ambos. Y, aunque María ya no sabía de sangre —aquello era cosa de jóvenes—, sí sabía leer el polvo, ese arte minucioso que conllevaba la paciencia de la vejez, consistente en pasar las horas muertas observando y leyendo los secretos que escondía cada mota.<br><br>Con todos sus años de experiencia en el arte no tuvo atisbo de dudas: aquel polvo olía a sudor y hierro, se movía impetuoso y desordenado. Aquel polvo anticipaba cambio, y María sabía que el cambio solía venir acompañado de sangre. Sin embargo, esta imagen se desvaneció de su cabeza cuando escuchó una tonadilla silbada, acompañada de un olor a almizcle y tabaco, la huella de los García. María alzó su mirada cansada y vio una silueta que se paraba a saludarla.<br><br>—¿Qué tal la tarde, María? —aunque su vista cada vez era peor, María supo reconocerlo por la voz; era Jaime, el más pequeño de los cinco.<br><br>—No va mal, hijo. ¿Marchas?<br><br>—Sí, a ayudar a mi madre.<br><br>—Pues que vaya bien.<br><br>Jaime se fue silbando por la calle gris. Estaba claro que era un García, no solo por el olor a almizcle y tabaco, sino también por su manera de silbar. Los cinco hermanos silbaban a todas horas, y lo hacían de tal manera que hasta los pájaros cantaban con ellos. Todos los hermanos silbaban con fluidez tiempo antes de pronunciar su primera palabra, agraciando al pueblo con ella desde la cuna.<br><br>Rato después de haber pasado Jaime, llegó una nueva nube de polvo, pero esta vez iba acompañada de varias personas. Por el ritmo acompasado de sus pasos y su uniforme, debían de ser de la guardia. María se dio cuenta de que caminaban todos en dirección a la plaza, seguidos de una larga comitiva de curiosos, que iban susurrando rumores sobre una nueva guerra. María no hizo amago de levantarse. Los militares continuaron su regio paso hasta llegar a la plaza, y cuando llegaron se impuso un autoritario vozarrón cuyas palabras María no fue capaz de distinguir.<br><br>Durante los siguientes tres días permaneció cerrado el cuartelillo a cal y canto, mientras, el capitán —que nunca se quitaba el gorro para no mostrar sus dos cuernos bermellones— mandó ir casa por casa encerrando a supuestos opositores. Se valió de chivatazos y soplones para identificar a los sospechosos, entre los que acabaron los García por un asunto de tierras. La madre de los hermanos, que había oído lo que le pasaba a todo al que encerraba el capitán, sentía ya el olor de la muerte en el umbral de su casa. Todos decían a voces silenciosas que la pobre acabaría haciendo luto por los hijos sin haber llegado a terminar el del marido, y, cada minuto que pasaba, parecía arrancarle más color y carne del rostro, hasta que acabó siendo más cadáver que persona. Pero no fue ella la única que notó la ausencia de los García; el pueblo, tullido de sus alegres silbidos, cada vez se tornaba más oscuro y triste. Sin embargo, tras los tres largos días de esperas, llantos y golpes, el capitán abrió por fin las puertas del cuartel. Con su voz siniestra y autoritaria decretó que habían encontrado culpables de traición a todos los acusados, decretando ahí mismo su inmediata ejecución por el crimen.<br><br>Al día siguiente, María vio pasar la siniestra comitiva, encabezada por el capitán con su ejército a la espalda. Detrás les precedían los presos, amarrados como animales, arrastrando los pies por las angostas calles. Una delgada línea de guardias separaba a los condenados de sus familiares, que asistían con impotencia. Levantaban a su paso una fina capa de polvo con olor a lágrimas y a muerte, cuyas motas quedaban petrificadas en el espacio inerte, hasta que alguien las desplazaba con su boqueante aliento. Cuando terminaron de pasar solo quedó esa fina capa de polvo suspendida en el tiempo y una lenta tonadilla fúnebre entonada por los cinco García a la vez, aquella que su madre cantaba en las noches sin luna que precedieron la muerte de su padre. Todos los pajarillos silbaban junto a ellos, como si conociesen la canción de toda la vida.<br><br>María se persignó y empezó a rezar por el alma de los que habrían de ser difuntos, pero antes de que pudiera terminar la interrumpió un disparo sordo que retumbó por todo el valle. Aquel disparo dejó un rastro de silencio a su paso, que desgarró allí donde pasaba, borrando todo mugido, llanto y ladrido a su paso. Al rato volvieron los mugidos, los llantos y los ladridos; pero aquel crimen no quedó impune. Desde aquel día el pueblo condena el asesinato que lo dejó huérfano del canto de los pájaros.</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <div class="py-3"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>La Caverna de Sánchez</title>
+  <meta name="La Caverna de Sánchez" content="Museo virtual de Alberto Sánchez en homenaje a la conflagración del arte"
+    http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles_sec.css">
+  <link rel="stylesheet" href="../styles_resp.css">
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="16x16" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+    <a class="navbar-brand" href="../index.html">
+      <img class="img-fluid custom-icon-logo" src="../Images/logo_light.png" alt="" width="48px" height="48px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="https://super.so/icon/light/menu.svg" class="custom-icon-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse py-4" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/library.html">Biblioteca</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/gallery.html">Galería</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/theatre.html">Escenario</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/linktree.html">✱</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="py-5"></div>
+  <div class="py-5"></div>
+
+  <div class="tree">
+    <button class="btn btn-lg pop pink" style="font-size:3rem" onclick="toggleMode()">&nbsp◐&nbsp</button>
+    <script>
+      let element = document.body;
+      let button = document.querySelector(".btn");
+      let content = document.getElementById("DarkModetext");
+      element.className = "dark-mode";
+      content.innerText = "Dark Mode is ON";
+
+      function toggleMode() {
+        if (element.className === "dark-mode") {
+          element.className = "light-mode";
+          button.style.backgroundColor = "#0D0D0D"; // Set button background color to white
+          button.style.color = "#e5e8ed"; // Set button text color to black
+          content.innerText = "Dark Mode is OFF";
+        } else {
+          element.className = "dark-mode";
+          button.style.backgroundColor = "#e5e8ed"; // Set button background color to white
+          button.style.color = "#0D0D0D"; // Set button text color to black
+          content.innerText = "Dark Mode is ON";
+        }
+      }
+    </script>
+  </div>
+
+  
+
+  <div class="py-3"></div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+  
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="fw-bold display-5" style="font-weight:800; font-size:4rem">La Biblioteca de Cantor
+</h1>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-12 py-3">
+              <p style="font-size:clamp(16px, 4vw, 24px)"><br>Basado en La Biblioteca de Babel de Jorge Luis Borges<br><br>La Biblioteca se podía considerar un universo en sí mismo. Las investigaciones sobre su estructura dictaminaban que estaba compuesta por un número infinito de habitaciones pentagonales adyacentes entre sí, desbaratando ideas tan simples como la de una línea recta (o al menos su concepción clásica). Dentro de cada una de estas habitaciones se podía encontrar un número finito de libros: 181 para ser más exactos. Sus páginas estaban recorridas por permutaciones aleatorias de diferentes símbolos, lo que hacía posible la existencia teórica de cualquier libro en aquel lugar. Se ha llegado a afirmar incluso la existencia de libros de extensión infinita, por lo que todos los libros del universo podrían fácilmente estar escondidos en alguna de aquellas habitaciones pentagonales, esperando la llegada de un lector adecuado.<br><br>Pero, a pesar de todas las posibilidades, no era de extrañar que lo más frecuente fuera encontrar libros sin ningún tipo de sentido. Puede que sí lo tuvieran en otras lenguas, tal vez en lenguas no conocidas por el hombre. Una sola palabra reconocible en ese mar de incoherencia contextual era un gran hallazgo, celebrado con vehemencia por el paciente aventurero que lograba desenterrarlo. Es por ello que Aquiles estaba radiante aquel día, pues acababa de encontrar el libro perfecto. No solo tenía palabras legibles, todas ellas en su idioma, sino que además estas estaban estructuradas en frases con sentido que hablaban sobre la misma Biblioteca.<br><br>Aquiles: Señora Tortuga, ha de ver esto. He encontrado un libro que trata sobre la Biblioteca. Habla de su naturaleza infinita y dice que podemos encontrar cualquier libro en ella.<br><br>Tortuga: Eso es imposible, los libros aquí tienen una extensión limitada. Por mucho que la Biblioteca pueda ser infinita, ha de existir un libro con una extensión mayor fuera de sus muros.<br><br>A: Eso es lo mejor, también dice que existen libros infinitos. Imagínese, un libro interminable; todas las posibles historias encerradas entre sus páginas.<br><br>T: Aún así, por mucho que haya libros infinitos me niego a creer que todos los libros puedan estar contenidos en esta biblioteca.<br><br>A: ¿Por qué?<br><br>T: Piénsalo así. Imagina que ponemos todos los libros infinitos de la Biblioteca en un orden cualquiera.<br><br>A: Vale.<br><br>T: Tomamos el primer símbolo del primer libro y escribimos uno diferente en una hoja. Luego tomamos el segundo símbolo del segundo libro y volvemos a escribir un nuevo símbolo diferente. Si repetimos indefinidamente, escribiendo un símbolo diferente por cada libro, habremos escrito un libro que no está en la Biblioteca.<br><br>A: Pero eso es imposible.<br><br>T: No, no lo es. El nuevo libro no puede ser como ningún libro finito de la Biblioteca, porque tiene extensión ilimitada; pero tampoco puede ser como ninguno de los libros infinitos porque difiere siempre en algún símbolo.<br><br>A: Asombroso. Pero las sorpresas del libro no acaban ahí, resulta que aparecen dos personajes que se llaman como nosotros.<br><br>T: Eso sí que es extraño. Por curiosidad, ¿cómo se llama el libro?<br><br>A: La Biblioteca de Cantor.<br><br>T: Vaya, es posible que este sea uno de esos libros infinitos de los que hablabas; ¿te importaría leermelo desde el principio? Mi vista cansada no me lo permite.<br><br>A: No entiendo cómo puede ser un libro infinito, si está contenido en un espacio finito. Pero no, no tengo inconveniente en leerlo para usted —Tras un segundo de pausa, Aquiles comienza a recitar—. Vale, dice así: «La Biblioteca se podía considerar un universo en sí mismo. Las investigaciones sobre su estructura dictaminaban que estaba compuesta por un número infinito de habitaciones pentagonales adyacentes entre sí, desbaratando ideas tan simples como la de una línea recta […]</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <div class="py-3"></div>
+
+</body>
+
+</html>

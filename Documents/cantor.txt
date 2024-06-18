@@ -1,0 +1,37 @@
+La Biblioteca de Cantor
+
+Basado en La Biblioteca de Babel de Jorge Luis Borges
+
+La Biblioteca se podía considerar un universo en sí mismo. Las investigaciones sobre su estructura dictaminaban que estaba compuesta por un número infinito de habitaciones pentagonales adyacentes entre sí, desbaratando ideas tan simples como la de una línea recta (o al menos su concepción clásica). Dentro de cada una de estas habitaciones se podía encontrar un número finito de libros: 181 para ser más exactos. Sus páginas estaban recorridas por permutaciones aleatorias de diferentes símbolos, lo que hacía posible la existencia teórica de cualquier libro en aquel lugar. Se ha llegado a afirmar incluso la existencia de libros de extensión infinita, por lo que todos los libros del universo podrían fácilmente estar escondidos en alguna de aquellas habitaciones pentagonales, esperando la llegada de un lector adecuado.
+
+Pero, a pesar de todas las posibilidades, no era de extrañar que lo más frecuente fuera encontrar libros sin ningún tipo de sentido. Puede que sí lo tuvieran en otras lenguas, tal vez en lenguas no conocidas por el hombre. Una sola palabra reconocible en ese mar de incoherencia contextual era un gran hallazgo, celebrado con vehemencia por el paciente aventurero que lograba desenterrarlo. Es por ello que Aquiles estaba radiante aquel día, pues acababa de encontrar el libro perfecto. No solo tenía palabras legibles, todas ellas en su idioma, sino que además estas estaban estructuradas en frases con sentido que hablaban sobre la misma Biblioteca.
+
+Aquiles: Señora Tortuga, ha de ver esto. He encontrado un libro que trata sobre la Biblioteca. Habla de su naturaleza infinita y dice que podemos encontrar cualquier libro en ella.
+
+Tortuga: Eso es imposible, los libros aquí tienen una extensión limitada. Por mucho que la Biblioteca pueda ser infinita, ha de existir un libro con una extensión mayor fuera de sus muros.
+
+A: Eso es lo mejor, también dice que existen libros infinitos. Imagínese, un libro interminable; todas las posibles historias encerradas entre sus páginas.
+
+T: Aún así, por mucho que haya libros infinitos me niego a creer que todos los libros puedan estar contenidos en esta biblioteca.
+
+A: ¿Por qué?
+
+T: Piénsalo así. Imagina que ponemos todos los libros infinitos de la Biblioteca en un orden cualquiera.
+
+A: Vale.
+
+T: Tomamos el primer símbolo del primer libro y escribimos uno diferente en una hoja. Luego tomamos el segundo símbolo del segundo libro y volvemos a escribir un nuevo símbolo diferente. Si repetimos indefinidamente, escribiendo un símbolo diferente por cada libro, habremos escrito un libro que no está en la Biblioteca.
+
+A: Pero eso es imposible.
+
+T: No, no lo es. El nuevo libro no puede ser como ningún libro finito de la Biblioteca, porque tiene extensión ilimitada; pero tampoco puede ser como ninguno de los libros infinitos porque difiere siempre en algún símbolo.
+
+A: Asombroso. Pero las sorpresas del libro no acaban ahí, resulta que aparecen dos personajes que se llaman como nosotros.
+
+T: Eso sí que es extraño. Por curiosidad, ¿cómo se llama el libro?
+
+A: La Biblioteca de Cantor.
+
+T: Vaya, es posible que este sea uno de esos libros infinitos de los que hablabas; ¿te importaría leermelo desde el principio? Mi vista cansada no me lo permite.
+
+A: No entiendo cómo puede ser un libro infinito, si está contenido en un espacio finito. Pero no, no tengo inconveniente en leerlo para usted —Tras un segundo de pausa, Aquiles comienza a recitar—. Vale, dice así: «La Biblioteca se podía considerar un universo en sí mismo. Las investigaciones sobre su estructura dictaminaban que estaba compuesta por un número infinito de habitaciones pentagonales adyacentes entre sí, desbaratando ideas tan simples como la de una línea recta […]
