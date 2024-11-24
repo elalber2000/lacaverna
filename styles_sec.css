@@ -229,6 +229,30 @@
 }
 
 
+#tag-search {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border: 1px solid var(--color-light);
+}
+
+
+#tag-list {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border: 1px solid var(--color-light);
+}
+
+#tag-list .list-group-item {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border: none;
+}
+
+#tag-list .list-group-item:hover {
+    color: var(--color-highlight);
+}
+
+
 
 @media screen and (max-width:991px) {
 
