@@ -65,7 +65,7 @@
 
 
   <div class="py-5"></div>
-  
+
 
   <!-- Search and Filter Section -->
   <div class="container my-5 card-text">
@@ -80,7 +80,7 @@
 
   <script>
     // Fetch posts data
-    fetch('../Documents/_posts.json')
+    fetch('../Documents/posts.json')
       .then(response => response.json())
       .then(posts => {
         displayPosts(posts);
@@ -199,7 +199,7 @@
     }
 
     function filterPostsByTag(tag) {
-      fetch('../Documents/_posts.json')
+      fetch('../Documents/posts.json')
         .then(response => response.json())
         .then(posts => {
           if (tag) {
