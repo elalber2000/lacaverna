@@ -1,143 +1,206 @@
 [
-  {
-      "title": "Ojos Verdes",
-      "description": "Sobre la soledad en un futuro posible.",
-      "link": "../Documents/ojos_verdes.html",
-      "img_link": "../Images/Library/ojos_verdes.png",
-      "tags": ["ciencia ficción", "narrativa"]
-  },
-  {
-      "title": "El Enclave Subterráneo",
-      "description": "Sobre los lugares que esconde la urbe.",
-      "link": "../Documents/metrorrelato.html",
-      "img_link": "../Images/Library/metrorrelatos.png",
-      "tags": ["microrrelato", "narrativa"]
-  },
-  {
-      "title": "El Hombre que se Perdió en una Biblioteca",
-      "description": "Sobre los recovecos que se esconden tras las grandes bibliotecas.",
-      "link": "../Documents/el_hombre_que_se_perdio.html",
-      "img_link": "../Images/Library/el_hombre_que_se_perdio.png",
-      "tags": ["fantasía", "narrativa"]
-  },
-  {
-      "title": "La Sociedad de Descubrimientos Asombrosos",
-      "description": "Sobre la magia que esconden los descubrimientos.",
-      "link": "../Documents/descubrimientos.html",
-      "img_link": "../Images/Library/descubrimientos.png",
-      "tags": ["realismo mágico", "narrativa"]
-  },
-  {
-      "title": "Chatarra Virtual",
-      "description": "Sobre una distopía con realidad aumentada.",
-      "link": "../Documents/distopia.html",
-      "img_link": "../Images/Library/distopia.png",
-      "tags": ["distopía", "narrativa"]
-  },
-  {
-      "title": "Hay Peores Crímenes",
-      "description": "Sobre el encuentro casual entre un literato aficionado y un pirómano profesional.",
-      "link": "../Documents/crimenes.html",
-      "img_link": "../Images/Library/peores_crimenes.png",
-      "tags": ["fantasía", "narrativa"]
-  },
-  {
-      "title": "Almizcle y Tabaco",
-      "description": "Sobre la sombra del silencio que recorre nuestros pueblos.",
-      "link": "../Documents/almizcle.html",
-      "img_link": "../Images/Library/almizcle.png",
-      "tags": ["realismo mágico", "narrativa"]
-  },
-  {
-      "title": "La Biblioteca de Cantor",
-      "description": "Sobre las matemáticas que esconden las bibliotecas infinitas.",
-      "link": "../Documents/cantor.html",
-      "img_link": "../Images/Library/la_biblioteca_de_cantor.png",
-      "tags": ["matemáticas", "narrativa"]
-  },
-  {
-      "title": "Como un Hijo Más",
-      "description": "Sobre la fragilidad de la mente humana.",
-      "link": "../Documents/como_un_hijo_mas.html",
-      "img_link": "../Images/Library/como_un_hijo_mas.png",
-      "tags": ["microrrelato", "narrativa"]
-  },
-  {
-      "title": "Has Leído Demasiado a Bukowski",
-      "description": "Sobre los escritores pesados que solo leen un autor.",
-      "link": "../Documents/bukowski.html",
-      "img_link": "../Images/Library/bukowski.png",
-      "tags": ["opinión", "artículo"]
-  },
-  {
-      "title": "La Tragedia Poética",
-      "description": "Sobre lo trágico de la poesía en el mundo moderno.",
-      "link": "../Documents/tragedia.html",
-      "img_link": "../Images/Library/tragedia_poetica.png",
-      "tags": ["opinión", "artículo"]
-  },
-  {
-      "title": "Post-Scriptum Sobre Por Qué el Mundo —Igual— Se Va a la Mierda",
-      "description": "Sobre lo que nos depara este futuro incierto.",
-      "link": "../Documents/postscriptum.html",
-      "img_link": "../Images/Library/post-scriptum.png",
-      "tags": ["opinión", "artículo"]
-  },
-  {
-      "title": "Brujería Moderna",
-      "description": "Sobre magias, brujerías, hechicerías, sortilegios, conjuros y encantamientos.",
-      "link": "../Documents/brujeria.html",
-      "img_link": "../Images/Library/brujeria_moderna.png",
-      "tags": ["divulgación", "artículo"]
-  },
-  {
-      "title": "Quememos al Autor",
-      "description": "Sobre lo mucho que necesita Lovecraft un cocktail molotov.",
-      "link": "../Documents/quememos.html",
-      "img_link": "../Images/Library/quememos_al_autor.png",
-      "tags": ["opinión", "artículo"]
-  },
-  {
-      "title": "«Watchmen»: La Subversión del Superhéroe",
-      "description": "Sobre uno de tantísimos análisis sobre Watchmen.",
-      "link": "../Documents/watchmen.html",
-      "img_link": "../Images/Library/watchmen.png",
-      "tags": ["análisis", "artículo"]
-  },
-  {
-      "title": "Experimentos Poéticos",
-      "description": "Experimentos aleatorios del mundo poético.",
-      "link": "../Documents/experimentos.html",
-      "img_link": "../Images/Library/experimentos.png",
-      "tags": ["poesía"]
-  },
-  {
-      "title": "Los Técnicos del Apocalípsis",
-      "description": "Sobre la gente que crea y lamenta cada apocalípsis.",
-      "link": "../Documents/tecnicos.html",
-      "img_link": "../Images/Library/tecnicos.png",
-      "tags": ["poesía"]
-  },
-  {
-      "title": "Poema de Aniversario",
-      "description": "Sobre el día de mi segundo aniversario.",
-      "link": "../Documents/aniversario.html",
-      "img_link": "../Images/Library/aniversario.png",
-      "tags": ["poesía"]
-  },
-  {
-      "title": "Que Empiece Ya",
-      "description": "Sobre una obra que tarda demasiado en empezar.",
-      "link": "../Documents/que_empiece_ya.html",
-      "img_link": "../Images/Library/que_empiece_ya.png",
-      "tags": ["sketch", "teatro"]
-  },
-  {
-      "title": "Hacíamos Teatro",
-      "description": "De cuando hacíamos más artisteadas.",
-      "link": "../Documents/antes.html",
-      "img_link": "../Images/Library/antes.png",
-      "tags": ["poesía"]
-  }
+    {
+        "title": "Ojos Verdes",
+        "description": "Sobre la soledad en un futuro posible.",
+        "link": "../Documents/ojos_verdes.html",
+        "img_link": "../Images/Library/ojos_verdes.png",
+        "tags": ["memoria", "distopía", "ciencia ficción", "filosofía", "narrativa"]
+    },
+    {
+        "title": "El Enclave Subterráneo",
+        "description": "Sobre los lugares que esconde la urbe.",
+        "link": "../Documents/metrorrelato.html",
+        "img_link": "../Images/Library/metrorrelatos.png",
+        "tags": ["microrrelato", "narrativa"]
+    },
+    {
+        "title": "El Hombre que se Perdió en una Biblioteca",
+        "description": "Sobre los recovecos que se esconden tras las grandes bibliotecas.",
+        "link": "../Documents/el_hombre_que_se_perdio.html",
+        "img_link": "../Images/Library/el_hombre_que_se_perdio.png",
+        "tags": ["fantasía", "narrativa"]
+    },
+    {
+        "title": "La Sociedad de Descubrimientos Asombrosos",
+        "description": "Sobre la magia que esconden los descubrimientos.",
+        "link": "../Documents/descubrimientos.html",
+        "img_link": "../Images/Library/descubrimientos.png",
+        "tags": ["realismo mágico", "narrativa"]
+    },
+    {
+        "title": "Chatarra Virtual",
+        "description": "Sobre una distopía con realidad aumentada.",
+        "link": "../Documents/distopia.html",
+        "img_link": "../Images/Library/distopia.png",
+        "tags": ["distopía", "ciencia ficción", "narrativa"]
+    },
+    {
+        "title": "Hay Peores Crímenes",
+        "description": "Sobre el encuentro casual entre un literato aficionado y un pirómano profesional.",
+        "link": "../Documents/crimenes.html",
+        "img_link": "../Images/Library/peores_crimenes.png",
+        "tags": ["fantasía", "narrativa"]
+    },
+    {
+        "title": "Almizcle y Tabaco",
+        "description": "Sobre la sombra del silencio que recorre nuestros pueblos.",
+        "link": "../Documents/almizcle.html",
+        "img_link": "../Images/Library/almizcle.png",
+        "tags": ["memoria", "realismo mágico", "narrativa"]
+    },
+    {
+        "title": "La Biblioteca de Cantor",
+        "description": "Sobre las matemáticas que esconden las bibliotecas infinitas.",
+        "link": "../Documents/cantor.html",
+        "img_link": "../Images/Library/la_biblioteca_de_cantor.png",
+        "tags": ["matemáticas", "filosofía", "fantasía", "narrativa"]
+    },
+    {
+        "title": "Como un Hijo Más",
+        "description": "Sobre la fragilidad de la mente humana.",
+        "link": "../Documents/como_un_hijo_mas.html",
+        "img_link": "../Images/Library/como_un_hijo_mas.png",
+        "tags": ["memoria", "microrrelato", "narrativa"]
+    },
+    {
+        "title": "Has Leído Demasiado a Bukowski",
+        "description": "Sobre los escritores pesados que solo leen un autor.",
+        "link": "../Documents/bukowski.html",
+        "img_link": "../Images/Library/bukowski.png",
+        "tags": ["opinión", "artículo"]
+    },
+    {
+        "title": "La Tragedia Poética",
+        "description": "Sobre lo trágico de la poesía en el mundo moderno.",
+        "link": "../Documents/tragedia.html",
+        "img_link": "../Images/Library/tragedia_poetica.png",
+        "tags": ["opinión", "artículo"]
+    },
+    {
+        "title": "Post-Scriptum Sobre Por Qué el Mundo —Igual— Se Va a la Mierda",
+        "description": "Sobre lo que nos depara este futuro incierto.",
+        "link": "../Documents/postscriptum.html",
+        "img_link": "../Images/Library/post-scriptum.png",
+        "tags": ["opinión", "filosofía", "artículo"]
+    },
+    {
+        "title": "Brujería Moderna",
+        "description": "Sobre magias, brujerías, hechicerías, sortilegios, conjuros y encantamientos.",
+        "link": "../Documents/brujeria.html",
+        "img_link": "../Images/Library/brujeria_moderna.png",
+        "tags": ["divulgación", "filosofía", "artículo"]
+    },
+    {
+        "title": "Quememos al Autor",
+        "description": "Sobre lo mucho que necesita Lovecraft un buen cocktail molotov.",
+        "link": "../Documents/quememos.html",
+        "img_link": "../Images/Library/quememos_al_autor.png",
+        "tags": ["opinión", "filosofía", "artículo"]
+    },
+    {
+        "title": "«Watchmen»: La Subversión del Superhéroe",
+        "description": "Sobre uno de tantísimos análisis sobre Watchmen.",
+        "link": "../Documents/watchmen.html",
+        "img_link": "../Images/Library/watchmen.png",
+        "tags": ["análisis", "filosofía", "artículo"]
+    },
+    {
+        "title": "Experimentos Poéticos",
+        "description": "Experimentos aleatorios del mundo poético.",
+        "link": "../Documents/experimentos.html",
+        "img_link": "../Images/Library/experimentos.png",
+        "tags": ["experimental", "poesía"]
+    },
+    {
+        "title": "Los Técnicos del Apocalípsis",
+        "description": "Sobre la gente que crea y lamenta cada apocalípsis.",
+        "link": "../Documents/tecnicos.html",
+        "img_link": "../Images/Library/tecnicos.png",
+        "tags": ["distopía", "poesía"]
+    },
+    {
+        "title": "Poema de Aniversario",
+        "description": "Sobre el día de mi segundo aniversario.",
+        "link": "../Documents/aniversario.html",
+        "img_link": "../Images/Library/aniversario.png",
+        "tags": ["poesía"]
+    },
+    {
+        "title": "Que Empiece Ya",
+        "description": "Sobre una obra que tarda demasiado en empezar.",
+        "link": "../Documents/que_empiece_ya.html",
+        "img_link": "../Images/Library/que_empiece_ya.png",
+        "tags": ["sketch", "filosofía", "teatro"]
+    },
+    {
+        "title": "Hacíamos Teatro",
+        "description": "De cuando hacíamos más artisteadas.",
+        "link": "../Documents/antes.html",
+        "img_link": "../Images/Library/antes.png",
+        "tags": ["poesía"]
+    },
+    {
+        "title": "Poesía con P Mayúscula",
+        "description": "Sobre la peña pesada del mundo poético.",
+        "link": "../Documents/pmayuscula.html",
+        "img_link": "../Images/Library/pmayuscula.png",
+        "tags": ["poesía"]
+    },
+    {
+        "title": "Cuando Muera",
+        "description": "Testamento poético.",
+        "link": "../Documents/cuando_muera.html",
+        "img_link": "../Images/Library/cuando_muera.png",
+        "tags": ["memoria", "filosofía", "poesía"]
+    },
+    {
+        "title": "Tweets Desde el Exilio",
+        "description": "Cosillas que escribí desde Francia.",
+        "link": "../Documents/laberinto.html",
+        "img_link": "../Images/Library/laberinto.png",
+        "tags": ["poesía"]
+    },
+    {
+        "title": "Aullido",
+        "description": "Sobre la locura que devoró a las mejores mentes de mi generación.",
+        "link": "../Documents/aullido.html",
+        "img_link": "../Images/Library/aullido.png",
+        "tags": ["memoria", "traducción", "filosofía", "poesía"]
+    },
+    {
+        "title": "Bohemia la Noche Luce",
+        "description": "Poema para ligar.",
+        "link": "../Documents/blnl.html",
+        "img_link": "../Images/Library/blnl.png",
+        "tags": ["poesía"]
+    },
+    {
+        "title": "El Arte en Babel",
+        "description": "Poema bivocal.",
+        "link": "../Documents/babel.html",
+        "img_link": "../Images/Library/el_arte_en_babel.png",
+        "tags": ["filosofía", "experimental", "poesía"]
+    },
+    {
+        "title": "Sé que Soy",
+        "description": "Poema monosilábico.",
+        "link": "../Documents/se_que_soy.html",
+        "img_link": "../Images/Library/se_que_soy.png",
+        "tags": ["experimental", "filosofía", "poesía"]
+    },
+    {
+        "title": "Versos encadenados",
+        "description": "Poema encadenado.",
+        "link": "../Documents/versos_encadenados.html",
+        "img_link": "../Images/Library/versos_encadenados.png",
+        "tags": ["experimental", "poesía"]
+    },
+    {
+        "title": "Soledad",
+        "description": "Tautograma.",
+        "link": "../Documents/soledad.html",
+        "img_link": "../Images/Library/soledad.png",
+        "tags": ["experimental", "filosofía", "poesía"]
+    } 
 ]
   
