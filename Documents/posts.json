@@ -49,74 +49,25 @@
         "tags": ["memoria", "realismo mágico", "narrativa"]
     },
     {
-        "title": "La Biblioteca de Cantor",
-        "description": "Sobre las matemáticas que esconden las bibliotecas infinitas.",
-        "link": "../Documents/cantor.html",
-        "img_link": "../Images/Library/la_biblioteca_de_cantor.png",
-        "tags": ["matemáticas", "filosofía", "fantasía", "narrativa"]
-    },
-    {
-        "title": "Como un Hijo Más",
-        "description": "Sobre la fragilidad de la mente humana.",
-        "link": "../Documents/como_un_hijo_mas.html",
-        "img_link": "../Images/Library/como_un_hijo_mas.png",
-        "tags": ["memoria", "microrrelato", "narrativa"]
-    },
-    {
-        "title": "Has Leído Demasiado a Bukowski",
-        "description": "Sobre los escritores pesados que solo leen un autor.",
-        "link": "../Documents/bukowski.html",
-        "img_link": "../Images/Library/bukowski.png",
-        "tags": ["opinión", "artículo"]
-    },
-    {
-        "title": "La Tragedia Poética",
-        "description": "Sobre lo trágico de la poesía en el mundo moderno.",
-        "link": "../Documents/tragedia.html",
-        "img_link": "../Images/Library/tragedia_poetica.png",
-        "tags": ["opinión", "artículo"]
-    },
-    {
-        "title": "Post-Scriptum Sobre Por Qué el Mundo —Igual— Se Va a la Mierda",
-        "description": "Sobre lo que nos depara este futuro incierto.",
-        "link": "../Documents/postscriptum.html",
-        "img_link": "../Images/Library/post-scriptum.png",
-        "tags": ["opinión", "filosofía", "artículo"]
-    },
-    {
-        "title": "Brujería Moderna",
-        "description": "Sobre magias, brujerías, hechicerías, sortilegios, conjuros y encantamientos.",
-        "link": "../Documents/brujeria.html",
-        "img_link": "../Images/Library/brujeria_moderna.png",
-        "tags": ["divulgación", "filosofía", "artículo"]
-    },
-    {
-        "title": "Quememos al Autor",
-        "description": "Sobre lo mucho que necesita Lovecraft un buen cocktail molotov.",
-        "link": "../Documents/quememos.html",
-        "img_link": "../Images/Library/quememos_al_autor.png",
-        "tags": ["opinión", "filosofía", "artículo"]
-    },
-    {
-        "title": "«Watchmen»: La Subversión del Superhéroe",
-        "description": "Sobre uno de tantísimos análisis sobre Watchmen.",
-        "link": "../Documents/watchmen.html",
-        "img_link": "../Images/Library/watchmen.png",
-        "tags": ["análisis", "filosofía", "artículo"]
-    },
-    {
-        "title": "Experimentos Poéticos",
-        "description": "Experimentos aleatorios del mundo poético.",
-        "link": "../Documents/experimentos.html",
-        "img_link": "../Images/Library/experimentos.png",
-        "tags": ["experimental", "poesía"]
-    },
-    {
         "title": "Los Técnicos del Apocalípsis",
         "description": "Sobre la gente que crea y lamenta cada apocalípsis.",
         "link": "../Documents/tecnicos.html",
         "img_link": "../Images/Library/tecnicos.png",
         "tags": ["distopía", "poesía"]
+    },
+    {
+        "title": "Adán y el Fuego",
+        "description": "Microteatro sobre la Mirada del Algoritmo.",
+        "link": "../Documents/adan.html",
+        "img_link": "../Images/Library/adan.png",
+        "tags": ["experimental", "teatro"]
+    },
+    {
+        "title": "Deriva",
+        "description": "Microrrelato inspirado por una deriva cibernética.",
+        "link": "../Documents/deriva.html",
+        "img_link": "../Images/Library/deriva.png",
+        "tags": ["experimental", "microrrelato", "narrativa"]
     },
     {
         "title": "Poema de Aniversario",
@@ -133,6 +84,13 @@
         "tags": ["sketch", "filosofía", "teatro"]
     },
     {
+        "title": "El Primer McDonalds XIII",
+        "description": "Poema combinado de Mateo XIII y El Primer McDonalds de Zaragoza.",
+        "link": "../Documents/mcdonalds.html",
+        "img_link": "../Images/Library/mcdonalds.png",
+        "tags": ["experimental", "poesía"]
+    },
+    {
         "title": "Hacíamos Teatro",
         "description": "De cuando hacíamos más artisteadas.",
         "link": "../Documents/antes.html",
@@ -140,11 +98,11 @@
         "tags": ["poesía"]
     },
     {
-        "title": "Poesía con P Mayúscula",
-        "description": "Sobre la peña pesada del mundo poético.",
-        "link": "../Documents/pmayuscula.html",
-        "img_link": "../Images/Library/pmayuscula.png",
-        "tags": ["poesía"]
+        "title": "Has Leído Demasiado a Bukowski",
+        "description": "Sobre los escritores pesados que solo leen un autor.",
+        "link": "../Documents/bukowski.html",
+        "img_link": "../Images/Library/bukowski.png",
+        "tags": ["opinión", "artículo"]
     },
     {
         "title": "Cuando Muera",
@@ -154,11 +112,67 @@
         "tags": ["memoria", "filosofía", "poesía"]
     },
     {
+        "title": "Circe",
+        "description": "Microrrelato inspirado por el cuento Circe de Cortazar.",
+        "link": "../Documents/circe.html",
+        "img_link": "../Images/Library/circe.png",
+        "tags": ["experimental", "microrrelato", "narrativa"]
+    },
+    {
         "title": "Tweets Desde el Exilio",
         "description": "Cosillas que escribí desde Francia.",
         "link": "../Documents/laberinto.html",
         "img_link": "../Images/Library/laberinto.png",
         "tags": ["poesía"]
+    },
+    {
+        "title": "La Tragedia Poética",
+        "description": "Sobre lo trágico de la poesía en el mundo moderno.",
+        "link": "../Documents/tragedia.html",
+        "img_link": "../Images/Library/tragedia_poetica.png",
+        "tags": ["opinión", "artículo"]
+    },
+    {
+        "title": "Post-Scriptum Sobre Por Qué el Mundo —Igual— Se Va a la Mierda",
+        "description": "Sobre lo que nos depara este futuro incierto.",
+        "link": "../Documents/postscriptum.html",
+        "img_link": "../Images/Library/post-scriptum.png",
+        "tags": ["opinión", "filosofía", "artículo"]
+    },
+    {
+        "title": "No Es Poco",
+        "description": "Poema reversible.",
+        "link": "../Documents/paliza.html",
+        "img_link": "../Images/Library/paliza.png",
+        "tags": ["experimental", "poesía"]
+    },
+    {
+        "title": "La Biblioteca de Cantor",
+        "description": "Sobre las matemáticas que esconden las bibliotecas infinitas.",
+        "link": "../Documents/cantor.html",
+        "img_link": "../Images/Library/la_biblioteca_de_cantor.png",
+        "tags": ["matemáticas", "filosofía", "fantasía", "narrativa"]
+    },
+    {
+        "title": "Brujería Moderna",
+        "description": "Sobre magias, brujerías, hechicerías, sortilegios, conjuros y encantamientos.",
+        "link": "../Documents/brujeria.html",
+        "img_link": "../Images/Library/brujeria_moderna.png",
+        "tags": ["divulgación", "filosofía", "artículo"]
+    },
+    {
+        "title": "Poesía con P Mayúscula",
+        "description": "Sobre la peña pesada del mundo poético.",
+        "link": "../Documents/pmayuscula.html",
+        "img_link": "../Images/Library/pmayuscula.png",
+        "tags": ["poesía"]
+    },
+    {
+        "title": "Quememos al Autor",
+        "description": "Sobre lo mucho que necesita Lovecraft un buen cocktail molotov.",
+        "link": "../Documents/quememos.html",
+        "img_link": "../Images/Library/quememos_al_autor.png",
+        "tags": ["opinión", "filosofía", "artículo"]
     },
     {
         "title": "Aullido",
@@ -201,6 +215,20 @@
         "link": "../Documents/soledad.html",
         "img_link": "../Images/Library/soledad.png",
         "tags": ["experimental", "filosofía", "poesía"]
-    } 
+    },
+    {
+        "title": "Como un Hijo Más",
+        "description": "Sobre la fragilidad de la mente humana.",
+        "link": "../Documents/como_un_hijo_mas.html",
+        "img_link": "../Images/Library/como_un_hijo_mas.png",
+        "tags": ["memoria", "microrrelato", "narrativa"]
+    },
+    {
+        "title": "«Watchmen»: La Subversión del Superhéroe",
+        "description": "Sobre uno de tantísimos análisis sobre Watchmen.",
+        "link": "../Documents/watchmen.html",
+        "img_link": "../Images/Library/watchmen.png",
+        "tags": ["análisis", "filosofía", "artículo"]
+    }
 ]
   
