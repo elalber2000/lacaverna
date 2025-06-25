@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>La Caverna de Sánchez</title>
+  <meta name="La Caverna de Sánchez" content="Museo virtual de Alberto Sánchez en homenaje a la conflagración del arte"
+    http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles_sec.css">
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="../Images/favicon.png" sizes="16x16" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-custom p-1">
+    <a class="navbar-brand" href="../index.html">
+      <img class="img-fluid custom-icon-logo" src="../Images/logo_light.png" alt="" width="48px" height="48px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="https://super.so/icon/light/menu.svg" class="custom-icon-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse py-4" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/library.html">Biblioteca</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/gallery.html">Galería</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/theatre.html">Escenario</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link custom-navitem" href="../Sections/linktree.html">✱</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <!-- Header -->
+  <div class="wrapper">
+    <a href="../Sections/library.html" class="section-h2">
+      <h2 class="fw-bold display-5 custom-section-title"> La Biblioteca </h2>
+    </a>
+    <img src="../Images/library2.png" class="section-img" id="library">
+  </div>
+  <p class="note-text py-2">Todas las imágenes han sido generadas con Inteligencia Artificial (Stable Diffusion) &nbsp
+  </p>
+
+
+  <div class="py-5"></div>
+
+
+  <!-- Search and Filter Section -->
+  <div class="container my-5 card-text">
+    <input type="text" id="tag-search" class="form-control" placeholder="Buscar...">
+    <div id="tag-list" class="list-group mt-2" style="display: none;"></div>
+  </div>
+
+  <!-- Posts Container -->
+  <div class="container">
+    <div id="posts-container" class="row"></div>
+  </div>
+
+  <script>
+    // Fetch posts data
+    fetch('../Documents/posts.json')
+      .then(response => response.json())
+      .then(posts => {
+        displayPosts(posts);
+        setupTagSearch(posts);
+      });
+
+    function displayPosts(posts) {
+      const container = document.getElementById('posts-container');
+      container.innerHTML = ''; // Clear existing posts
+
+      posts.forEach(post => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 mb-3';
+
+        const card = document.createElement('div');
+        card.className = 'card custom-card';
+
+        const img = document.createElement('img');
+        img.className = 'img-fluid';
+        img.src = post.img_link;
+        img.alt = post.title;
+
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body';
+
+        const title = document.createElement('a');
+        title.href = post.link;
+        title.className = 'card-title py-2';
+        title.textContent = post.title;
+
+        const description = document.createElement('p');
+        description.className = 'card-text';
+        description.textContent = post.description + ' ';
+
+        // Add tags
+        post.tags.forEach(tag => {
+          const tagLink = document.createElement('a');
+          tagLink.className = 'custom-link';
+          tagLink.href = '#';
+          tagLink.textContent = `[${tag}]`;
+          tagLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            filterPostsByTag(tag);
+          });
+          description.appendChild(tagLink);
+          description.appendChild(document.createTextNode(' '));
+        });
+
+        cardBody.appendChild(title);
+        cardBody.appendChild(description);
+        card.appendChild(img);
+        card.appendChild(cardBody);
+        col.appendChild(card);
+        container.appendChild(col);
+      });
+    }
+
+    function setupTagSearch(posts) {
+      const tagSearch = document.getElementById('tag-search');
+      const tagList = document.getElementById('tag-list');
+
+      // Build tagCounts
+      let tagCounts = {};
+
+      posts.forEach(post => {
+        post.tags.forEach(tag => {
+          if (tagCounts[tag]) {
+            tagCounts[tag]++;
+          } else {
+            tagCounts[tag] = 1;
+          }
+        });
+      });
+
+      // Convert tagCounts to array and sort
+      let tagArray = [];
+      for (let tag in tagCounts) {
+        tagArray.push({ tag: tag, count: tagCounts[tag] });
+      }
+      tagArray.sort((a, b) => b.count - a.count); // Sort tags by count in descending order
+
+      renderTagList(tagArray);
+
+      tagSearch.addEventListener('focus', () => {
+        tagList.style.display = 'block';
+      });
+
+      tagSearch.addEventListener('input', () => {
+        const query = tagSearch.value.toLowerCase();
+        const filteredTags = tagArray.filter(tagObj => tagObj.tag.toLowerCase().includes(query));
+        renderTagList(filteredTags);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!tagSearch.contains(e.target) && !tagList.contains(e.target)) {
+          tagList.style.display = 'none';
+        }
+      });
+
+      function renderTagList(tags) {
+        tagList.innerHTML = '';
+        tags.forEach(tagObj => {
+          const tagItem = document.createElement('a');
+          tagItem.href = '#';
+          tagItem.className = 'list-group-item list-group-item-action';
+          tagItem.textContent = `${tagObj.tag} (${tagObj.count})`; // Display tag with count
+          tagItem.addEventListener('click', (e) => {
+            e.preventDefault();
+            tagSearch.value = tagObj.tag;
+            tagList.style.display = 'none';
+            filterPostsByTag(tagObj.tag);
+          });
+          tagList.appendChild(tagItem);
+        });
+      }
+    }
+
+    function filterPostsByTag(tag) {
+      fetch('../Documents/posts.json')
+        .then(response => response.json())
+        .then(posts => {
+          if (tag) {
+            const filteredPosts = posts.filter(post => post.tags.includes(tag));
+            displayPosts(filteredPosts);
+          } else {
+            displayPosts(posts);
+          }
+        });
+    }
+  </script>
+  
+</body>
+
+</html>
