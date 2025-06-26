@@ -16,7 +16,7 @@
 
 body {
     background-color: var(--color-dark);
-    font-family: 'Space Mono', serif;
+    font-family: 'Roboto Mono', serif;
     color: var(--color-white);
     font-size: max(2em, 2vw);
 }
@@ -24,8 +24,8 @@ body {
 h1,
 h2,
 h3 {
-    font-family: 'Montserrat', serif;
-    font-weight: 500;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 100;
 }
 
 
@@ -37,7 +37,7 @@ h3 {
 }
 
 .custom-extra-bold {
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .btn-custom {
