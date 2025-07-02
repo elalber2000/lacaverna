@@ -39,7 +39,7 @@ def get_img_link(text):
     text = re.sub(r'\s+', '_', text.strip())
     text = re.sub(r'[^\w ]+', '', text)
     text = re.sub(r'\s+', '_', text.strip())
-    return text.lower()
+    return f"../Images/Library/{text.lower()}.png"
 
 def fetch_substack_entries(profile):
     feed_url = f"https://{profile}.substack.com/feed"
