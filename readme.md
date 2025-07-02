@@ -26,5 +26,10 @@ Archivo virtual de todas las cosas que he ido haciendo estos años.
   - informatica
     - paper
     - proyecto
-- cabinet : twitter thread (movies, books, tv shows), spoti playlist
+- cabinet: favs & actual
+  - Music: Spoti
+  - Books: Goodreads
+  - Films: Letterbox
+  - Notes: Twitter
+- bitácora: bucketlist (tree syntax)
 - *

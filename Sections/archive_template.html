@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse py-4" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item px-4">
-          <a class="nav-link custom-navitem" href="../Sections/library.html">Biblioteca</a>
+          <a class="nav-link custom-navitem" href="../Sections/archive.html">Archivo</a>
         </li>
         <li class="nav-item px-4">
           <a class="nav-link custom-navitem" href="../Sections/gallery.html">Galería</a>
@@ -80,24 +80,25 @@
     </script>
   </div>
 
-  
-
-  <div class="py-3"></div>
-
-
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-8 offset-md-2">
   
         <div class="row">
           <div class="col-md-12">
-            <h1 class="fw-bold display-5" style="font-weight:800; font-size:4rem">My title</h1>
+            <h1 class="fw-bold display-5 py-5" style="font-weight:800; font-size:4rem">{{title}}</h1>
+            <p>{{author}}</p>
           </div>
         </div>
-  
+
+        <div class="text-center my-4">
+          <img src="{{img_link}}" alt="{{img_meta}}" class="img-fluid">
+          <p class="note-text py-2">{{img_meta}}</p>
+        </div>
+        
         <div class="row">
           <div class="col-md-12 py-3">
-              <p style="font-size:clamp(16px, 4vw, 24px)">Lorem ipsum</p>
+              <p style="font-size:clamp(16px, 4vw, 24px)">{{text}}</p>
           </div>
         </div>
   

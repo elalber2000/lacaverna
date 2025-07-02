@@ -12,7 +12,7 @@
     --color-highlight: #ff10f0;
     --color-highlight: #ff56f4;
     --color-white: #e5e8ed;
-}
+}   
 
 body {
     background-color: var(--color-dark);
