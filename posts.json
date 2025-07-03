@@ -1,5 +1,137 @@
 [
   {
+    "title": "Slop",
+    "description": "Y mientras, nuestra biblioteca de Alejandría —Internet— arde",
+    "link": "https://sancheznoseke.substack.com/p/slop",
+    "img_link": "../Images/Library/slop.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Covered slop jar' [2473], United States Pottery Company"
+  },
+  {
+    "title": "Espacio Vacío",
+    "description": "Como en todos los aeropuertos, la puerta de Barajas es un pu",
+    "link": "https://sancheznoseke.substack.com/p/espacio-vacio",
+    "img_link": "../Images/Library/espacio_vacio.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Pierced Window Screen (Jali)' [453241], "
+  },
+  {
+    "title": "Memorias Contemporáneas de un Comensal en Francia",
+    "description": "Hace poco, 70 años después de Liebling, me dio por patearme ",
+    "link": "https://sancheznoseke.substack.com/p/memorias-contemporaneas-de-un-comensal",
+    "img_link": "../Images/Library/memorias_contemporaneas_comensal_francia.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Woman Playing a Guitar' [747607], Simon Vouet"
+  },
+  {
+    "title": "Tenerife 105.7",
+    "description": "Llevo un par de semanas haciendo rutina en Tenerife",
+    "link": "https://sancheznoseke.substack.com/p/tenerife-1057",
+    "img_link": "../Images/Library/tenerife_1057.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'The Beggar who Professed his Love for a Prince', Folio 28r from a Mantiq al-Tayr (Language of the Birds)' [451729], Farid al-Din `Attar"
+  },
+  {
+    "title": "Barcelona. 11 Horas y Cuarto",
+    "description": "Suena el despertador",
+    "link": "https://sancheznoseke.substack.com/p/barcelona-11-horas-y-cuarto",
+    "img_link": "../Images/Library/barcelona_11_horas_cuarto.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Battle between Christians and Muslims at El Sotillo' [437969], Francisco de Zurbarán"
+  },
+  {
+    "title": "Micromanifiesto Neo-NeoBarroco",
+    "description": "Domscrolling, brainrot, TikTok, hiperpop, FOMO, deep fried m",
+    "link": "https://sancheznoseke.substack.com/p/micromanifiesto-neo-neobarroco",
+    "img_link": "../Images/Library/micromanifiesto_neoneobarroco.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Saint Catherine of Alexandria' [464707], "
+  },
+  {
+    "title": "Querido Tres Cejas:",
+    "description": "Según un estudio de Reino Unido, el 46% de los psicólogos di",
+    "link": "https://sancheznoseke.substack.com/p/querido-tres-cejas",
+    "img_link": "../Images/Library/querido_tres_cejas.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Key' [468837], "
+  },
+  {
+    "title": "La Deriva Cibernética",
+    "description": "Juro que lo he intentado",
+    "link": "https://sancheznoseke.substack.com/p/la-deriva-cibernetica",
+    "img_link": "../Images/Library/deriva_cibernetica.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Altar to the Sun Warrior' [318674], Mexico Nahua artist(s)"
+  },
+  {
+    "title": "A tu Kebab le Falta Salsa",
+    "description": "Monté un show de poesía experimental con tres amigos y de ah",
+    "link": "https://sancheznoseke.substack.com/p/a-tu-kebab-le-falta-salsa",
+    "img_link": "../Images/Library/kebab_falta_salsa.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Peg from Wah's Coffin' [576354], "
+  },
+  {
+    "title": "Poetómatas prehistóricos",
+    "description": "La antigua Web ha muerto, y la nueva está llena de robots",
+    "link": "https://sancheznoseke.substack.com/p/poetomatas-prehistoricos",
+    "img_link": "../Images/Library/poetomatas_prehistoricos.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'D.D. Withers, from the Racing Colors of the World series (N22a) for Allen & Ginter Cigarettes' [409302], Allen & Ginter"
+  },
+  {
+    "title": "La Otra Pasta",
+    "description": "Hay recuerdos que quedan siempre en el fondo del cerebro",
+    "link": "https://sancheznoseke.substack.com/p/la-otra-pasta",
+    "img_link": "../Images/Library/otra_pasta.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Stylized Figure Pendant' [309957], Darién artist(s)"
+  },
+  {
     "title": "Ojos Verdes",
     "description": "Sobre la soledad en un futuro posible.",
     "link": "../Documents/ojos_verdes.html",
@@ -101,7 +233,7 @@
       "experimental",
       "teatro"
     ],
-    "img_meta": "'Altar al Guerrero del Sol' [318674], artista(s) nahua de México" 
+    "img_meta": "'Altar al Guerrero del Sol' [318674], artista(s) nahua de México"
   },
   {
     "title": "Deriva",
@@ -116,14 +248,14 @@
     "img_meta": "'Tres cabezas orientales' [408064], Robert Blyth"
   },
   {
-  "title": "Poema de Aniversario",
-  "description": "Sobre el día de mi segundo aniversario.",
-  "link": "../Documents/aniversario.html",
-  "img_link": "../Images/Library/aniversario.png",
-  "tags": [
-    "poesía"
-  ],
-  "img_meta": "'José Costa y Bonells (Pepito)' [436546], Francisco de Goya y Lucientes'"
+    "title": "Poema de Aniversario",
+    "description": "Sobre el día de mi segundo aniversario.",
+    "link": "../Documents/aniversario.html",
+    "img_link": "../Images/Library/aniversario.png",
+    "tags": [
+      "poesía"
+    ],
+    "img_meta": "'José Costa y Bonells (Pepito)' [436546], Francisco de Goya y Lucientes'"
   },
   {
     "title": "Que Empiece Ya",
@@ -377,137 +509,5 @@
       "artículo"
     ],
     "img_meta": "'Sello' [565442], artista desconocido'"
-  },
-  {
-    "title": "Slop",
-    "description": "Y mientras, nuestra biblioteca de Alejandría —Internet— arde",
-    "link": "https://sancheznoseke.substack.com/p/slop",
-    "img_link": "../Images/Library/slop.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "Espacio Vacío",
-    "description": "Como en todos los aeropuertos, la puerta de Barajas es un pu",
-    "link": "https://sancheznoseke.substack.com/p/espacio-vacio",
-    "img_link": "../Images/Library/espacio_vacio.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "Memorias Contemporáneas de un Comensal en Francia",
-    "description": "Hace poco, 70 años después de Liebling, me dio por patearme ",
-    "link": "https://sancheznoseke.substack.com/p/memorias-contemporaneas-de-un-comensal",
-    "img_link": "../Images/Library/memorias_contemporaneas_comensal_francia.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "Tenerife 105.7",
-    "description": "Llevo un par de semanas haciendo rutina en Tenerife",
-    "link": "https://sancheznoseke.substack.com/p/tenerife-1057",
-    "img_link": "../Images/Library/tenerife_1057.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "Barcelona. 11 Horas y Cuarto",
-    "description": "Suena el despertador",
-    "link": "https://sancheznoseke.substack.com/p/barcelona-11-horas-y-cuarto",
-    "img_link": "../Images/Library/barcelona_11_horas_cuarto.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "Micromanifiesto Neo-NeoBarroco",
-    "description": "Domscrolling, brainrot, TikTok, hiperpop, FOMO, deep fried m",
-    "link": "https://sancheznoseke.substack.com/p/micromanifiesto-neo-neobarroco",
-    "img_link": "../Images/Library/micromanifiesto_neoneobarroco.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "Querido Tres Cejas:",
-    "description": "Según un estudio de Reino Unido, el 46% de los psicólogos di",
-    "link": "https://sancheznoseke.substack.com/p/querido-tres-cejas",
-    "img_link": "../Images/Library/querido_tres_cejas.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "La Deriva Cibernética",
-    "description": "Juro que lo he intentado",
-    "link": "https://sancheznoseke.substack.com/p/la-deriva-cibernetica",
-    "img_link": "../Images/Library/deriva_cibernetica.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "A tu Kebab le Falta Salsa",
-    "description": "Monté un show de poesía experimental con tres amigos y de ah",
-    "link": "https://sancheznoseke.substack.com/p/a-tu-kebab-le-falta-salsa",
-    "img_link": "../Images/Library/kebab_falta_salsa.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "Poetómatas prehistóricos",
-    "description": "La antigua Web ha muerto, y la nueva está llena de robots",
-    "link": "https://sancheznoseke.substack.com/p/poetomatas-prehistoricos",
-    "img_link": "../Images/Library/poetomatas_prehistoricos.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
-  },
-  {
-    "title": "La Otra Pasta",
-    "description": "Hay recuerdos que quedan siempre en el fondo del cerebro",
-    "link": "https://sancheznoseke.substack.com/p/la-otra-pasta",
-    "img_link": "../Images/Library/otra_pasta.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": ""
   }
 ]
