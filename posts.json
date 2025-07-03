@@ -1,137 +1,5 @@
 [
   {
-    "title": "Slop",
-    "description": "Y mientras, nuestra biblioteca de Alejandría —Internet— arde",
-    "link": "https://sancheznoseke.substack.com/p/slop",
-    "img_link": "../Images/Library/slop.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'Covered slop jar' [2473], United States Pottery Company"
-  },
-  {
-    "title": "Espacio Vacío",
-    "description": "Como en todos los aeropuertos, la puerta de Barajas es un pu",
-    "link": "https://sancheznoseke.substack.com/p/espacio-vacio",
-    "img_link": "../Images/Library/espacio_vacio.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'Pierced Window Screen (Jali)' [453241], "
-  },
-  {
-    "title": "Memorias Contemporáneas de un Comensal en Francia",
-    "description": "Hace poco, 70 años después de Liebling, me dio por patearme ",
-    "link": "https://sancheznoseke.substack.com/p/memorias-contemporaneas-de-un-comensal",
-    "img_link": "../Images/Library/memorias_contemporaneas_comensal_francia.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'Woman Playing a Guitar' [747607], Simon Vouet"
-  },
-  {
-    "title": "Tenerife 105.7",
-    "description": "Llevo un par de semanas haciendo rutina en Tenerife",
-    "link": "https://sancheznoseke.substack.com/p/tenerife-1057",
-    "img_link": "../Images/Library/tenerife_1057.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'The Beggar who Professed his Love for a Prince', Folio 28r from a Mantiq al-Tayr (Language of the Birds)' [451729], Farid al-Din `Attar"
-  },
-  {
-    "title": "Barcelona. 11 Horas y Cuarto",
-    "description": "Suena el despertador",
-    "link": "https://sancheznoseke.substack.com/p/barcelona-11-horas-y-cuarto",
-    "img_link": "../Images/Library/barcelona_11_horas_cuarto.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'Battle between Christians and Muslims at El Sotillo' [437969], Francisco de Zurbarán"
-  },
-  {
-    "title": "Micromanifiesto Neo-NeoBarroco",
-    "description": "Domscrolling, brainrot, TikTok, hiperpop, FOMO, deep fried m",
-    "link": "https://sancheznoseke.substack.com/p/micromanifiesto-neo-neobarroco",
-    "img_link": "../Images/Library/micromanifiesto_neoneobarroco.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'Saint Catherine of Alexandria' [464707], "
-  },
-  {
-    "title": "Querido Tres Cejas:",
-    "description": "Según un estudio de Reino Unido, el 46% de los psicólogos di",
-    "link": "https://sancheznoseke.substack.com/p/querido-tres-cejas",
-    "img_link": "../Images/Library/querido_tres_cejas.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'Key' [468837], "
-  },
-  {
-    "title": "La Deriva Cibernética",
-    "description": "Juro que lo he intentado",
-    "link": "https://sancheznoseke.substack.com/p/la-deriva-cibernetica",
-    "img_link": "../Images/Library/deriva_cibernetica.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'Caricatured Mexican, 5 Centavos, from the series Coins of All Nations (N72, variation 2) for Duke brand cigarettes' [423126], W. Duke, Sons & Co."
-  },
-  {
-    "title": "A tu Kebab le Falta Salsa",
-    "description": "Monté un show de poesía experimental con tres amigos y de ah",
-    "link": "https://sancheznoseke.substack.com/p/a-tu-kebab-le-falta-salsa",
-    "img_link": "../Images/Library/kebab_falta_salsa.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'Peg from Wah's Coffin' [576354], "
-  },
-  {
-    "title": "Poetómatas prehistóricos",
-    "description": "La antigua Web ha muerto, y la nueva está llena de robots",
-    "link": "https://sancheznoseke.substack.com/p/poetomatas-prehistoricos",
-    "img_link": "../Images/Library/poetomatas_prehistoricos.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'D.D. Withers, from the Racing Colors of the World series (N22a) for Allen & Ginter Cigarettes' [409302], Allen & Ginter"
-  },
-  {
-    "title": "La Otra Pasta",
-    "description": "Hay recuerdos que quedan siempre en el fondo del cerebro",
-    "link": "https://sancheznoseke.substack.com/p/la-otra-pasta",
-    "img_link": "../Images/Library/otra_pasta.png",
-    "tags": [
-      "narrativa",
-      "artículo",
-      "substack"
-    ],
-    "img_meta": "'Stylized Figure Pendant' [309957], Darién artist(s)"
-  },
-  {
     "title": "Ojos Verdes",
     "description": "Sobre la soledad en un futuro posible.",
     "link": "../Documents/ojos_verdes.html",
@@ -141,9 +9,206 @@
       "distopía",
       "ciencia ficción",
       "filosofía",
-      "narrativa"
+      "narrativa",
+      "ia",
+      "tecnología",
+      "literatura"
     ],
     "img_meta": "'Colgante céltico' [313018], artista(s) de la Gran Nicoya/región central"
+  },
+  {
+    "title": "Slop",
+    "description": "Y mientras, nuestra biblioteca de Alejandría —Internet— arde",
+    "link": "https://sancheznoseke.substack.com/p/slop",
+    "img_link": "../Images/Library/slop.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'Covered slop jar' [2473], United States Pottery Company"
+  },
+  {
+    "title": "Espacio Vacío",
+    "description": "Como en todos los aeropuertos, la puerta de Barajas es un pu",
+    "link": "https://sancheznoseke.substack.com/p/espacio-vacio",
+    "img_link": "../Images/Library/espacio_vacio.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'Pierced Window Screen (Jali)' [453241], "
+  },
+  {
+    "title": "Memorias Contemporáneas de un Comensal en Francia",
+    "description": "Hace poco, 70 años después de Liebling, me dio por patearme ",
+    "link": "https://sancheznoseke.substack.com/p/memorias-contemporaneas-de-un-comensal",
+    "img_link": "../Images/Library/memorias_contemporaneas_comensal_francia.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'Woman Playing a Guitar' [747607], Simon Vouet"
+  },
+  {
+    "title": "Tenerife 105.7",
+    "description": "Llevo un par de semanas haciendo rutina en Tenerife",
+    "link": "https://sancheznoseke.substack.com/p/tenerife-1057",
+    "img_link": "../Images/Library/tenerife_1057.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'The Beggar who Professed his Love for a Prince', Folio 28r from a Mantiq al-Tayr (Language of the Birds)' [451729], Farid al-Din `Attar"
+  },
+  {
+    "title": "Pastiche",
+    "description": "Zine que fui llenando de artistadas varias.",
+    "link": "https://www.webtoons.com/en/challenge/dashboardEpisode?titleNo=966909",
+    "img_link": "../Images/Library/pastiche.png",
+    "tags": [
+      "zine",
+      "edit",
+      "galería"
+    ],
+    "img_meta": "'Pastiche in the manner of Bassano' [640239], Baron Dominique Vivant Denon"
+  },
+  {
+    "title": "Memes",
+    "description": "Memes de cosecha propia.",
+    "link": "https://elalber2000.github.io/lacaverna/Sections/gallery_memes.html",
+    "img_link": "../Images/Library/memes.png",
+    "tags": [
+      "edit",
+      "galería"
+    ],
+    "img_meta": "'Study of a Nude Man' [436406], Pierre Narcisse Guérin"
+  },
+  {
+    "title": "14 Apocalipsis de Bolsillo",
+    "description": "14 micropoemas sobre el fin del mundo",
+    "link": "https://www.webtoons.com/en/canvas/los-fanzines-de-sánchez/14-apocalipsis-de-bolsillo/viewer?title_no=821593&episode_no=5&webtoonType=CHALLENGE",
+    "img_link": "../Images/Library/14_apocalipsis_bolsillo.png",
+    "tags": [
+      "zine",
+      "edit",
+      "galería"
+    ],
+    "img_meta": "'Leaves from a Beatus Manuscript: Bifolium with part of the Genealogy of Christ and the Adoration of the Magi' [466197], "
+  },
+  {
+    "title": "Descent to the Dark Net",
+    "description": "Extensión del RPG Cy-Borg",
+    "link": "https://elalber2000.itch.io/descent-to-the-dark-net",
+    "img_link": "../Images/Library/descent_to_the_dark_net.png",
+    "tags": [
+      "rpg",
+      "edit",
+      "galería"
+    ],
+    "img_meta": "'Kneeling Black woman' [193627], "
+  },
+  {
+    "title": "Enoc",
+    "description": "Poemario ilustrado sobre una ciudad maldita",
+    "link": "https://www.webtoons.com/en/challenge/los-fanzines-de-sánchez/enoc/viewer?title_no=821593&episode_no=1&webtoonType=CHALLENGE",
+    "img_link": "../Images/Library/enoc.png",
+    "tags": [
+      "poesía",
+      "edit",
+      "galería",
+      "literatura"
+    ],
+    "img_meta": "'Printed Book with Silva Nuptialis Bonis Referta Non Modicis' [466568], Johannes Nevizanus"
+  },
+  {
+    "title": "Memorias de Perekrestok",
+    "description": "Memorias artificiales sobre un país inexistente.",
+    "link": "https://www.webtoons.com/en/challenge/los-fanzines-de-sánchez/memorias-de-perekrestok/viewer?title_no=821593&episode_no=2&webtoonType=CHALLENGE",
+    "img_link": "../Images/Library/memorias_perekrestok.png",
+    "tags": [
+      "zine",
+      "galería",
+      "ia",
+      "memoria",
+      "tecnología"
+    ],
+    "img_meta": "'Ignacio Garcini y Queralt (1752–1825), Brigadier of Engineers' [436542], Goya (Francisco de Goya y Lucientes)"
+  },
+  {
+    "title": "NeoBohemia",
+    "description": "Relatos del viaje de Marx Estrella por la ciudad maldita",
+    "link": "https://www.webtoons.com/en/canvas/los-fanzines-de-sánchez/neo-bohemia/viewer?title_no=821593&episode_no=4&webtoonType=CHALLENGE",
+    "img_link": "../Images/Library/neobohemia.png",
+    "tags": [
+      "cómic",
+      "edit",
+      "galería"
+    ],
+    "img_meta": "'A Bull Lying Down, and Two Donkeys, in a Landscape' [459757], Giovanni Domenico Tiepolo"
+  },
+  {
+    "title": "Dioses de Alquiträn",
+    "description": "Panteón de dioses modernos.",
+    "link": "https://www.webtoons.com/en/canvas/los-fanzines-de-sánchez/dioses-de-alquitr%C3%A4n/viewer?title_no=821593&episode_no=3",
+    "img_link": "../Images/Library/dioses_alquitran.png",
+    "tags": [
+      "zine",
+      "edit",
+      "galería"
+    ],
+    "img_meta": "'Ceramic Fragment' [446434], "
+  },
+  {
+    "title": "Barcelona. 11 Horas y Cuarto",
+    "description": "Suena el despertador",
+    "link": "https://sancheznoseke.substack.com/p/barcelona-11-horas-y-cuarto",
+    "img_link": "../Images/Library/barcelona_11_horas_cuarto.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'Battle between Christians and Muslims at El Sotillo' [437969], Francisco de Zurbarán"
+  },
+  {
+    "title": "Micromanifiesto Neo-NeoBarroco",
+    "description": "Domscrolling, brainrot, TikTok, hiperpop, FOMO, deep fried m",
+    "link": "https://sancheznoseke.substack.com/p/micromanifiesto-neo-neobarroco",
+    "img_link": "../Images/Library/micromanifiesto_neoneobarroco.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'Saint Catherine of Alexandria' [464707], "
+  },
+  {
+    "title": "Querido Tres Cejas:",
+    "description": "Según un estudio de Reino Unido, el 46% de los psicólogos di",
+    "link": "https://sancheznoseke.substack.com/p/querido-tres-cejas",
+    "img_link": "../Images/Library/querido_tres_cejas.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'Key' [468837], "
+  },
+  {
+    "title": "La Deriva Cibernética",
+    "description": "Juro que lo he intentado",
+    "link": "https://sancheznoseke.substack.com/p/la-deriva-cibernetica",
+    "img_link": "../Images/Library/deriva_cibernetica.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'Caricatured Mexican, 5 Centavos, from the series Coins of All Nations (N72, variation 2) for Duke brand cigarettes' [423126], W. Duke, Sons & Co."
   },
   {
     "title": "El Enclave Subterráneo",
@@ -152,9 +217,68 @@
     "img_link": "../Images/Library/metrorrelatos.png",
     "tags": [
       "microrrelato",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Botella con forma de felino' [317793], artista(s) Wari"
+  },
+  {
+    "title": "Blackout",
+    "description": "Solo un apagón puede acabar con la corrupción.",
+    "link": "https://www.youtube.com/watch?v=XKBwlNi3u9M",
+    "img_link": "../Images/Library/blackout.png",
+    "tags": [
+      "vídeo",
+      "ia",
+      "distopía",
+      "tecnología"
+    ],
+    "img_meta": "'Death of Hercules from The Labors of Hercules (copy)' [416154], Sebald Beham"
+  },
+  {
+    "title": "Primavera Otaku",
+    "description": "Falso documental sobre el extremismo otaku",
+    "link": "https://www.youtube.com/watch?v=ELS7kzAY9tc",
+    "img_link": "../Images/Library/primavera_otaku.png",
+    "tags": [
+      "vídeo",
+      "comedia",
+      "falso documental"
+    ],
+    "img_meta": "'Papyrus Fragment' [479304], "
+  },
+  {
+    "title": "Reducción al Absurdo",
+    "description": "Podcast con amigos sobre matemáticas y mierdas varias",
+    "link": "https://open.spotify.com/show/3A64vZ4OJwXz3OvZGMIcNa?si=V9bdiwLyRKuNNFjVTd6MLw&nd=1",
+    "img_link": "../Images/Library/reduccion_absurdo.png",
+    "tags": [
+      "podcast",
+      "comedia",
+      "matemáticas"
+    ],
+    "img_meta": "'Tile' [452070], "
+  },
+  {
+    "title": "Monólogo Españita",
+    "description": "Pequeño monólogo sobre Españita",
+    "link": "https://www.youtube.com/watch?v=dvnmXU-5GaE",
+    "img_link": "../Images/Library/monologo_espanita.png",
+    "tags": [
+      "comedia"
+    ],
+    "img_meta": "'Amulet in the Form of a falcon' [558524], "
+  },
+  {
+    "title": "Tres Sombreros de Copa",
+    "description": "La única obra de teatro en la que he actuado",
+    "link": "https://www.youtube.com/watch?v=kRFABA0dxn4",
+    "img_link": "../Images/Library/tres_sombreros_copa.png",
+    "tags": [
+      "teatro",
+      "vídeo"
+    ],
+    "img_meta": "'The Adoration of the Magi' [435724], Hieronymus Bosch"
   },
   {
     "title": "El Hombre que se Perdió en una Biblioteca",
@@ -163,7 +287,8 @@
     "img_link": "../Images/Library/el_hombre_que_se_perdio.png",
     "tags": [
       "fantasía",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Brazo izquierdo con trazas de cartucho de Atón' [549811], artista desconocido"
   },
@@ -174,7 +299,8 @@
     "img_link": "../Images/Library/descubrimientos.png",
     "tags": [
       "realismo mágico",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Cardenal Fernando Niño de Guevara (1541-1609)' [436573], El Greco (Doménikos Theotokopoulos)"
   },
@@ -186,7 +312,8 @@
     "tags": [
       "distopía",
       "ciencia ficción",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Fragmento textil' [444229], artista desconocido"
   },
@@ -197,7 +324,8 @@
     "img_link": "../Images/Library/peores_crimenes.png",
     "tags": [
       "fantasía",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Fragmento textil' [443705], artista desconocido"
   },
@@ -209,7 +337,8 @@
     "tags": [
       "memoria",
       "realismo mágico",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Fragmento de brazalete votivo' [573218], artista desconocido"
   },
@@ -220,7 +349,8 @@
     "img_link": "../Images/Library/tecnicos.png",
     "tags": [
       "distopía",
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Henry Wadsworth Longfellow' [423515], W. Duke, Sons & Co."
   },
@@ -231,9 +361,46 @@
     "img_link": "../Images/Library/adan.png",
     "tags": [
       "experimental",
-      "teatro"
+      "teatro",
+      "literatura"
     ],
     "img_meta": "'Altar al Guerrero del Sol' [318674], artista(s) nahua de México"
+  },
+  {
+    "title": "A tu Kebab le Falta Salsa",
+    "description": "Monté un show de poesía experimental con tres amigos y de ah",
+    "link": "https://sancheznoseke.substack.com/p/a-tu-kebab-le-falta-salsa",
+    "img_link": "../Images/Library/kebab_falta_salsa.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'Peg from Wah's Coffin' [576354], "
+  },
+  {
+    "title": "Poetómatas prehistóricos",
+    "description": "La antigua Web ha muerto, y la nueva está llena de robots",
+    "link": "https://sancheznoseke.substack.com/p/poetomatas-prehistoricos",
+    "img_link": "../Images/Library/poetomatas_prehistoricos.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'D.D. Withers, from the Racing Colors of the World series (N22a) for Allen & Ginter Cigarettes' [409302], Allen & Ginter"
+  },
+  {
+    "title": "La Otra Pasta",
+    "description": "Hay recuerdos que quedan siempre en el fondo del cerebro",
+    "link": "https://sancheznoseke.substack.com/p/la-otra-pasta",
+    "img_link": "../Images/Library/otra_pasta.png",
+    "tags": [
+      "artículo",
+      "substack",
+      "literatura"
+    ],
+    "img_meta": "'Stylized Figure Pendant' [309957], Darién artist(s)"
   },
   {
     "title": "Deriva",
@@ -243,7 +410,8 @@
     "tags": [
       "experimental",
       "microrrelato",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Tres cabezas orientales' [408064], Robert Blyth"
   },
@@ -253,7 +421,8 @@
     "link": "../Documents/aniversario.html",
     "img_link": "../Images/Library/aniversario.png",
     "tags": [
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'José Costa y Bonells (Pepito)' [436546], Francisco de Goya y Lucientes'"
   },
@@ -265,7 +434,8 @@
     "tags": [
       "sketch",
       "filosofía",
-      "teatro"
+      "teatro",
+      "literatura"
     ],
     "img_meta": "'Moldura barrida' [460988], artista desconocido'"
   },
@@ -276,9 +446,21 @@
     "img_link": "../Images/Library/mcdonalds.png",
     "tags": [
       "experimental",
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Tumba de Ermengol VII, conde de Urgell' [472387], artista desconocido'"
+  },
+  {
+    "title": "StopSlop",
+    "description": "Extensión de Chrome para filtrar Slop",
+    "link": "https://github.com/elalber2000/stop_slop",
+    "img_link": "../Images/Library/stopslop.png",
+    "tags": [
+      "ia",
+      "tecnología"
+    ],
+    "img_meta": "'Khonsu shrine amulet' [551004], "
   },
   {
     "title": "Hacíamos Teatro",
@@ -286,7 +468,8 @@
     "link": "../Documents/antes.html",
     "img_link": "../Images/Library/antes.png",
     "tags": [
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Lámina, marca de lino, hilado medio' [549009], artista desconocido'"
   },
@@ -297,7 +480,8 @@
     "img_link": "../Images/Library/bukowski.png",
     "tags": [
       "opinión",
-      "artículo"
+      "artículo",
+      "literatura"
     ],
     "img_meta": "'Óstracon con tropario' [474890], artista desconocido'"
   },
@@ -309,7 +493,8 @@
     "tags": [
       "memoria",
       "filosofía",
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Miss Kate Uart' [416538], Allen & Ginter'"
   },
@@ -321,7 +506,8 @@
     "tags": [
       "experimental",
       "microrrelato",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Circe' [266257], Julia Margaret Cameron'"
   },
@@ -331,7 +517,8 @@
     "link": "../Documents/laberinto.html",
     "img_link": "../Images/Library/laberinto.png",
     "tags": [
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Khusrau Párviz ante su padre Hurmuzd (?)' [447304], artista desconocido'"
   },
@@ -342,7 +529,9 @@
     "img_link": "../Images/Library/tragedia_poetica.png",
     "tags": [
       "opinión",
-      "artículo"
+      "artículo",
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Contenedor' [447751], artista desconocido'"
   },
@@ -354,7 +543,8 @@
     "tags": [
       "opinión",
       "filosofía",
-      "artículo"
+      "artículo",
+      "literatura"
     ],
     "img_meta": "'Thomas H. ‘Pat’ Deasley, receptor, Nueva York' [402261], Goodwin & Co.'"
   },
@@ -365,7 +555,8 @@
     "img_link": "../Images/Library/paliza.png",
     "tags": [
       "experimental",
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Clavicordio' [503271], Christian Kintzing'"
   },
@@ -378,7 +569,8 @@
       "matemáticas",
       "filosofía",
       "fantasía",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Cesta' [238823], John Edwards II'"
   },
@@ -390,7 +582,8 @@
     "tags": [
       "divulgación",
       "filosofía",
-      "artículo"
+      "artículo",
+      "literatura"
     ],
     "img_meta": "'Decoración de superficie, grotesco con roleo, escena de entierro' [408521], Cornelis Floris II'"
   },
@@ -400,7 +593,8 @@
     "link": "../Documents/pmayuscula.html",
     "img_link": "../Images/Library/pmayuscula.png",
     "tags": [
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Altar to the Sun Warrior' [318674], Mexico Nahua artist(s)"
   },
@@ -412,7 +606,8 @@
     "tags": [
       "opinión",
       "filosofía",
-      "artículo"
+      "artículo",
+      "literatura"
     ],
     "img_meta": "'Perro sentado' [318964], artista(s) de Colima'"
   },
@@ -425,7 +620,8 @@
       "memoria",
       "traducción",
       "filosofía",
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Negros libres en Haití' [421363], Adalbert John Volck'"
   },
@@ -435,7 +631,8 @@
     "link": "../Documents/blnl.html",
     "img_link": "../Images/Library/blnl.png",
     "tags": [
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'La familia Monet en su jardín en Argenteuil' [436965], Édouard Manet'"
   },
@@ -447,7 +644,8 @@
     "tags": [
       "filosofía",
       "experimental",
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Hombre en oración' [435837], Rogier van der Weyden'"
   },
@@ -459,7 +657,8 @@
     "tags": [
       "experimental",
       "filosofía",
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Fragmento de azulejo' [560901], artista desconocido'"
   },
@@ -470,7 +669,8 @@
     "img_link": "../Images/Library/versos_encadenados.png",
     "tags": [
       "experimental",
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Cordero de Juan el Bueno' [469170], artista desconocido'"
   },
@@ -482,7 +682,8 @@
     "tags": [
       "experimental",
       "filosofía",
-      "poesía"
+      "poesía",
+      "literatura"
     ],
     "img_meta": "'Tapa de jarra canópica de Kay' [546284], artista desconocido'"
   },
@@ -494,7 +695,8 @@
     "tags": [
       "memoria",
       "microrrelato",
-      "narrativa"
+      "narrativa",
+      "literatura"
     ],
     "img_meta": "'Colgante de figura céltica' [313013], artista(s) de la Gran Nicoya/región central'"
   },
@@ -506,7 +708,8 @@
     "tags": [
       "análisis",
       "filosofía",
-      "artículo"
+      "artículo",
+      "literatura"
     ],
     "img_meta": "'Sello' [565442], artista desconocido'"
   }

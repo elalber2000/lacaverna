@@ -10,6 +10,7 @@ from io import BytesIO
 import matplotlib.pyplot as plt
 import json
 
+from scripts.get_substack_posts import get_img_link
 from scripts.utils import ROOT_DIR
 
 # Configure logging
@@ -61,7 +62,7 @@ def fetch_random_met_image(min_val=400000, max_val=600000, randseed=None, title=
         if res.status_code != 200:
             continue
         data = res.json()
-        if posts is not None and data['id'] in str(posts):
+        if posts is not None and str(data['objectID']) in str(posts):
             continue
         img_url = data.get("primaryImage")
         if img_url:
@@ -121,6 +122,10 @@ if __name__ == "__main__":
         logging.info(f"Processing: {post['title']}")
         img, meta = process_met_image(randseed=search_image(post["title"]), title=post["title"], posts=posts)
         add_meta(posts, post["title"], f"'{meta['title']}' [{meta['id']}], {meta['artist']}")
+
+        if "img_link" not in post or post["img_link"]=="":
+            post["img_link"] = get_img_link(post["title"])
+            
         with open(posts_path, "w", encoding="utf-8") as f:
             json.dump(posts, f, indent=2, ensure_ascii=False)
         cv2.imwrite(f"{ROOT_DIR}/{post['img_link'].replace('../', '')}", img)

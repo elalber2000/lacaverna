@@ -2,30 +2,40 @@
 Archivo virtual de todas las cosas que he ido haciendo estos años.
 
 # Structure
-- index : hero, adj, timeline
-- archive : add substack, git, paper, dictionary, poems, gallery, theater
-  - literatura
-    - narrativa
-      - microrrelato
-      - fantasia
-      - ciencia ficcion
-      - realismo magico
-    - poesia
-    - teatro
-      - sketch
-    - articulo
-      - opinion
-      - analisis
-      - divulgacion
-      - substack
-  - filosofia
-  - plastica
-    - zine
-    - meme
-    - comic
-  - informatica
-    - paper
-    - proyecto
+- index : hero, categories
+- archive : add paper, dictionary, poems
+    - Literatura
+      - Narrativa
+        - Microrrelato
+      - Poesía
+      - Teatro
+        - Sketch
+      - Artículo
+        - Substack
+        - Análisis
+        - Divulgación
+        - Opinión
+      - Traducción
+    - Galería
+      - Edit
+      - RPG
+      - Cómic
+      - Zine
+    - Vídeo
+      - Falso Documental
+    - Experimental
+    - Podcast
+    - Tecnología
+      - IA
+    - Matemáticas
+    - Filosofía
+    ------------------
+    - Fantasía
+    - Realismo Mágico
+    - Distopía
+    - Memoria
+    - Ciencia Ficción
+    - Comedia
 - cabinet: favs & actual
   - Music: Spoti
   - Books: Goodreads
