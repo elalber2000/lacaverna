@@ -61,7 +61,7 @@ def fetch_random_met_image(min_val=400000, max_val=600000, randseed=None, title=
         if res.status_code != 200:
             continue
         data = res.json()
-        if posts is not None and data['title'] in str(posts):
+        if posts is not None and data['id'] in str(posts):
             continue
         img_url = data.get("primaryImage")
         if img_url:
