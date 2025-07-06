@@ -3,7 +3,7 @@ Archivo virtual de todas las cosas que he ido haciendo estos años.
 
 # Structure
 - index : hero, categories
-- archive : add paper, dictionary, poems
+- archivo : add paper, dictionary, poems
     - Literatura
       - Narrativa
         - Microrrelato
@@ -36,7 +36,7 @@ Archivo virtual de todas las cosas que he ido haciendo estos años.
     - Memoria
     - Ciencia Ficción
     - Comedia
-- cabinet: favs & actual
+- estante: favs & actual
   - Music: Spoti
   - Books: Goodreads
   - Films: Letterbox

@@ -29,6 +29,16 @@
     "img_meta": "'Covered slop jar' [2473], United States Pottery Company"
   },
   {
+    "title": "Diccionario",
+    "description": "Diccionario de términos personales",
+    "link": "../Documents/diccionario.html",
+    "img_link": "../Images/Library/diccionario.png",
+    "tags": [
+      "literatura"
+    ],
+    "img_meta": "'Tomb Effigy of a Boy, Probably Ermengol IX, Count of Urgell' [471965], "
+  },
+  {
     "title": "Espacio Vacío",
     "description": "Como en todos los aeropuertos, la puerta de Barajas es un pu",
     "link": "https://sancheznoseke.substack.com/p/espacio-vacio",
@@ -98,6 +108,17 @@
       "galería"
     ],
     "img_meta": "'Leaves from a Beatus Manuscript: Bifolium with part of the Genealogy of Christ and the Adoration of the Magi' [466197], "
+  },
+  {
+    "title": "An LLM-Based Approach for Insight Generation in Data Analysis",
+    "description": "Paper sobre generación de insights con modelos de lenguaje",
+    "link": "https://arxiv.org/abs/2503.11664",
+    "img_link": "../Images/Library/an_llmbased_approach_for_insight_generation_in_data_analysis.png",
+    "tags": [
+      "ia",
+      "tecnología"
+    ],
+    "img_meta": "'Queen of Belgium, from World's Sovereigns series (N34) for Allen & Ginter Cigarettes' [420491], Allen & Ginter"
   },
   {
     "title": "Descent to the Dark Net",
