@@ -39,7 +39,7 @@
           <a class="nav-link custom-navitem" href="../Sections/archive.html">Archivo</a>
         </li>
         <li class="nav-item px-4">
-          <a class="nav-link custom-navitem" href="../Sections/gallery.html">Galería</a>
+          <a class="nav-link custom-navitem" href="../Sections/desk.html">Escritorio</a>
         </li>
         <li class="nav-item px-4">
           <a class="nav-link custom-navitem" href="../Sections/theatre.html">Escenario</a>
@@ -210,6 +210,14 @@
           }
         });
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const tagFromHash = decodeURIComponent(location.hash.slice(1));
+      if (tagFromHash) {
+        document.getElementById('tag-search').value = tagFromHash; // opcional, muestra el tag en el input
+        filterPostsByTag(tagFromHash);
+      }
+    });
   </script>
   
 </body>

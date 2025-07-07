@@ -259,6 +259,42 @@
 }
 
 
+/* Desk */
+.desk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.desk-item {
+  position: relative;
+  width: 40%;
+}
+
+.desk-item:nth-child(odd)  { align-self: flex-start; }
+.desk-item:nth-child(even) { align-self: flex-end; }
+
+.desk-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.desk-item .scribble-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  background: url('Images/Escritorio/scribbles.png') no-repeat center center;
+  background-size: 80% 80%;
+  opacity: 0;
+}
+
+.desk-item:hover .scribble-overlay {
+  opacity: 1;
+}
+
+
 
 @media screen and (max-width:991px) {
 
