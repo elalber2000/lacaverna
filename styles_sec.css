@@ -361,6 +361,16 @@ ul.tracklist a{
 }
 
 
+/* Bucketlist */
+.bucketlist-elem{
+    color: var(--color-light);
+}
+
+.bucketlist-elemx{
+    color: var(--color-white)
+}
+
+
 @media screen and (max-width:991px) {
 
     
