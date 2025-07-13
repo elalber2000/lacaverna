@@ -12,6 +12,7 @@
 .custom-link {
     color: var(--color-light);
     font-weight: 700;
+    text-decoration: none;
 }
 
 .custom-link:hover {
@@ -145,7 +146,6 @@
 
 .card-title:hover {
     color: var(--color-highlight);
-    text-decoration: underline;
 }
 
 .card-text {
@@ -294,6 +294,71 @@
   opacity: 1;
 }
 
+.deskitem-header .scribble-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%; height: 100%;
+  pointer-events: none;
+  background: url('Images/Escritorio/scribbles.png') no-repeat center center;
+  background-size: 80% 80%;
+  transform:translateX(75%);
+  opacity: 0;
+}
+
+.deskitem-header:hover .scribble-overlay {
+  opacity: 1;
+}
+
+.desk-logo {
+    width:120px;
+    aspect-ratio:1/1;
+    border-radius:50%;
+}
+
+/* Desk Subsections */
+
+.deskitem-header{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:6rem auto 3rem;
+    padding:0 5%;
+    text-decoration:none;
+    color: var(--color-white)
+}
+
+.deskitem-header:hover{
+    text-decoration: none;
+    color: var(--color-highlight)
+}
+
+
+.deskitem-header img{
+    width:30%;
+    height:auto;
+}
+
+ul.tracklist{
+    list-style:none;
+    display:grid;
+    gap:.75rem;
+    padding: 0;
+}
+ul.tracklist li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+ul.tracklist a{
+    text-decoration:none;
+    font-weight:500;
+}
+
+.stars{
+    color:var(--color-light);
+}
 
 
 @media screen and (max-width:991px) {
