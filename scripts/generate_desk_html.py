@@ -103,8 +103,11 @@ def get_goodreads_rss(limit=5):
         m     = re.search(r'gave\s+(\d+)\s+stars', entry.get('description',''))
         score = int(m.group(1)) if m else None
 
+        author = re.search(r'class="authorName"[^>]*>(.*?)</a>', entry.summary)
+
         reviews.append({
             'title':  entry.title.replace("Elalber2000 added ", ""),
+            'artist': author.group(1) if author else "",
             'url':    entry.link,
             'review': text,
             'score':  score,
@@ -113,11 +116,49 @@ def get_goodreads_rss(limit=5):
             break
     return reviews
 
+
+def process_score_str(score: float | str):
+    if isinstance(score, str):
+        return score
+    else:
+        return '<p class="stars">' + "★" * int(score) + ("½" if score-int(score)>0 else "") + '</p>'
+
+def process_artist_str(name: str):
+    if name == "":
+        return 1
+    else:
+        return f' ({" ".join([i[0].upper()+"." if count<len(name.split(" "))-1 else i for count, i in enumerate(name.split(" "))])})'
+
+
+def rewrite_html():
+    parent_dir = os.getcwd()
+    pattern = r'(<section>\s*<p>Recientes</p>\s*<ul class="tracklist">)(.*?)(</ul>\s*</section>)'
+
+    for section, section_fun in [
+        ["music",  get_spotify_recent],
+        ["movies", get_letterbox_rss],
+        ["books",  get_goodreads_rss],
+    ]:
+        print(section)
+        with open(f"{parent_dir}/Sections/desk/{section}.html", "r", encoding='utf-8') as f:
+            html = f.read()
+
+        items = [f'<li><a href="{review["url"]}" target="_blank" class="custom-link">- {review["title"]}{process_artist_str(review.get("artist", ""))}</a>{process_score_str(review.get("score", ""))}</li>'
+                     for review in section_fun()]
+        replacement = r'\1\n' + "\n".join(items) + r'\n\3'
+
+        new_html = re.sub(pattern, replacement, html, flags=re.DOTALL)
+        with open(f"{parent_dir}/Sections/desk/{section}.html", "w", encoding='utf-8') as f:
+            html = f.write(new_html)
+        
+
 def main():
+    rewrite_html()
+    raise KeyboardInterrupt
     out = {
         "music":  get_spotify_recent(),
-        #"movies": get_letterbox_rss(),
-        #"books":  get_goodreads_rss(),
+        "movies": get_letterbox_rss(),
+        "books":  get_goodreads_rss(),
     }
     print(json.dumps(out, indent=2, ensure_ascii=False))
 
