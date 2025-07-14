@@ -130,7 +130,7 @@ def process_artist_str(name: str):
         return f' ({" ".join([i[0].upper()+"." if count<len(name.split(" "))-1 else i for count, i in enumerate(name.split(" "))])})'
 
 
-def rewrite_html():
+def generate_desk_html():
     parent_dir = os.getcwd()
     pattern = r'(<section>\s*<p>Recientes</p>\s*<ul class="tracklist">)(.*?)(</ul>\s*</section>)'
 
@@ -152,15 +152,11 @@ def rewrite_html():
             html = f.write(new_html)
         
 
-def main():
-    rewrite_html()
-    raise KeyboardInterrupt
-    out = {
-        "music":  get_spotify_recent(),
-        "movies": get_letterbox_rss(),
-        "books":  get_goodreads_rss(),
-    }
-    print(json.dumps(out, indent=2, ensure_ascii=False))
-
 if __name__ == "__main__":
-    main()
+    generate_desk_html()
+    #out = {
+    #    "music":  get_spotify_recent(),
+    #    "movies": get_letterbox_rss(),
+    #    "books":  get_goodreads_rss(),
+    #}
+    #print(json.dumps(out, indent=2, ensure_ascii=False))

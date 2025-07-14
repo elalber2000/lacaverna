@@ -47,20 +47,24 @@ def write_code(text, template, file_path):
     logging.info(f"Generated HTML for {file_path}")
     return res
 
-for filename in os.listdir(path):
-    if filename.endswith(".html"):
-        file_path = os.path.join(path, filename)
-        os.remove(file_path)
-        logging.info(f"Removed: {file_path}")
+def generate_doc_html():
+    for filename in os.listdir(path):
+        if filename.endswith(".html"):
+            file_path = os.path.join(path, filename)
+            os.remove(file_path)
+            logging.info(f"Removed: {file_path}")
 
-template_path = f"{ROOT_DIR}/Sections/archive_template.html"
-for file in glob.glob(os.path.join(path, '*.txt')):
-    logging.info(f"Converting {file}")
-    with open(file, "r", encoding='utf-8') as f_origin, \
-         open(template_path, "r", encoding='utf-8') as f_template:
-        f_dest_path = f"{path}/{os.path.splitext(os.path.basename(file))[0]}.html"
-        html_code = write_code(f_origin, f_template, f_dest_path)
-        if html_code:
-            with open(f_dest_path, "w", encoding='utf-8') as f_dest:
-                f_dest.write(html_code)
-                logging.info(f"Wrote: {f_dest_path}")
+    template_path = f"{ROOT_DIR}/Sections/archive_template.html"
+    for file in glob.glob(os.path.join(path, '*.txt')):
+        logging.info(f"Converting {file}")
+        with open(file, "r", encoding='utf-8') as f_origin, \
+            open(template_path, "r", encoding='utf-8') as f_template:
+            f_dest_path = f"{path}/{os.path.splitext(os.path.basename(file))[0]}.html"
+            html_code = write_code(f_origin, f_template, f_dest_path)
+            if html_code:
+                with open(f_dest_path, "w", encoding='utf-8') as f_dest:
+                    f_dest.write(html_code)
+                    logging.info(f"Wrote: {f_dest_path}")
+
+if __name__=="__main__":
+    generate_doc_html()

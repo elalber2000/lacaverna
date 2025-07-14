@@ -105,7 +105,7 @@ def add_meta(posts, title, meta):
             post["img_meta"]=meta
     return posts
 
-if __name__ == "__main__":
+def generate_doc_imgs():
     posts_path = Path(ROOT_DIR) / "posts.json"
     logging.info(f"Loading existing posts from {posts_path}")
     if posts_path.exists() and posts_path.stat().st_size > 0:
@@ -130,5 +130,7 @@ if __name__ == "__main__":
             json.dump(posts, f, indent=2, ensure_ascii=False)
         cv2.imwrite(f"{ROOT_DIR}/{post['img_link'].replace('../', '')}", img)
         
-
     logging.info("Done")
+
+if __name__ == "__main__":
+    generate_doc_imgs()

@@ -83,7 +83,7 @@ def merge_catalog(existing, new_entries, key):
     logging.info(f"Added {added} new items (skipped {len(new_entries)-added} duplicates)")
     return existing
 
-if __name__ == "__main__":
+def get_substack_posts():
     posts_path = Path(ROOT_DIR) / "posts.json"
     logging.info(f"Loading existing posts from {posts_path}")
     if posts_path.exists() and posts_path.stat().st_size > 0:
@@ -100,3 +100,6 @@ if __name__ == "__main__":
     with open(posts_path, "w", encoding="utf-8") as f:
         json.dump(all_posts, f, indent=2, ensure_ascii=False)
     logging.info("Done")
+
+if __name__=="__main__":
+    get_substack_posts()
