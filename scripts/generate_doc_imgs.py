@@ -7,7 +7,6 @@ import cv2
 import numpy as np
 from PIL import Image
 from io import BytesIO
-import matplotlib.pyplot as plt
 import json
 
 from scripts.get_substack_posts import get_img_link
