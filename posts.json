@@ -733,5 +733,17 @@
       "literatura"
     ],
     "img_meta": "'Sello' [565442], artista desconocido'"
+  },
+  {
+    "title": "Cibernacular",
+    "description": "El orfebre trabaja el oro y el carpintero la madera",
+    "link": "https://sancheznoseke.substack.com/p/cibernacular",
+    "img_link": "../Images/Library/cibernacular.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Square' [445786], "
   }
 ]
