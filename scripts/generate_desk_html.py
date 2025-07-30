@@ -1,5 +1,12 @@
-import os, json, requests, feedparser, re, html
+import os, json, requests, feedparser, re, html, logging
 from dotenv import load_dotenv
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
 
 load_dotenv()
 
@@ -19,7 +26,7 @@ def get_spotify_token():
         }
     )
     if resp.status_code != 200:
-        print("Error accessing spotify token:", resp.status_code, resp.text)
+        logging.error("Error accessing spotify token:", resp.status_code, resp.text)
         resp.raise_for_status()
     return resp.json()["access_token"]
 
@@ -139,12 +146,13 @@ def generate_desk_html():
         ["movies", get_letterbox_rss],
         ["books",  get_goodreads_rss],
     ]:
-        print(section)
+        logging.info(f"Generating html for {section}.html")
         with open(f"{parent_dir}/Sections/desk/{section}.html", "r", encoding='utf-8') as f:
             html = f.read()
 
         items = [f'<li><a href="{review["url"]}" target="_blank" class="custom-link">- {review["title"]}{process_artist_str(review.get("artist", ""))}</a>{process_score_str(review.get("score", ""))}</li>'
                      for review in section_fun()]
+        print(items)
         replacement = r'\1\n' + "\n".join(items) + r'\n\3'
 
         new_html = re.sub(pattern, replacement, html, flags=re.DOTALL)
