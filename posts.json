@@ -757,5 +757,29 @@
       "substack"
     ],
     "img_meta": "'Vase' [450941], "
+  },
+  {
+    "title": "Pequeño Estudio Sobre la Nada",
+    "description": "El resto de mes lo pasé preguntando",
+    "link": "https://sancheznoseke.substack.com/p/pequeno-estudio-sobre-la-nada",
+    "img_link": "../Images/Library/pequeno_estudio_nada.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Alex Martins, from the Actors and Actresses series (N45, Type 1) for Virginia Brights Cigarettes' [412108], Allen & Ginter"
+  },
+  {
+    "title": "Un Castellano para Borges",
+    "description": "Lo bueno del lenguaje es que nos deja jugar con él, declinar",
+    "link": "https://sancheznoseke.substack.com/p/un-castellano-para-borges",
+    "img_link": "../Images/Library/castellano_borges.png",
+    "tags": [
+      "narrativa",
+      "artículo",
+      "substack"
+    ],
+    "img_meta": "'Scarab amulet' [568978], "
   }
 ]
