@@ -74,13 +74,13 @@ def fetch_substack_entries(profile):
 def merge_catalog(existing, new_entries, key):
     logging.info(f"Merging catalogs on key: {key}")
     seen = {item[key] for item in existing}
-    added = 0
+    new_items = []
     for item in new_entries:
         if item[key] not in seen:
-            existing.append(item)
+            new_items.append(item)
             seen.add(item[key])
-            added += 1
-    logging.info(f"Added {added} new items (skipped {len(new_entries)-added} duplicates)")
+    existing[:] = new_items + existing
+    logging.info(f"Added {len(new_items)} new items (skipped {len(new_entries) - len(new_items)} duplicates)")
     return existing
 
 def get_substack_posts():
