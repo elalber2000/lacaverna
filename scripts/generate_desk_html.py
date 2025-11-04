@@ -132,7 +132,7 @@ def process_score_str(score: float | str):
 
 def process_artist_str(name: str):
     if name == "":
-        return 1
+        return ""
     else:
         return f' ({" ".join([i[0].upper()+"." if count<len(name.split(" "))-1 else i for count, i in enumerate(name.split(" "))])})'
 
