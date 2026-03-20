@@ -23,7 +23,6 @@ Archivo virtual de todas las cosas que he ido haciendo estos años.
       - Zine
     - Vídeo
       - Falso Documental
-    - Experimental
     - Podcast
     - Tecnología
       - IA
@@ -36,6 +35,7 @@ Archivo virtual de todas las cosas que he ido haciendo estos años.
     - Memoria
     - Ciencia Ficción
     - Comedia
+    - Experimental
 - estante: favs & actual
   - Music: Spoti
   - Books: Goodreads
