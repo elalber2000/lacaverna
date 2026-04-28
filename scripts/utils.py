@@ -1,4 +1,4 @@
-import os
+from pathlib import Path
 
-
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+ROOT_PATH = Path(__file__).resolve().parents[1]
+print(ROOT_PATH)

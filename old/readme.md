@@ -1,0 +1,45 @@
+# La Caverna de Sánchez
+Archivo virtual de todas las cosas que he ido haciendo estos años.
+
+# Structure
+- index : hero, categories
+- archivo : add paper, dictionary, poems
+    - Literatura
+      - Narrativa
+        - Microrrelato
+      - Poesía
+      - Teatro
+        - Sketch
+      - Artículo
+        - Substack
+        - Análisis
+        - Divulgación
+        - Opinión
+      - Traducción
+    - Galería
+      - Edit
+      - RPG
+      - Cómic
+      - Zine
+    - Vídeo
+      - Falso Documental
+    - Podcast
+    - Tecnología
+      - IA
+    - Matemáticas
+    - Filosofía
+    ------------------
+    - Fantasía
+    - Realismo Mágico
+    - Distopía
+    - Memoria
+    - Ciencia Ficción
+    - Comedia
+    - Experimental
+- estante: favs & actual
+  - Music: Spoti
+  - Books: Goodreads
+  - Films: Letterbox
+  - Notes: Twitter
+- bitácora: bucketlist (tree syntax)
+- *
