@@ -214,7 +214,7 @@ function articleCard(post) {
 
   const tagLinks = tags.map(tag => {
     const slug = slugify(tag);
-    return `<a class="tag bracket-link" href="archive.html#${slug}">${escapeHtml(tag)}</a>`;
+    return `<a class="tag bracket-link" href="../sections/archive.html#${slug}">${escapeHtml(tag)}</a>`;
   }).join("");
 
   return `

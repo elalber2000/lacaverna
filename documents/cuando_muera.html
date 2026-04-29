@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Cuando Muera — La Caverna</title>
+  <meta name="description" content="Testamento poético." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="brand bracket-link" href="../index.html" aria-label="Inicio">
+        <img src="../assets/logo.png" alt="La Caverna" class="brand-logo" />
+      </a>
+
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Abrir menú" />
+      <label class="nav-button bracket-link" for="nav-toggle">menu</label>
+
+      <div class="nav-links">
+        <a class="bracket-link" href="../sections/archive.html">Archivo</a>
+        <a class="bracket-link" href="../sections/influences.html">Influencias</a>
+        <a class="bracket-link" href="../sections/about.html">About</a>
+        <a class="bracket-link" href="../sections/linktree.html">*</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page article-page">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema">
+      🌓︎
+    </button>
+
+    <article class="article">
+      <header class="article-header">
+        <h1>Cuando Muera</h1>
+        
+        <div class="article-tags" aria-label="Tags">
+<a class="bracket-link" href="../sections/archive.html#memoria">memoria</a><a class="bracket-link" href="../sections/archive.html#filosofía">filosofía</a><a class="bracket-link" href="../sections/archive.html#poesía">poesía</a><a class="bracket-link" href="../sections/archive.html#literatura">literatura</a>
+</div>
+        <!--
+        <div class="article-tags" aria-label="Tags">
+          <a class="bracket-link" href="archive.html#literatura">literatura</a>
+          <a class="bracket-link" href="archive.html#articulo">artículo</a>
+          <a class="bracket-link" href="archive.html#distopia">distopía</a>
+          <a class="bracket-link" href="archive.html#substack">substack</a>
+        </div>
+        -->
+      </header>
+
+      <figure class="article-figure">
+        <img
+          src="../assets/archive/cuando_muera.png"
+        />
+        <figcaption>
+          'Miss Kate Uart' [416538], Allen & Ginter'
+        </figcaption>
+      </figure>
+
+      <section class="article-body">
+        <p>█▀▀<br />
+█▄▄uando muera quiero haber </p>
+<ul>
+<li>Probado todas las drogas que existen, </li>
+<li>Cubierto cada centímetro de mi piel con tinta, </li>
+<li>Leído todos los libros del mundodisco, </li>
+<li>Quemado todos los poemas a los que alguna vez tuve la osadía de poner nombre, </li>
+<li>Escrito un libro que habría hecho llorar a Borges y otro que habría hecho llorar a mi abuelo, </li>
+<li>Puesto una rosa en la tumba de Miguel Hernández, </li>
+<li>Pintado el ocaso que se ve tras la ventana en las noches de primavera, </li>
+<li>Despedido a todas las personas a las que quise mas que a mí mismo, </li>
+<li>Hecho mil y una dominadas, </li>
+<li>Puesto un nombre a un pequeño e irrelevante teorema que aparezca como nota a pie de página en un solo libro de matemáticas, </li>
+<li>Programado el algoritmo que salve a la raza humana de sí misma, </li>
+<li>Escrito al menos un poema que nunca haya recitado, </li>
+<li>Recitado ese mismo poema, </li>
+<li>Tenido un amor de metro que dure el trayecto justo entre Colonia y Pio, </li>
+<li>Ido a un concierto de Crema, </li>
+<li>Salvado a una persona de la muerte, </li>
+<li>Dirigido una obra con Histrión (escrita por mí), </li>
+<li>Recitado por última vez en Aleatorio, </li>
+<li>Escrito un monólogo para la muerte de Viñas —el haría lo mismo por mi—, </li>
+<li>Probado todas y cada una de las artes, </li>
+<li>Ganado un premio Nobel totalmente inesperado, </li>
+<li>Perdido el brazo en un duelo, </li>
+<li>Levantado mas de 100kg en press de banca, </li>
+<li>Conocido a mi demonio interior para invitarle a tomar algo, </li>
+<li>Sacado la carrera de Informática y Matemáticas, </li>
+<li>Viajado a un lugar totalmente aleatorio, </li>
+<li>Vivido una larga temporada como anacoreta en el monte para luego descender y decir que no aprendí nada, </li>
+<li>Ser conocido en los Bajos de Arguelles, </li>
+<li>Presenciado las ocho maravillas del mundo moderno (esta última aún no existe), </li>
+<li>Dejado un libro a medio leer en la mesilla de noche con notas al pie de página para no terminar de irme del todo, </li>
+<li>Soñado con mi primer amor una última vez, </li>
+<li>Dejado toda mi casa llena de pinturas negras como Goya, </li>
+<li>Ganado un campeonato poco importante de ajedrez, </li>
+<li>Ganado un campeonato muy importante de lo que sea, </li>
+<li>Dormido bajo las estrellas, </li>
+<li>Escalado un árbol, </li>
+<li>Escrito los versos más tristes</li>
+</ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span>@sanchez</span>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const button = document.querySelector("#theme-toggle");
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      root.dataset.theme = savedTheme;
+    }
+
+    button.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+
+      root.dataset.theme = nextTheme;
+      localStorage.setItem("theme", nextTheme);
+    });
+  </script>
+</body>
+</html>

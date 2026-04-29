@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Versos encadenados — La Caverna</title>
+  <meta name="description" content="Poema encadenado." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="brand bracket-link" href="../index.html" aria-label="Inicio">
+        <img src="../assets/logo.png" alt="La Caverna" class="brand-logo" />
+      </a>
+
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Abrir menú" />
+      <label class="nav-button bracket-link" for="nav-toggle">menu</label>
+
+      <div class="nav-links">
+        <a class="bracket-link" href="../sections/archive.html">Archivo</a>
+        <a class="bracket-link" href="../sections/influences.html">Influencias</a>
+        <a class="bracket-link" href="../sections/about.html">About</a>
+        <a class="bracket-link" href="../sections/linktree.html">*</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page article-page">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema">
+      🌓︎
+    </button>
+
+    <article class="article">
+      <header class="article-header">
+        <h1>Versos encadenados</h1>
+        
+        <div class="article-tags" aria-label="Tags">
+<a class="bracket-link" href="../sections/archive.html#experimental">experimental</a><a class="bracket-link" href="../sections/archive.html#poesía">poesía</a><a class="bracket-link" href="../sections/archive.html#literatura">literatura</a>
+</div>
+        <!--
+        <div class="article-tags" aria-label="Tags">
+          <a class="bracket-link" href="archive.html#literatura">literatura</a>
+          <a class="bracket-link" href="archive.html#articulo">artículo</a>
+          <a class="bracket-link" href="archive.html#distopia">distopía</a>
+          <a class="bracket-link" href="archive.html#substack">substack</a>
+        </div>
+        -->
+      </header>
+
+      <figure class="article-figure">
+        <img
+          src="../assets/archive/versos_encadenados.png"
+        />
+        <figcaption>
+          'Cordero de Juan el Bueno' [469170], artista desconocido'
+        </figcaption>
+      </figure>
+
+      <section class="article-body">
+        <p>▄▀█<br />
+█▀█lma macabra, brama maldades desde dentro. <br />
+Tronante, tenebrosa, sacrificada. <br />
+<em>(Suspiro)</em> <br />
+Dame medios, Dios osado; <br />
+Donde debas bastará </p>
+<p>¡Rápido! Dolores restallan, <br />
+Llantos toscos cosen sensaciones nestóreas hasta taladrarme. <br />
+<em>(Suspiro)</em> <br />
+Merecido dolor lorquiano.</p>
+<p>—Nostálgico corazón, zonzorrión onírico. ¿Cómo morir? <br />
+—Iracundo. <br />
+—¿Donde? <br />
+—Depende. <br />
+—¿Depende? <br />
+—Definitivamente.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span>@sanchez</span>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const button = document.querySelector("#theme-toggle");
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      root.dataset.theme = savedTheme;
+    }
+
+    button.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+
+      root.dataset.theme = nextTheme;
+      localStorage.setItem("theme", nextTheme);
+    });
+  </script>
+</body>
+</html>
