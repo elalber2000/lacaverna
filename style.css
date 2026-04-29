@@ -400,6 +400,14 @@ button {
   filter: grayscale(1);
 }
 
+.hover-hi {
+  color: var(--fg);
+}
+
+.hover-hi:hover {
+  color: var(--hi);
+}
+
 /*.archive-card:hover .archive-image {
   filter: grayscale(0);
 }*/

@@ -4,52 +4,52 @@ const CSV_PATH = location.pathname.includes("/sections/")
 
 const CATEGORY_TREE = [
   {
-    name: "Literatura",
+    name: "literatura",
     children: [
       {
-        name: "Artículo",
-        children: ["Opinión", "Divulgación", "Análisis"]
+        name: "artículo",
+        children: ["opinión", "divulgación", "análisis"]
       },
       {
-        name: "Narrativa",
-        children: ["Microrrelato"]
+        name: "narrativa",
+        children: ["microrrelato"]
       },
       {
-        name: "Teatro",
-        children: ["Sketch"]
+        name: "teatro",
+        children: ["sketch"]
       },
-      "Traducción",
-      "Poesía",
-      "Substack",
-      "Experimental"
+      "traducción",
+      "poesía",
+      "substack",
+      "experimental"
     ]
   },
   {
-    name: "Galería",
-    children: ["Edit", "Zine", "Cómic", "RPG"]
+    name: "galería",
+    children: ["photoedit", "zine", "cómic", "rpg"]
   },
-  "Podcast",
+  "podcast",
   {
-    name: "Vídeo",
-    children: ["Falso Documental"]
-  },
-  {
-    name: "Tecnología",
-    children: ["IA"]
+    name: "vídeo",
+    children: ["falso documental"]
   },
   {
-    name: "Géneros",
+    name: "tecnología",
+    children: ["ia"]
+  },
+  {
+    name: "géneros",
     children: [
-      "Memoria",
-      "Distopía",
-      "Comedia",
-      "Fantasía",
-      "Ciencia Ficción",
-      "Realismo Mágico"
+      "memoria",
+      "distopía",
+      "comedia",
+      "fantasía",
+      "ciencia ficción",
+      "realismo mágico"
     ]
   },
-  "Matemáticas",
-  "Filosofía",
+  "matemáticas",
+  "filosofía",
 ];
 
 function slugify(value) {
