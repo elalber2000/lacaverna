@@ -78,6 +78,21 @@ button {
   font-size: var(--x);
 }
 
+ul {
+  list-style: none;
+  padding-left: 1.2rem;
+}
+
+ul li {
+  position: relative;
+}
+
+ul li::before {
+  content: "-";
+  position: absolute;
+  left: -1.2rem;
+}
+
 /* Bracket links */
 
 .bracket-link,
