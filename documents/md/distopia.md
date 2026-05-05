@@ -8,12 +8,12 @@ La enfermiza luz artificial, esa canción pegadiza que nunca termina y un flujo 
 
 El gorila señaló la puerta del fondo. Dentro, una chica anime con el pelo violeta neón bicheaba en un pequeño portátil.
 
-—¿Quién eres? 
-—Conseguí el contacto en uno de los bajos foros. 
-—Pues aquí me tienes, ¿qué buscas? 
-—Después del último apagón perdí casi todo mi crédito. Trabajo de conductor en una app de segundilla y apenas me da para pagar las deudas. Tuve que aceptar un crédito y ahora estoy hasta arriba de *adware*. Necesito que me lo desinstales o voy a acabar neurodemente. 
-—Mhm —asintió sin mucho interés—. ¿Tienes mosca? 
-—Sí —llevaba meses ahorrando. 
+—¿Quién eres?
+—Conseguí el contacto en uno de los bajos foros.
+—Pues aquí me tienes, ¿qué buscas?
+—Después del último apagón perdí casi todo mi crédito. Trabajo de conductor en una app de segundilla y apenas me da para pagar las deudas. Tuve que aceptar un crédito y ahora estoy hasta arriba de *adware*. Necesito que me lo desinstales o voy a acabar neurodemente.
+—Mhm —asintió sin mucho interés—. ¿Tienes mosca?
+—Sí —llevaba meses ahorrando.
 —Pues transfiere la mitad por adelantado y empezamos el asunto.
 
 El proceso fue rápido, o eso me pareció. Una pastilla de color negro trajo un sueño chicloso. Al despertar, el cuarto estaba muy vacío. Había algo raro; la oscuridad me hizo darme cuenta. Respiré con alegría, ¡no había anuncios por ningún lado! Un hollín puro y limpio de perfumes sintéticos invadió mis pulmones. Sin embargo, al poco rato de felicidad caí en que eso no era todo. No solo habían desaparecido los anuncios, descubrí con pánico, había desaparecido todo. La estancia, que había creído otra, era la misma pero sin ornamento digital ni música virtual. Pensé que me habían robado, pero el acceso a mi criptocartera fue denegado. No solo me habían limpiado el crédito, esos cabrones me habían dejado fuera del sistema. Salí afuera, donde me recibió el rojizo nimbo de un eterno ocaso y una ciudad vacía de inteligencias artificiosas. Por las calles vacías, una nueva raza de cenizos cadáveres se arrastraba por la ciudad. Hasta que no vi mi reflejo en un charco no me di cuenta de que esos cadáveres y yo compartíamos especie, solo que en estado desconocido hasta el momento: desnudos de cualquier binario atavío. Traté de llegar a casa, pero sin holomapa ni asistentes virtuales la tarea se volvió imposible. ¿Y qué más daba, igualmente? Sin mis llaves tecnométricas, había desaparecido mi casa, mi trabajo, mi dinero y cualquier esperanza de recuperarlos. Traté de pedir ayuda a alguno de los cadáveres macilentos, pero ninguno fue capaz de verme u oírme, o —acaso más probable aún— eso fingían.

@@ -343,7 +343,7 @@ function renderArchive(posts) {
 
   const label = CATEGORY_LABELS[category] || category;
 
-  title.textContent = category ? label : "Todos los archivos";
+  title.textContent = category ? label : "Todo";
   count.textContent = `${filtered.length} archivo${filtered.length === 1 ? "" : "s"}`;
 
   updateActiveCategory(category);

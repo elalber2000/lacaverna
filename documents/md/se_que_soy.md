@@ -5,7 +5,7 @@ Sé que soy, pues se ve luz.
 Sin luz, ya no sé si soy.
 Mas hay luz,
 por lo que soy;
-soy, y lo sé. 
+soy, y lo sé.
 
 Mas sin su ser…
 Sin su ser ya no sé si soy.

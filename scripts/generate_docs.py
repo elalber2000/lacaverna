@@ -1,13 +1,16 @@
 import ast
 import base64
 import logging
-from html import escape
+import re
+from html import escape, unescape
 from pathlib import Path
 
 import markdown
 import numpy as np
 import pandas as pd
 import yaml
+from markdown.extensions import Extension
+from markdown.treeprocessors import Treeprocessor
 
 from utils import ROOT_PATH, configure_logging
 
@@ -22,6 +25,16 @@ TEMPLATE_PATH = ROOT / "sections" / "doc_template.html"
 LOMB_PATH = ROOT / "assets" / "lombardics.yaml"
 
 PostMetadata = dict[str, str]
+
+LOMB_BR_SENTINEL = "\ue000LOMB_BR\ue000"
+INDENT_SPACE_SENTINEL = "\ue000LC_INDENT_SPACE\ue000"
+INDENT_TAB_SENTINEL = "\ue000LC_INDENT_TAB\ue000"
+TAB_WIDTH = 4
+
+HEADING_RE = re.compile(
+    r"<(?P<open>h(?P<level>[1-6])\b[^>]*)>(?P<inner>.*?)</h(?P=level)>",
+    flags=re.IGNORECASE | re.DOTALL,
+)
 
 
 def parse_tags(tags: object) -> list[str]:
@@ -96,6 +109,17 @@ def load_posts_metadata() -> pd.DataFrame:
     )
 
 
+def load_lombardics() -> dict[str, str]:
+    with LOMB_PATH.open("r", encoding="utf-8") as f:
+        raw_lomb = yaml.safe_load(f) or {}
+
+    # Use a sentinel first so Markdown does not escape literal HTML.
+    return {
+        str(key): str(value).replace("\n", LOMB_BR_SENTINEL)
+        for key, value in raw_lomb.items()
+    }
+
+
 def find_post_metadata(md_path: Path, posts_df: pd.DataFrame) -> PostMetadata | None:
     """
     Matches md file to CSV row via generated HTML link.
@@ -115,14 +139,6 @@ def build_related_posts_map(
     posts_df: pd.DataFrame,
     top_k: int = 3,
 ) -> dict[str, list[PostMetadata]]:
-    """
-    Builds:
-        {
-            current_post_link: [closest_post_1, closest_post_2, closest_post_3]
-        }
-
-    Cosine similarity is computed with numpy.
-    """
     valid_indices: list[int] = []
     embeddings: list[np.ndarray] = []
 
@@ -181,14 +197,10 @@ def build_related_posts_map(
 
     matrix = np.vstack(filtered_embeddings).astype(np.float32)
 
-    # Normalize defensively, even if embeddings were already stored normalized.
     norms = np.linalg.norm(matrix, axis=1, keepdims=True)
     matrix = matrix / np.maximum(norms, 1e-12)
 
-    # Cosine similarity because rows are unit-normalized.
     similarity = matrix @ matrix.T
-
-    # Exclude self-similarity.
     np.fill_diagonal(similarity, -np.inf)
 
     related_by_link: dict[str, list[PostMetadata]] = {}
@@ -252,20 +264,17 @@ def render_related_posts(related_posts: list[PostMetadata]) -> str:
 
     related_text = "\n".join(rows)
 
-    return f"""<section class="related-docs" aria-label="Related articles">
-<pre>- · RELATED · -
+    return f"""</br>
+<div class="fleuron" aria-hidden="true">- · ─ * ─ · -</div>
+<section class="related-docs" aria-label="Related articles">
+<pre>
+SEGUIR LEYENDO
 ────────────────
 {related_text}</pre>
 </section>"""
 
 
 def inject_related_html(html: str, related_html: str) -> str:
-    """
-    Preferred template placeholder:
-        {{related}}
-
-    If missing, inject before </main> or </body>.
-    """
     if "{{related}}" in html:
         return html.replace("{{related}}", related_html)
 
@@ -281,11 +290,168 @@ def inject_related_html(html: str, related_html: str) -> str:
     return f"{html}\n{related_html}"
 
 
-def md_to_html(md_text: str) -> str:
-    return markdown.markdown(
+class LombardicParagraphTreeprocessor(Treeprocessor):
+    """
+    Applies lombardics only inside the first <p> emitted from Markdown.
+    It never touches headings, lists, blockquotes, code blocks, etc.
+    """
+
+    def __init__(self, md, lomb: dict[str, str]):
+        super().__init__(md)
+        self.lomb = lomb
+
+    def run(self, root):
+        for elem in root.iter():
+            if str(elem.tag).lower() != "p":
+                continue
+
+            self.replace_first_alpha_inside(elem)
+            break
+
+        return root
+
+    def replace_first_alpha_inside(self, elem) -> bool:
+        if elem.text:
+            elem.text, changed = self.replace_first_alpha(elem.text)
+            if changed:
+                return True
+
+        for child in list(elem):
+            if self.replace_first_alpha_inside(child):
+                return True
+
+            if child.tail:
+                child.tail, changed = self.replace_first_alpha(child.tail)
+                if changed:
+                    return True
+
+        return False
+
+    def replace_first_alpha(self, text: str) -> tuple[str, bool]:
+        for i, char in enumerate(text):
+            if char.isalpha():
+                replacement = self.lomb.get(char.lower(), char)
+                return text[:i] + replacement + text[i + 1 :], True
+
+        return text, False
+
+
+class LombardicParagraphExtension(Extension):
+    def __init__(self, lomb: dict[str, str]):
+        super().__init__()
+        self.lomb = lomb
+
+    def extendMarkdown(self, md):
+        md.treeprocessors.register(
+            LombardicParagraphTreeprocessor(md, self.lomb),
+            "lombardic_paragraph_only",
+            15,
+        )
+
+
+def strip_leading_md_title(text: str) -> str:
+    """
+    Remove the first Markdown heading because the template already renders the title.
+    """
+    lines = text.splitlines()
+
+    if lines and lines[0].lstrip().startswith("#"):
+        lines = lines[1:]
+
+    return "\n".join(lines).strip()
+
+
+def protect_leading_indentation(md_text: str) -> str:
+    """
+    Preserves leading spaces/tabs in poem-like text.
+
+    HTML collapses leading whitespace. This replaces leading indentation with
+    sentinels before Markdown rendering, then md_to_html() converts them to
+    non-breaking spaces after rendering.
+
+    Skips fenced code blocks.
+    """
+    lines = md_text.splitlines()
+    protected_lines: list[str] = []
+
+    in_fence = False
+
+    for line in lines:
+        stripped = line.lstrip(" \t")
+
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            in_fence = not in_fence
+            protected_lines.append(line)
+            continue
+
+        if in_fence or not stripped:
+            protected_lines.append(line)
+            continue
+
+        indent_len = len(line) - len(stripped)
+
+        if indent_len == 0:
+            protected_lines.append(line)
+            continue
+
+        indent = line[:indent_len]
+
+        protected_indent = (
+            indent
+            .replace(" ", INDENT_SPACE_SENTINEL)
+            .replace("\t", INDENT_TAB_SENTINEL)
+        )
+
+        protected_lines.append(protected_indent + stripped)
+
+    return "\n".join(protected_lines)
+
+
+def md_to_html(md_text: str, lomb: dict[str, str]) -> str:
+    md_text = strip_leading_md_title(md_text)
+    md_text = protect_leading_indentation(md_text)
+
+    html = markdown.markdown(
         md_text,
-        extensions=["extra", "sane_lists", "nl2br"],
+        extensions=[
+            "extra",
+            "sane_lists",
+            "nl2br",
+            LombardicParagraphExtension(lomb),
+        ],
     )
+
+    return (
+        html
+        .replace(LOMB_BR_SENTINEL, "</br>")
+        .replace(INDENT_SPACE_SENTINEL, "&nbsp;")
+        .replace(INDENT_TAB_SENTINEL, "&nbsp;" * TAB_WIDTH)
+    )
+
+
+def prefix_heading_markers(html: str) -> str:
+    """
+    Adds §.
+    """
+
+    def replace_heading(match: re.Match) -> str:
+        open_tag = match.group("open")
+        level = int(match.group("level"))
+        inner = match.group("inner")
+
+        if level == 1:
+            return match.group(0)
+
+        text_only = re.sub(r"<[^>]+>", "", inner)
+        text_only = unescape(text_only).strip()
+
+        if text_only.startswith("§"):
+            return match.group(0)
+
+        prefix = "§" * (level - 1)
+        return f"<{open_tag}>{prefix} {inner}</h{level}>"
+
+    return HEADING_RE.sub(replace_heading, html)
 
 
 def fill_template(
@@ -311,31 +477,10 @@ def fill_template(
         )
     )
 
-    return inject_related_html(html, related_html)
+    html = inject_related_html(html, related_html)
+    html = prefix_heading_markers(html)
 
-
-def format_body(text: str) -> str:
-    with LOMB_PATH.open("r", encoding="utf-8") as f:
-        raw_lomb = yaml.safe_load(f) or {}
-
-    lomb = {str(key): str(value) for key, value in raw_lomb.items()}
-
-    lines = text.splitlines()
-
-    if lines and lines[0].startswith("#"):
-        lines = lines[1:]
-
-    text = "\n".join(lines).strip()
-
-    ind, first_letter = next(
-        ((i, c) for i, c in enumerate(text) if c.isalpha()),
-        (None, None),
-    )
-
-    if ind is None or first_letter is None:
-        return text
-
-    return text[:ind] + lomb.get(first_letter.lower(), first_letter) + text[ind + 1:]
+    return html
 
 
 def generate_doc_html() -> None:
@@ -346,6 +491,7 @@ def generate_doc_html() -> None:
 
     posts_df = load_posts_metadata()
     related_by_link = build_related_posts_map(posts_df, top_k=3)
+    lomb = load_lombardics()
 
     with TEMPLATE_PATH.open("r", encoding="utf-8") as f:
         template = f.read()
@@ -356,7 +502,7 @@ def generate_doc_html() -> None:
             continue
 
         with md_path.open("r", encoding="utf-8") as f:
-            html_body = md_to_html(format_body(f.read()))
+            html_body = md_to_html(f.read(), lomb)
 
         related_posts = related_by_link.get(post["link"], [])
         related_html = render_related_posts(related_posts)

@@ -2,14 +2,14 @@
 
 *Combinación del poema "McDonalds" de Manuel Vilas y "Mateo, XXV, 13", de Borges*
 
-El primer McDonalds de Zaragoza y, frente a mí 
-Fragor de máquinas tejían laberintos de arterias embotadas 
-Humo con olor a barbacoa escapa de Auswitz 
-Y, desde el centro de esa máquina kafkiana, una voz sintética dijo: 
-—Pan, carne, pepinillos, lechuga, cebolla, cheddar y salsa secreta. 
-Todo eso te damos, y también el moderno alimento de las masas: 
-Coca cola, patatas fritas y un *mcflurry*. 
-En vano te damos comida instantánea 
-En vano conida barata que publicitan actores y suoermodelos 
-Has gastado los años y te han gastado 
+El primer McDonalds de Zaragoza y, frente a mí
+Fragor de máquinas tejían laberintos de arterias embotadas
+Humo con olor a barbacoa escapa de Auswitz
+Y, desde el centro de esa máquina kafkiana, una voz sintética dijo:
+—Pan, carne, pepinillos, lechuga, cebolla, cheddar y salsa secreta.
+Todo eso te damos, y también el moderno alimento de las masas:
+Coca cola, patatas fritas y un *mcflurry*.
+En vano te damos comida instantánea
+En vano conida barata que publicitan actores y suoermodelos
+Has gastado los años y te han gastado
 Ahora come tu puta hamburguesa

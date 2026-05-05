@@ -196,59 +196,59 @@ con el corazón absoluto del poema de la vida descuartizado de sus propios cuerp
 
 ## III
 
-¡Carl Solomon! Estoy contigo en Rockland 
+¡Carl Solomon! Estoy contigo en Rockland
   donde estás más loco que yo
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde debes sentirte muy extraño
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde imitas la sombra de mi madre
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde has asesinado a tus doce secretarias
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde te ríes con este humor invisible
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde somos grandes escritores en la misma máquina de escribir
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde tu condición se ha vuelto seria y es informada en la radio
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde las facultades del cráneo ya no admiten a los gusanos de los sentidos
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde bebes el te de los senos de las solteronas de Utica
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde bromeas en los cuerpos de tus enfermeras las arpías del Bronx
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde gritas en una camisa de fuerza que estás perdiendo el juego de real pingpong del abismo
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde aporreas el catatónico piano el alma es inocente e inmortal y jamás debería morir impíamente en un manicomio armado
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde cincuenta shocks más nunca van a devolver tu alma a su cuerpo de su peregrinación a una cruz en el vacío
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   Donde acusas a tus doctores de locura y conspiras la Hebraica revolución socialista contra el fascista Gólgota nacional
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde partes los cielos de Long Island y resucitas a tus vivientes humanos Jesuses de la tumba sobrenatural
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde hay veinticinco mil camaradas locos todos juntos cantando los versos finales de la Internacional
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   donde nos abrazamos y nos besamos el Estados Unidos bajo nuestras sábanas el Estados Unidos que tose toda la noche y no nos deja dormir
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   Donde te despiertas electrificado del coma por los aviones de nuestras propias almas rugiendo sobre el tejado han venido a arrojar bombas angélicas el hospital se ilumina imaginarias paredes colapsan O diezmadas legiones corren afuera O estrellado-lentejuelado shock de misericordia la guerra eterna está aquí O victoria olvida tu ropa interior somos libres
 
-Estoy contigo en Rockland 
+Estoy contigo en Rockland
   En mis sueños caminas goteando de un viaje marítimo en la autopista que cruza América llorando a la puerta de mi cabaña en la Occidental noche».
