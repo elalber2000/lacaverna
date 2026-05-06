@@ -319,7 +319,7 @@ def render_cluster(section, icon, title, recent, favourites):
     return f"""      <article class="panel influence-cluster">
         <h2><span class="mono-icon">{icon}</span> {title}</h2>
         <div class="mini-cols">
-{render_column("Nuevo", render_items(recent, section))}
+{render_column("Nuevos", render_items(recent, section))}
 {render_column("Favoritos", render_items(favourites, section))}
         </div>
       </article>"""
@@ -327,7 +327,7 @@ def render_cluster(section, icon, title, recent, favourites):
 
 def render_quotes_cluster():
     return f"""      <article class="panel influence-cluster">
-        <h2><span class="mono-icon">❝</span> Quotes</h2>
+        <h2><span class="mono-icon">❝</span> Citas</h2>
         <div class="quotes-stack">
 {render_quotes()}
         </div>
@@ -341,9 +341,9 @@ def render_block(limit):
 
     return """    <section class="influence-grid">
 """ + "\n\n".join([
-        render_cluster("books", "🕮", "Books", books, FAVOURITE_BOOKS),
-        render_cluster("movies", "🎞︎", "Movies", movies, FAVOURITE_MOVIES),
-        render_cluster("music", "♪", "Music", music, FAVOURITE_MUSIC),
+        render_cluster("books", "🕮", "Libros", books, FAVOURITE_BOOKS),
+        render_cluster("movies", "🎞︎", "Películas", movies, FAVOURITE_MOVIES),
+        render_cluster("music", "♪", "Musica", music, FAVOURITE_MUSIC),
         render_quotes_cluster(),
     ]) + """
     </section>"""
