@@ -1,9 +1,7 @@
+get_substack_posts --> fill_embeddings
+get_substack_posts --> get_doc_images
+fill_embeddings --> generate_docs
+get_doc_images --> generate_docs
+generate_docs --> fill_index
 
-- `populate_csv.py` - Only for one-time migration
-
-1. scrap_stuff
-2. generate_images
-3. `generate_docs.py`
-4. `fill_embeddings.py`
-5. `fill_index.py`
-6. fill_influences
+fill_influences

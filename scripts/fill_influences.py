@@ -8,9 +8,10 @@ from dataclasses import dataclass
 import requests
 import feedparser
 from dotenv import load_dotenv
+from utils import ROOT_PATH, configure_logging
 
 
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+configure_logging()
 
 START = "<!-- PLACEHOLDER_START -->"
 END = "<!-- PLACEHOLDER_END -->"
@@ -363,7 +364,7 @@ def replace_placeholder(source, block):
 if __name__ == "__main__":
     load_dotenv()
 
-    html_path = Path(os.getenv("INFLUENCES_HTML", "Sections/influences.html"))
+    html_path = ROOT_PATH / "sections" / "influences.html"
     limit = int(os.getenv("INFLUENCES_LIMIT", "5"))
 
     source = html_path.read_text(encoding="utf-8")
