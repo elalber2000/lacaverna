@@ -1,4 +1,12 @@
-import os
+from pathlib import Path
+import logging
 
+ROOT_PATH = Path(__file__).resolve().parents[1]
+print(ROOT_PATH)
 
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+def configure_logging():
+    logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)

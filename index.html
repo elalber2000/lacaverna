@@ -1,132 +1,246 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="es">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>La Caverna de Sánchez</title>
-  <meta name="La Caverna de Sánchez" content="Museo virtual de Alberto Sánchez en homenaje a la conflagración del arte"
-    http-equiv="Content-Type" content="text/html" charset="UTF-8">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="styles_resp.css">
-  <link rel="icon" type="image/png" href="Images/favicon.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="Images/favicon.png" sizes="16x16" />
+  <meta name="description" content="Archivo creativo, técnico e intelectual de Sánchez." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
-    <a class="navbar-brand" href="index.html">
-      <img class="img-fluid custom-icon-logo" src="Images/logo_light.png" alt="" width="48px" height="48px">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <img src="https://super.so/icon/light/menu.svg" class="custom-icon-menu"></span>
-    </button>
-    <div class="collapse navbar-collapse py-4" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item px-4">
-          <a class="nav-link custom-navitem" href="Sections/archive.html">Archivo</a>
-        </li>
-        <li class="nav-item px-4">
-          <a class="nav-link custom-navitem" href="Sections/desk.html">Escritorio</a>
-        </li>
-        <li class="nav-item px-4">
-          <a class="nav-link custom-navitem" href="Sections/log.html">Bitácora</a>
-        </li>
-        <li class="nav-item px-4">
-          <a class="nav-link custom-navitem" href="Sections/linktree.html">✱</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="brand bracket-link" href="../index.html" aria-label="Inicio">
+        <img src="../assets/logo.png" alt="La Caverna" class="brand-logo" />
+      </a>
 
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Abrir menú" />
+      <label class="nav-button bracket-link" for="nav-toggle">menu</label>
 
-  <!-- Hero -->
-  <div class="container col-xxl-8 as-hero-cont hero-custom">
-    <div class="row flex-lg-row-reverse align-items-center justify-content-around gx-0">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src="Images/statue.png" class="d-block mx-lg-auto img-fluid img-custom" alt="burning statue"
-          loading="lazy">
+      <div class="nav-links">
+        <a class="bracket-link" href="sections/archive.html" aria-current="page">Archivo</a>
+        <a class="bracket-link" href="sections/influences.html">Influencias</a>
+        <a class="bracket-link" href="sections/about.html">About</a>
+        <a class="bracket-link" href="sections/linktree.html">*</a>
       </div>
-      <div class="col-lg-6 py-5">
-        <div class="lc-block mb-3 py-1">
-          <div editable="rich">
-            <h2 class="display-5 custom-title">La Caverna de <span class="custom-extra-bold">Sánchez</span></h2>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+
+      <h1 class="ascii-title">
+        <span>La Caverna de</span>
+        <pre aria-label="Sánchez" class="pixelart">█▀ ▄▀█ █▄ █ █▀▀ █ █ █▀▀ ▀█
+▄█ █▀█ █ ▀█ █▄▄ █▀█ ██▄ █▄</pre>
+      </h1>
+
+      <p class="intro">
+        Bienvenido a la Caverna. Este es mi archivo de mis proyectos creativos,
+        técnicos e intelectuales:
+        <a class="bracket-link" href="sections/archive.html#tecnologia">tecnología</a>,
+        <a class="bracket-link" href="sections/archive.html#literatura">literatura</a>,
+        <a class="bracket-link" href="sections/archive.html#artes-visuales">artes visuales</a>,
+        <a class="bracket-link" href="sections/archive.html#video">vídeo</a>,
+        <a class="bracket-link" href="sections/archive.html#matematicas">matemáticas</a>,
+        <a class="bracket-link" href="sections/archive.html#filosofia">filosofía</a>...
+      </p>
+    </section>
+
+    <!-- PLACEHOLDER_START -->
+    <section class="two-col" aria-label="Destacados">
+      <article class="panel">
+        <div class="panel-head">
+          <h2>NUEVO</h2>
+        </div>
+
+        <div class="list-stack">
+          <div class="article-item">
+            <a class="article-line" href="https://www.instagram.com/sanchezhacecosas/p/DXFET28DECA/">
+              <span>Mermelada del Pueblo</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#cocina">cocina</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://parrotsbasilisks.substack.com/p/stopslop-detecting-slop-with-a-5kb">
+              <span>StopSlop: Detecting Slop with a 5KB Model</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#substack">substack</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#tecnologia">tecnologia</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#ia">ia</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://parrotsbasilisks.substack.com/p/context-management-is-memory-management">
+              <span>Context Management is Memory Management</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#substack">substack</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#tecnologia">tecnologia</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#ia">ia</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://parrotsbasilisks.substack.com/p/searching-for-high-prose-in-qwen25">
+              <span>Searching for High Prose in Qwen2.5-3B&#x27;s Latent Space</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#substack">substack</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#tecnologia">tecnologia</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#ia">ia</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://parrotsbasilisks.substack.com/p/a-small-sota-on-automatic-prompt">
+              <span>A Small SOTA on Automatic Prompt Optimization</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#substack">substack</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#tecnologia">tecnologia</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#ia">ia</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://sancheznoseke.substack.com/p/5-ciudades-subterraneas">
+              <span>5 Ciudades Subterráneas</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#narrativa">narrativa</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#artículo">artículo</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#substack">substack</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://sancheznoseke.substack.com/p/la-iglesia-de-villanueva">
+              <span>La Iglesia de Villanueva</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#narrativa">narrativa</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#artículo">artículo</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#substack">substack</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://sancheznoseke.substack.com/p/nueva-casa-18-libros">
+              <span>Nueva Casa, 18 Libros</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#narrativa">narrativa</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#artículo">artículo</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#substack">substack</a></li>
+            </ul>
           </div>
         </div>
-        <div class="lc-block mb-3 py-1">
-          <div editable="rich">
-            <p class="lead custom-desc">Archivo virtual de todas las cosas que he ido haciendo estos años.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <h2>POPULAR</h2>
+        </div>
+
+        <div class="list-stack">
+          <div class="article-item">
+            <a class="article-line" href="documents/ojos_verdes.html">
+              <span>Ojos Verdes</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#memoria">memoria</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#distopía">distopía</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#ciencia ficción">ciencia ficción</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#filosofía">filosofía</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#narrativa">narrativa</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#ia">ia</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#tecnología">tecnología</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#literatura">literatura</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://www.youtube.com/watch?v=kRFABA0dxn4">
+              <span>Tres Sombreros de Copa</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#teatro">teatro</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#vídeo">vídeo</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://arxiv.org/abs/2503.11664">
+              <span>An LLM-Based Approach for Insight Generation in Data Analysis</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#ia">ia</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#tecnología">tecnología</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="documents/diccionario.html">
+              <span>Diccionario Cibernácular</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#literatura">literatura</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://www.webtoons.com/en/challenge/los-fanzines-de-sánchez/enoc/viewer?title_no=821593&amp;episode_no=1&amp;webtoonType=CHALLENGE">
+              <span>Enoc</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#poesía">poesía</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#photoedit">photoedit</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#galería">galería</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#literatura">literatura</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://www.webtoons.com/en/challenge/los-fanzines-de-sánchez/memorias-de-perekrestok/viewer?title_no=821593&amp;episode_no=2&amp;webtoonType=CHALLENGE">
+              <span>Memorias de Perekrestok</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#zine">zine</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#galería">galería</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#ia">ia</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#memoria">memoria</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#tecnología">tecnología</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="documents/almizcle.html">
+              <span>Almizcle y Tabaco</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#memoria">memoria</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#realismo mágico">realismo mágico</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#narrativa">narrativa</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#literatura">literatura</a></li>
+            </ul>
+          </div>
+          <div class="article-item">
+            <a class="article-line" href="https://elalber2000.itch.io/descent-to-the-dark-net">
+              <span>Descent to the Dark Net</span>
+            </a>
+            <ul class="tag-list" aria-label="Tags">
+              <li><a class="bracket-link" href="sections/archive.html#rpg">rpg</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#photoedit">photoedit</a></li>
+              <li><a class="bracket-link" href="sections/archive.html#galería">galería</a></li>
+            </ul>
           </div>
         </div>
-        <div class="lc-block d-grid gap-2 d-md-flex justify-content-md-start">
-          <a class="btn btn-custom px-4 me-md-2" href="Sections/archive.html" role="button">Leer algo</a>
-        </div>
+      </article>
+    </section>
+    <!-- PLACEHOLDER_END -->
+  </main>
 
-      </div>
-    </div>
-  </div>
-
-  <div class="py-5"></div>
-  <div class="py-2"></div>
-
-  <!-- Adjective Banner -->
-  <section class="adjectives text-center">
-    <p class="custom-desc">
-      <a href="Sections/archive.html#tecnología" class="adj-link">Programador</a> ·
-      <a href="Sections/archive.html#literatura" class="adj-link">Escritor</a> ·
-      <a href="Sections/archive.html#galería" class="adj-link">Artista</a> ·
-      <a href="Sections/archive.html#filosofía" class="adj-link">Curioso</a>
-    </p>
-  </section>
-
-  <div class="py-5"></div>
-  <div class="py-2"></div>
-
-  <!-- Timeline -->
-  <section class="timeline-section container py-5">
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h4>2000</h4>
-          <h4>Nazco.</h4>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h4>2018</h4>
-          <h4>Empiezo Informática y Matemáticas en la UPM. Entro en Histrión.</h4>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h4>2022</h4>
-          <h4>Acabo la carrera. Me voy a vivir a Niza. Empiezo el máster de Ciencia de Datos.</h4>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h4>2025</h4>
-          <h4>Publico un paper.</h4>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  <footer class="footer">
+    <span>La Caverna</span>
+    <span>Sánchez</span>
+  </footer>
 </body>
-
 </html>

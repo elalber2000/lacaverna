@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>El McDonalds, XXV, 13 — La Caverna</title>
+  <meta name="description" content="Poema combinado de Mateo XIII y El Primer McDonalds de Zaragoza." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="brand bracket-link" href="../index.html" aria-label="Inicio">
+        <img src="../assets/logo.png" alt="La Caverna" class="brand-logo" />
+      </a>
+
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Abrir menú" />
+      <label class="nav-button bracket-link" for="nav-toggle">menu</label>
+
+      <div class="nav-links">
+        <a class="bracket-link" href="../sections/archive.html">Archivo</a>
+        <a class="bracket-link" href="../sections/influences.html">Influencias</a>
+        <a class="bracket-link" href="../sections/about.html">About</a>
+        <a class="bracket-link" href="../sections/linktree.html">*</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page article-page">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema">
+      🌓︎
+    </button>
+
+    <article class="article">
+      <header class="article-header">
+        <h1>El McDonalds, XXV, 13</h1>
+        
+        <div class="article-tags" aria-label="Tags">
+<a class="bracket-link" href="../sections/archive.html#experimental">experimental</a><a class="bracket-link" href="../sections/archive.html#poesía">poesía</a><a class="bracket-link" href="../sections/archive.html#literatura">literatura</a><a class="bracket-link" href="../sections/archive.html#cocina">cocina</a>
+</div>
+        <!--
+        <div class="article-tags" aria-label="Tags">
+          <a class="bracket-link" href="archive.html#literatura">literatura</a>
+          <a class="bracket-link" href="archive.html#articulo">artículo</a>
+          <a class="bracket-link" href="archive.html#distopia">distopía</a>
+          <a class="bracket-link" href="archive.html#substack">substack</a>
+        </div>
+        -->
+      </header>
+
+      <figure class="article-figure">
+        <img
+          src="../assets/archive/mcdonalds.png"
+        />
+        <figcaption>
+          &#x27;Tumba de Ermengol VII, conde de Urgell&#x27; [472387], artista desconocido&#x27;
+        </figcaption>
+      </figure>
+
+      <section class="article-body">
+        <p><em>█▀▀</br>█▄▄ombinación del poema "McDonalds" de Manuel Vilas y "Mateo, XXV, 13", de Borges</em></p>
+<p>El primer McDonalds de Zaragoza y, frente a mí<br />
+Fragor de máquinas tejían laberintos de arterias embotadas<br />
+Humo con olor a barbacoa escapa de Auswitz<br />
+Y, desde el centro de esa máquina kafkiana, una voz sintética dijo:<br />
+—Pan, carne, pepinillos, lechuga, cebolla, cheddar y salsa secreta.<br />
+Todo eso te damos, y también el moderno alimento de las masas:<br />
+Coca cola, patatas fritas y un <em>mcflurry</em>.<br />
+En vano te damos comida instantánea<br />
+En vano conida barata que publicitan actores y suoermodelos<br />
+Has gastado los años y te han gastado<br />
+Ahora come tu puta hamburguesa</p>
+
+        </br>
+<div class="fleuron" aria-hidden="true">- · ─ * ─ · -</div>
+<section class="related-docs" aria-label="Related articles">
+<pre>
+SEGUIR LEYENDO
+────────────────
+※ <a class="hover-hi" href="../documents/tragedia.html">La Tragedia Poética</a>           <a class="bracket-link" href="../sections/archive.html#opinión">opinión</a> <a class="bracket-link" href="../sections/archive.html#artículo">artículo</a> <a class="bracket-link" href="../sections/archive.html#poesía">poesía</a> <a class="bracket-link" href="../sections/archive.html#literatura">literatura</a>
+※ <a class="hover-hi" href="../documents/aullido.html">Aullido</a>                       <a class="bracket-link" href="../sections/archive.html#memoria">memoria</a> <a class="bracket-link" href="../sections/archive.html#traducción">traducción</a> <a class="bracket-link" href="../sections/archive.html#filosofía">filosofía</a> <a class="bracket-link" href="../sections/archive.html#poesía">poesía</a> <a class="bracket-link" href="../sections/archive.html#literatura">literatura</a>
+※ <a class="hover-hi" href="../documents/pmayuscula.html">Poesía con P Mayúscula</a>        <a class="bracket-link" href="../sections/archive.html#poesía">poesía</a> <a class="bracket-link" href="../sections/archive.html#literatura">literatura</a></pre>
+</section>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span>@sanchez</span>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const button = document.querySelector("#theme-toggle");
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      root.dataset.theme = savedTheme;
+    }
+
+    button.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+
+      root.dataset.theme = nextTheme;
+      localStorage.setItem("theme", nextTheme);
+    });
+  </script>
+</body>
+</html>

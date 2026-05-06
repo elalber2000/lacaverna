@@ -1,105 +1,178 @@
+import csv
+import json
 import logging
+from pathlib import Path
+from urllib.parse import urlparse
+
 import feedparser
 from bs4 import BeautifulSoup
-import json
-import re
-import unicodedata
-from pathlib import Path
 
-from scripts.utils import ROOT_DIR
+from utils import ROOT_PATH, configure_logging
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
-)
+configure_logging()
 
-STOPWORDS = {
-    'a', 'un','una','unos','unas','el','la','los','las','lo','y','o','u','pero','si',
-    'luego','entonces','sino','de','del','al','en','por','para','con','sin',
-    'sobre','bajo','entre','hacia','hasta','como','que','quien','quienes','cual',
-    'cuales','cuando','donde','adonde','cuanto','cuantos','porqué','porque',
-    'para','contra','segun','según','durante','mediante','tras','más','menos',
-    'muy','poco','mucho','tan','tampoco','ya','aún','aun','sea','fue','son',
-    'sera','será','este','esta','estos','estas','esos','esas','mi','mis','tu',
-    'tus','su','sus','nuestro','nuestra','nuestros','nuestras', 'le'
-}
-STOPWORDS_RE = re.compile(
-    r'\b(?:' + '|'.join(map(re.escape, STOPWORDS)) + r')\b',
-    re.IGNORECASE
-)
+FIELDS = [
+    "id",
+    "title",
+    "description",
+    "link",
+    "img_link",
+    "tags",
+    "img_meta",
+    "date",
+    "embedding",
+]
 
-def get_img_link(text):
-    logging.debug(f"Generating img_link for title: {text!r}")
-    nkfd = unicodedata.normalize('NFD', text)
-    text = ''.join(c for c in nkfd if unicodedata.category(c) != 'Mn')
-    text = STOPWORDS_RE.sub('', text)
-    text = re.sub(r'[^\w ]+', '', text)
-    text = re.sub(r'\s+', '_', text.strip())
-    text = re.sub(r'[^\w ]+', '', text)
-    text = re.sub(r'\s+', '_', text.strip())
-    return f"../Images/Library/{text.lower()}.png"
+SUBSTACKS = [
+    "sancheznoseke",
+    "parrotsbasilisks",
+]
 
-def fetch_substack_entries(profile):
-    feed_url = f"https://{profile}.substack.com/feed"
-    logging.info(f"Fetching feed: {feed_url}")
+POSTS_PATH = Path(ROOT_PATH) / "data" / "posts.csv"
+
+
+def substack_feed_url(source: str) -> str:
+    source = source.strip()
+
+    if source.startswith("http://") or source.startswith("https://"):
+        parsed = urlparse(source)
+        host = parsed.netloc.rstrip("/")
+        return f"https://{host}/feed"
+
+    return f"https://{source}.substack.com/feed"
+
+
+def clean_description(entry, max_chars=-1):
+    raw_summary = entry.get("summary", "") or entry.get("description", "")
+    text = BeautifulSoup(raw_summary, "html.parser").get_text(" ", strip=True)
+
+    if not text:
+        return ""
+
+    first_sentence = text.split(".")[0].strip()
+    return first_sentence[:max_chars] if max_chars!=-1 else first_sentence
+
+
+def fetch_substack_entries(source):
+    feed_url = substack_feed_url(source)
+    logging.info("Fetching feed: %s", feed_url)
+
     feed = feedparser.parse(feed_url)
     entries = []
 
     for entry in feed.entries:
-        title = entry.title
-        if title == "Coming soon":
-            logging.debug("Skipping 'Coming soon' entry")
+        title = (entry.get("title") or "").strip()
+
+        if not title or title == "Coming soon":
             continue
-        link = entry.link
-        description = BeautifulSoup(entry.summary, "html.parser") \
-                        .get_text().strip().split(".")[0][:60]
-        img_link = get_img_link(title)
-        tags = ["narrativa", "artículo", "substack"]
-        img_meta = ""
 
-        entries.append({
-            "title":        title,
-            "description":  description,
-            "link":         link,
-            "img_link":     img_link,
-            "tags":         tags,
-            "img_meta":     img_meta
-        })
+        link = (entry.get("link") or "").strip()
 
-    logging.info(f"Fetched {len(entries)} new entries")
+        if not link:
+            continue
+
+        if source == "parrotsbasilisks":
+            tags = ["substack", "tecnologia", "ia"]
+        else:
+            tags = ["narrativa", "artículo", "substack"]
+
+        entries.append(
+            {
+                "id": "",
+                "title": title,
+                "description": clean_description(entry),
+                "link": link,
+                "img_link": "",
+                "tags": json.dumps(tags, ensure_ascii=False),
+                "img_meta": "",
+                "date": "",
+                "embedding": "",
+            }
+        )
+
+    logging.info("Fetched %d entries from %s", len(entries), feed_url)
     return entries
 
-def merge_catalog(existing, new_entries, key):
-    logging.info(f"Merging catalogs on key: {key}")
-    seen = {item[key] for item in existing}
+
+def load_existing_posts(path):
+    if not path.exists() or path.stat().st_size == 0:
+        logging.info("No existing posts CSV found; starting fresh")
+        return []
+
+    logging.info("Loading existing posts from %s", path)
+
+    with open(path, "r", encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        rows = []
+
+        for row in reader:
+            normalized = {field: row.get(field, "") for field in FIELDS}
+            rows.append(normalized)
+
+        return rows
+
+
+def next_id(existing):
+    ids = []
+
+    for item in existing:
+        value = str(item.get("id", "")).strip()
+
+        if value.isdigit():
+            ids.append(int(value))
+
+    return max(ids, default=0) + 1
+
+
+def merge_catalog(existing, new_entries):
+    seen_links = {item["link"] for item in existing if item.get("link")}
+    seen_titles = {item["title"] for item in existing if item.get("title")}
+
     new_items = []
+    current_id = next_id(existing)
+
     for item in new_entries:
-        if item[key] not in seen:
-            new_items.append(item)
-            seen.add(item[key])
-    existing[:] = new_items + existing
-    logging.info(f"Added {len(new_items)} new items (skipped {len(new_entries) - len(new_items)} duplicates)")
-    return existing
+        if item["link"] in seen_links or item["title"] in seen_titles:
+            continue
+
+        item["id"] = str(current_id)
+        current_id += 1
+
+        new_items.append(item)
+        seen_links.add(item["link"])
+        seen_titles.add(item["title"])
+
+    logging.info(
+        "Added %d new items; skipped %d duplicates",
+        len(new_items),
+        len(new_entries) - len(new_items),
+    )
+
+    return new_items + existing
+
+
+def save_posts(path, posts):
+    logging.info("Saving %d total entries to %s", len(posts), path)
+
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=FIELDS)
+        writer.writeheader()
+        writer.writerows(posts)
+
 
 def get_substack_posts():
-    posts_path = Path(ROOT_DIR) / "posts.json"
-    logging.info(f"Loading existing posts from {posts_path}")
-    if posts_path.exists() and posts_path.stat().st_size > 0:
-        with open(posts_path, "r", encoding="utf-8") as f:
-            old_posts = json.load(f)
-    else:
-        old_posts = []
-        logging.info("No existing posts file or file empty; starting fresh")
+    old_posts = load_existing_posts(POSTS_PATH)
 
-    new_posts = fetch_substack_entries("sancheznoseke")
-    all_posts = merge_catalog(old_posts, new_posts, "title")
+    new_posts = []
 
-    logging.info(f"Saving {len(all_posts)} total entries to {posts_path}")
-    with open(posts_path, "w", encoding="utf-8") as f:
-        json.dump(all_posts, f, indent=2, ensure_ascii=False)
+    for source in SUBSTACKS:
+        new_posts.extend(fetch_substack_entries(source))
+
+    all_posts = merge_catalog(old_posts, new_posts)
+    save_posts(POSTS_PATH, all_posts)
+
     logging.info("Done")
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     get_substack_posts()

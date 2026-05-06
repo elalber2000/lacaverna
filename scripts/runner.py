@@ -1,17 +1,22 @@
-from scripts.generate_desk_html import generate_desk_html
-from scripts.generate_doc_html import generate_doc_html
-from scripts.generate_doc_imgs import generate_doc_imgs
-from scripts.get_substack_posts import get_substack_posts
+from get_substack_posts import get_substack_posts
+from fill_embeddings import fill_embeddings
+from get_doc_images import get_doc_images
+from generate_docs import generate_docs
+from fill_index import fill_index
+from fill_influences import fill_influences
+from utils import configure_logging
 
+import logging
 
-if __name__=="__main__":
-    for f in [
-        get_substack_posts,
-        generate_doc_html,
-        generate_desk_html,
-        generate_doc_imgs,
-    ]:
-        try:
-            f()
-        except Exception as e:
-            print(f"Error while executing {f.__name__}: {e}")
+configure_logging()
+
+for f in [
+    get_substack_posts,
+    fill_embeddings,
+    get_doc_images,
+    generate_docs,
+    fill_index,
+    fill_influences,
+]:
+    logging.info(f"Running {f.__name__}")
+    f()

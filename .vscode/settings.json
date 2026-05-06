@@ -1,4 +1,5 @@
 {
     "editor.fontFamily": "'Monaspace Argon Frozen', 'Monaspace Xenon Frozen', monospace",
-    "editor.fontLigatures": "'calt'"
+    "editor.fontLigatures": "'calt'",
+    "liveServer.settings.port": 5503
 }
