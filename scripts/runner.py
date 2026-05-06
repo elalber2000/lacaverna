@@ -4,10 +4,19 @@ from get_doc_images import get_doc_images
 from generate_docs import generate_docs
 from fill_index import fill_index
 from fill_influences import fill_influences
+from utils import configure_logging
 
-get_substack_posts()
-fill_embeddings()
-get_doc_images()
-generate_docs()
-fill_index()
-fill_influences()
+import logging
+
+configure_logging()
+
+for f in [
+    get_substack_posts,
+    fill_embeddings,
+    get_doc_images,
+    generate_docs,
+    fill_index,
+    fill_influences,
+]:
+    logging.info(f"Running {f.__name__}")
+    f()

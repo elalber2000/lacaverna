@@ -50,6 +50,7 @@ const CATEGORY_TREE = [
   },
   "matemáticas",
   "filosofía",
+  "cocina",
 ];
 
 function slugify(value) {
