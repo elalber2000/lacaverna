@@ -189,7 +189,7 @@ def replace_between_markers(html: str, replacement: str) -> str:
     return html[:legacy_start] + wrap_placeholder_content(replacement) + html[legacy_end:]
 
 
-def fill_homepage_placeholders() -> None:
+def fill_index() -> None:
     posts_df = load_posts()
 
     newest_df = get_newest_posts(posts_df, count=8)
@@ -208,4 +208,4 @@ def fill_homepage_placeholders() -> None:
 
 
 if __name__ == "__main__":
-    fill_homepage_placeholders()
+    fill_index()

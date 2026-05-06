@@ -483,7 +483,7 @@ def fill_template(
     return html
 
 
-def generate_doc_html() -> None:
+def generate_docs() -> None:
     HTML_PATH.mkdir(parents=True, exist_ok=True)
 
     for html_path in HTML_PATH.glob("*.html"):
@@ -518,4 +518,4 @@ def generate_doc_html() -> None:
 
 
 if __name__ == "__main__":
-    generate_doc_html()
+    generate_docs()

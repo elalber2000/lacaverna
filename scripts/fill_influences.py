@@ -361,7 +361,7 @@ def replace_placeholder(source, block):
     return pattern.sub(f"{START}\n\n{block}\n    {END}", source, count=1)
 
 
-if __name__ == "__main__":
+def fill_influences():
     load_dotenv()
 
     html_path = ROOT_PATH / "sections" / "influences.html"
@@ -372,3 +372,7 @@ if __name__ == "__main__":
 
     html_path.write_text(output, encoding="utf-8")
     logging.info("Updated %s", html_path)
+    
+
+if __name__ == "__main__":
+    fill_influences()

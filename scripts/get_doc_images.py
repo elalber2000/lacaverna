@@ -269,7 +269,7 @@ def format_img_meta(meta):
     return f"'{title}' [{object_id}]"
 
 
-def generate_doc_imgs():
+def get_doc_images():
     posts = load_posts(POSTS_PATH)
 
     if not posts:
@@ -330,4 +330,4 @@ def generate_doc_imgs():
 
 
 if __name__ == "__main__":
-    generate_doc_imgs()
+    get_doc_images()

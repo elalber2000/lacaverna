@@ -92,7 +92,7 @@ def unpack_embedding(value: str) -> np.ndarray:
     return np.frombuffer(base64.b64decode(value), dtype=np.float32)
 
 
-def main():
+def fill_embeddings():
     configure_logging()
 
     df = pd.read_csv(CSV_PATH)
@@ -133,4 +133,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    fill_embeddings()
