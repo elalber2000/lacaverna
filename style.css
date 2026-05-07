@@ -225,7 +225,7 @@ ul li::before {
 
 .ascii-title span,
 .ascii-title pre {
-  font-size: calc(var(--x) * 4);
+  font-size: calc(var(--x) * 3);
   line-height: 0.98;
   font-weight: 600;
 }
