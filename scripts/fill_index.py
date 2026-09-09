@@ -1,4 +1,3 @@
-import ast
 import logging
 from pathlib import Path
 from html import escape
@@ -32,30 +31,6 @@ def load_posts() -> pd.DataFrame:
     )
 
 
-def parse_tags(tags: object) -> list[str]:
-    if tags is None:
-        return []
-
-    if not isinstance(tags, str) and pd.isna(tags):
-        return []
-
-    raw = str(tags).strip()
-    if not raw:
-        return []
-
-    try:
-        parsed = ast.literal_eval(raw)
-    except Exception:
-        logging.warning("Could not parse tags: %s", tags)
-        return []
-
-    if not isinstance(parsed, list):
-        logging.warning("Tags are not a list: %s", tags)
-        return []
-
-    return [str(tag).strip() for tag in parsed if str(tag).strip()]
-
-
 def normalize_link(link: str) -> str:
     link = str(link).strip()
 
@@ -65,32 +40,14 @@ def normalize_link(link: str) -> str:
     return link
 
 
-def render_tag_list(tags: object) -> str:
-    parsed_tags = parse_tags(tags)
-
-    if not parsed_tags:
-        return ""
-
-    items = "\n".join(
-        f'              <li><a class="bracket-link" href="sections/archive.html#{escape(tag, quote=True)}">{escape(tag)}</a></li>'
-        for tag in parsed_tags
-    )
-
-    return f"""            <ul class="tag-list" aria-label="Tags">
-{items}
-            </ul>"""
-
-
 def render_article_link(row: pd.Series) -> str:
     title = escape(str(row["title"]).strip())
     link = escape(normalize_link(str(row["link"])), quote=True)
-    tag_list = render_tag_list(row.get("tags", ""))
 
     return f"""          <div class="article-item">
             <a class="article-line" href="{link}">
               <span>{title}</span>
             </a>
-{tag_list}
           </div>"""
 
 
