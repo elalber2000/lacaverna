@@ -266,36 +266,25 @@ def render_rating(item, section):
     if not rating:
         return ""
 
-    return f'<span class="influence-rating" aria-label="{escape(str(item.score))} stars">{escape(rating)}</span>'
+    return f'<span class="collection-rating" aria-label="{escape(str(item.score))} stars">{escape(rating)}</span>'
 
 
-def render_item_inner(item, section):
-    by = f' <span class="influence-by">({escape(item.by)})</span>' if item.by else ""
-    rating = render_rating(item, section)
-
-    return f"""<span class="influence-item-main">
-              <span class="influence-title">{escape(item.title)}</span>{by}
-            </span></br>{rating}"""
-
-
-def render_link(item, section):
-    target = "" if item.url == "#" else ' target="_blank" rel="noopener noreferrer"'
-
-    return (
-        f'<a class="article-line influence-item" href="{escape(item.url)}"{target}>'
-        f"{render_item_inner(item, section)}"
-        f"</a>"
-    )
-
-
-def render_items(items, section):
+def render_collection_items(items, section):
     if not items:
-        return '            <span class="article-line">—</span>'
+        return '<li class="collection-empty">Todavía no hay novedades.</li>'
 
-    return "\n".join(
-        f"            {render_link(item, section)}"
-        for item in items
-    )
+    rows = []
+    for item in items:
+        target = ' target="_blank" rel="noopener noreferrer"' if item.url != "#" else ""
+        byline = f'<span class="collection-byline">{escape(item.by)}</span>' if item.by else ""
+        rating = render_rating(item, section)
+        rows.append(
+            f'<li class="collection-entry">'
+            f'<a class="collection-link" href="{escape(item.url)}"{target}>'
+            f'<span class="collection-title">{escape(item.title)}</span>{byline}</a>'
+            f'{rating}<span class="collection-arrow" aria-hidden="true">↗</span></li>'
+        )
+    return "\n".join(rows)
 
 
 def render_quotes():
@@ -308,25 +297,19 @@ def render_quotes():
     return "\n".join(items)
 
 
-def render_column(title, body):
-    return f"""          <div>
-            <h3>{title}</h3>
-{body}
-          </div>"""
-
-
 def render_cluster(section, icon, title, recent, favourites):
-    return f"""      <article class="panel influence-cluster">
-        <h2><span class="mono-icon">{icon}</span> {title}</h2>
-        <div class="mini-cols">
-{render_column("Nuevos", render_items(recent, section))}
-{render_column("Favoritos", render_items(favourites, section))}
-        </div>
-      </article>"""
+    groups = (("Nuevos", recent), ("Favoritos", favourites))
+    columns = []
+    for label, items in groups:
+        columns.append(f"""<section class="collection-group">
+  <header class="collection-group-heading"><h2>{label}</h2></header>
+  <ol class="collection-list">{render_collection_items(items, section)}</ol>
+</section>""")
+    return "\n".join(columns)
 
 
 def render_quotes_cluster():
-    return f"""      <article class="panel influence-cluster">
+    return f"""      <article class="panel influence-cluster" id="quotes">
         <h2><span class="mono-icon">❝</span> Citas</h2>
         <div class="quotes-stack">
 {render_quotes()}
@@ -339,14 +322,12 @@ def render_block(limit):
     movies = safe_fetch("movies", lambda: recent_movies(limit))
     music = safe_fetch("music", lambda: recent_music(limit))
 
-    return """    <section class="influence-grid">
-""" + "\n\n".join([
-        render_cluster("books", "🕮", "Libros", books, FAVOURITE_BOOKS),
-        render_cluster("movies", "🎞︎", "Películas", movies, FAVOURITE_MOVIES),
-        render_cluster("music", "♪", "Musica", music, FAVOURITE_MUSIC),
-        render_quotes_cluster(),
-    ]) + """
-    </section>"""
+    return {
+        "books": render_cluster("books", "", "Libros", books, FAVOURITE_BOOKS),
+        "movies": render_cluster("movies", "", "Películas", movies, FAVOURITE_MOVIES),
+        "music": render_cluster("music", "", "Música", music, FAVOURITE_MUSIC),
+        "quotes": render_quotes_cluster(),
+    }
 
 
 def replace_placeholder(source, block):
@@ -361,18 +342,24 @@ def replace_placeholder(source, block):
     return pattern.sub(f"{START}\n\n{block}\n    {END}", source, count=1)
 
 
-def fill_influences():
+def fill_sections():
     load_dotenv()
 
-    html_path = ROOT_PATH / "sections" / "influences.html"
-    limit = int(os.getenv("INFLUENCES_LIMIT", "5"))
-
-    source = html_path.read_text(encoding="utf-8")
-    output = replace_placeholder(source, render_block(limit))
-
-    html_path.write_text(output, encoding="utf-8")
-    logging.info("Updated %s", html_path)
+    limit = int(os.getenv("SECTION_ITEMS_LIMIT", "5"))
+    block = render_block(limit)
+    pages = {
+        "books": "books.html",
+        "movies": "movies.html",
+        "music": "music.html",
+        "quotes": "quotes.html",
+    }
+    for section, filename in pages.items():
+        html_path = ROOT_PATH / "sections" / filename
+        source = html_path.read_text(encoding="utf-8")
+        output = replace_placeholder(source, block[section])
+        html_path.write_text(output, encoding="utf-8")
+        logging.info("Updated %s section", section)
     
 
 if __name__ == "__main__":
-    fill_influences()
+    fill_sections()

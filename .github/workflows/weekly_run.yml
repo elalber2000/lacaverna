@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen
 
-      - name: Run script
+      - name: Run site scripts (including Código)
         run: uv run python scripts/runner.py
 
       - name: Commit and push changes

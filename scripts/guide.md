@@ -4,4 +4,5 @@ fill_embeddings --> generate_docs
 get_doc_images --> generate_docs
 generate_docs --> fill_index
 
-fill_influences
+fill_sections (books, movies, music, quotes)
+fill_code (Código, called by runner.py and the weekly GitHub Action)

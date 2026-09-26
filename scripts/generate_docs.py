@@ -68,7 +68,7 @@ def render_tags(tags: object) -> str:
         return ""
 
     links = [
-        f'<a class="bracket-link" href="../sections/archive.html#{escape(tag, quote=True)}">{escape(tag)}</a>'
+        f'<a class="bracket-link" href="../index.html#{escape(tag, quote=True)}">{escape(tag)}</a>'
         for tag in parsed_tags
     ]
 
@@ -254,7 +254,7 @@ def render_related_posts(related_posts: list[PostMetadata]) -> str:
             title_html = f'<span class="hover-hi">{escape(title)}</span>'
 
         tag_links = " ".join(
-            f'<a class="bracket-link" href="../sections/archive.html#{escape(tag, quote=True)}">'
+            f'<a class="bracket-link" href="../index.html#{escape(tag, quote=True)}">'
             f"{escape(tag)}"
             f"</a>"
             for tag in tags

@@ -15,6 +15,7 @@ INDEX_PATH = ROOT / "index.html"
 
 INDEX_COLUMN = "id"
 POPULAR_IDS = [61, 37, 52, 59, 50, 49, 32, 51]
+BOOK_COLORS = ["#59423d", "#384b50", "#5c5036", "#42465d", "#594454", "#603f36", "#385149", "#66513b"]
 
 PLACEHOLDER_START = "<!-- PLACEHOLDER_START -->"
 PLACEHOLDER_END = "<!-- PLACEHOLDER_END -->"
@@ -40,11 +41,19 @@ def normalize_link(link: str) -> str:
     return link
 
 
+def color_for_title(title: str) -> str:
+    value = 5381
+    for char in str(title):
+        value = ((value * 33) ^ ord(char)) & 0xFFFFFFFF
+    return BOOK_COLORS[value % len(BOOK_COLORS)]
+
+
 def render_article_link(row: pd.Series) -> str:
     title = escape(str(row["title"]).strip())
     link = escape(normalize_link(str(row["link"])), quote=True)
 
-    return f"""          <div class="article-item">
+    color = color_for_title(str(row["title"]).strip())
+    return f"""          <div class="article-item" style="--book-color:{color}">
             <a class="article-line" href="{link}">
               <span>{title}</span>
             </a>
@@ -92,34 +101,19 @@ def get_popular_posts(posts_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def render_featured_section(newest_df: pd.DataFrame, popular_df: pd.DataFrame) -> str:
-    newest_links = render_article_stack(newest_df)
-    popular_links = render_article_stack(popular_df)
+    newest_ids = ",".join(newest_df[INDEX_COLUMN].astype(str))
+    popular_ids = ",".join(popular_df[INDEX_COLUMN].astype(str))
 
-    return f"""    <section class="two-col" aria-label="Destacados">
-      <article class="panel">
-        <div class="panel-head">
-          <h2>NUEVO</h2>
-        </div>
-
-        <div class="list-stack">
-{newest_links}
-        </div>
-      </article>
-
-      <article class="panel">
-        <div class="panel-head">
-          <h2>POPULAR</h2>
-        </div>
-
-        <div class="list-stack">
-{popular_links}
-        </div>
-      </article>
-    </section>"""
+    return f'''          <a class="tree-link bracket-link feature-filter" href="#nuevos" data-filter="new" data-post-ids="{escape(newest_ids, quote=True)}">
+            <span class="tree-symbol" aria-hidden="true">↻</span> Nuevos <span>({len(newest_df)})</span>
+          </a>
+          <a class="tree-link bracket-link feature-filter" href="#favoritos" data-filter="favorites" data-post-ids="{escape(popular_ids, quote=True)}">
+            <span class="tree-symbol" aria-hidden="true">★</span> Favoritos <span>({len(popular_df)})</span>
+          </a>'''
 
 
 def wrap_placeholder_content(content: str) -> str:
-    return f"{PLACEHOLDER_START}\n{content}\n    {PLACEHOLDER_END}"
+    return f"{PLACEHOLDER_START}\n{content}\n          {PLACEHOLDER_END}"
 
 
 def replace_between_markers(html: str, replacement: str) -> str:

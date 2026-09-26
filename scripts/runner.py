@@ -3,7 +3,8 @@ from fill_embeddings import fill_embeddings
 from get_doc_images import get_doc_images
 from generate_docs import generate_docs
 from fill_index import fill_index
-from fill_influences import fill_influences
+from fill_sections import fill_sections
+from fill_code import fill_code
 from utils import configure_logging
 
 import logging
@@ -16,7 +17,8 @@ for f in [
     get_doc_images,
     generate_docs,
     fill_index,
-    fill_influences,
+    fill_sections,
+    fill_code,
 ]:
     logging.info(f"Running {f.__name__}")
     f()

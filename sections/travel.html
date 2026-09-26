@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Viajes — La Caverna</title>
+  <meta name="description" content="Mapa personal de los lugares visitados." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/monaspace-font@0.0.2/argon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="library-page showcase-page section-travel">
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="brand bracket-link" href="../index.html" aria-label="Inicio"><img src="../assets/logo.png" alt="La Caverna" class="brand-logo" /></a>
+      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Abrir menú" />
+      <label class="nav-button bracket-link" for="nav-toggle">menu</label>
+      <div class="nav-links">
+        <a class="bracket-link" href="../index.html#archivo">Archivo</a>
+        <a class="bracket-link" href="about.html">About</a>
+        <a class="bracket-link" href="linktree.html">*</a>
+      </div>
+    </nav>
+  </header>
+  <main class="page">
+    <div class="section-object" data-object-art="travel" aria-hidden="true"></div>
+    <section class="section-head clean-head"><h1>Viajes</h1></section>
+    <section class="travel-map" aria-labelledby="travel-map-title">
+      <div class="travel-map-intro">
+        <h2 id="travel-map-title">Lugares visitados</h2>
+        <p>Un mapa del mundo en dos hemisferios. Los países marcados reúnen los lugares recorridos.</p>
+      </div>
+      <div class="travel-map-art">
+        <object class="travel-map-object" data="../map.svg?v=2" type="image/svg+xml" aria-label="Mapa del mundo en dos círculos; países visitados resaltados en dorado">
+          <span>El mapa no se ha podido cargar.</span>
+        </object>
+        <div class="travel-map-tooltip" role="status" aria-live="polite" hidden></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><span>La Caverna de</span><span>Sánchez</span></footer>
+  <script src="../script.js"></script>
+  <script src="../travel-map.js"></script>
+</body>
+</html>
