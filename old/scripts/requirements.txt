@@ -1,7 +1,0 @@
-feedparser
-bs4
-opencv-python
-requests
-dotenv
-Pillow
-matplotlib
