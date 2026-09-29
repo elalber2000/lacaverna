@@ -1,6 +1,7 @@
-const CSV_PATH = location.pathname.includes("/sections/")
-  ? "../data/posts.csv"
-  : "data/posts.csv";
+const IS_NESTED_PAGE = /\/(sections|documents)\//.test(location.pathname);
+const ROOT_PATH = IS_NESTED_PAGE ? "../" : "";
+const CSV_PATH = `${ROOT_PATH}data/posts.csv`;
+const BOOKS_DIRECTORY = `${ROOT_PATH}assets/books/`;
 
 const CATEGORY_TREE = [
   {
@@ -100,9 +101,6 @@ const CATEGORY_SYMBOLS = {
 
 const BOOK_COLORS = ["#59423d", "#384b50", "#5c5036", "#42465d", "#594454", "#603f36", "#385149", "#66513b"];
 
-const BOOKS_DIRECTORY = location.pathname.includes("/sections/")
-  ? "../assets/books/"
-  : "assets/books/";
 let BOOK_IMAGES = [];
 
 async function discoverBookImages() {
@@ -117,6 +115,7 @@ async function discoverBookImages() {
 }
 
 function bookImage(title) {
+  if (!BOOK_IMAGES.length) return imageFallback(title);
   let hash = 5381;
   for (const char of String(title || "")) hash = (Math.imul(hash, 33) ^ char.charCodeAt(0)) >>> 0;
   return BOOK_IMAGES[hash % BOOK_IMAGES.length];
@@ -141,8 +140,11 @@ function bookDimensions(title, preferredHeight, fontSize = 14.4, reserveSymbolSq
   const words = String(title).split(/\s+/);
   const longestWord = Math.max(...words.map(word => context.measureText(word).width), 0);
   const titleWidth = context.measureText(title).width;
-  const baseReservedHeight = reserveSymbolSquare ? 36 + 53 : 51;
-  const targetSpineLength = Math.max(70, preferredHeight - baseReservedHeight);
+  // Keep title measurement stable whether or not the category symbol is shown.
+  // The symbol is absolutely positioned and must not make the book taller, but
+  // its visual zone still needs to be accounted for when choosing the spine width.
+  const titleMeasurementReserve = 36 + 53;
+  const targetSpineLength = Math.max(70, preferredHeight - titleMeasurementReserve);
   const columns = Math.max(1, Math.ceil(titleWidth / targetSpineLength) + 1);
   const width = Math.max(57, columns * 16 + 16);
   const symbolZone = width > 60 ? 30 : width;
@@ -239,17 +241,6 @@ function parseDate(value) {
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
-function formatDate(value) {
-  const date = parseDate(value);
-  if (!date) return "";
-
-  return new Intl.DateTimeFormat("es", {
-    year: "numeric",
-    month: "short",
-    day: "2-digit"
-  }).format(date);
-}
-
 function sortedPosts(posts) {
   return [...posts].sort((a, b) => {
     const dateA = parseDate(a.date);
@@ -298,29 +289,50 @@ function imageFallback(title) {
 }
 
 function currentCategory() {
-  const value = slugify(decodeURIComponent(location.hash.replace("#", "")));
+  const value = slugify(readHash());
   return ["archivo", "nuevos", "favoritos"].includes(value) ? "" : value;
 }
 
 function currentFeaturedFilter() {
-  const value = slugify(decodeURIComponent(location.hash.replace("#", "")));
+  const value = slugify(readHash());
   if (value === "nuevos") return "new";
   if (value === "favoritos") return "favorites";
   return "";
 }
 
 function homeArchiveHref(hash = "") {
-  const nested = location.pathname.includes("/sections/") || location.pathname.includes("/documents/");
-  const base = nested ? "../index.html" : "";
+  const base = IS_NESTED_PAGE ? "../index.html" : "";
   return `${base}${hash ? `#${hash}` : "#archivo"}`;
+}
+
+function readHash() {
+  try {
+    return decodeURIComponent(location.hash.slice(1));
+  } catch {
+    return location.hash.slice(1);
+  }
+}
+
+function initTheme() {
+  const root = document.documentElement;
+  const button = document.querySelector("#theme-toggle");
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light" || savedTheme === "dark") root.dataset.theme = savedTheme;
+  if (!button) return;
+
+  button.setAttribute("aria-pressed", String(root.dataset.theme === "light"));
+  button.addEventListener("click", () => {
+    const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+    root.dataset.theme = nextTheme;
+    button.setAttribute("aria-pressed", String(nextTheme === "light"));
+    localStorage.setItem("theme", nextTheme);
+  });
 }
 
 function articleCard(post) {
   const tags = parseTags(post.tags);
   const title = post.title || "Sin título";
-  const link = post.link || "#";
-  const description = post.description || "";
-  const date = formatDate(post.date);
 
   const tag = primaryCategory(tags);
   const tagLinks = tag ? (() => {
@@ -408,33 +420,21 @@ function renderCategoryTree(posts) {
   });
 }
 
-const OBJECT_ART = {
-  portrait: ["about.svg", "Retrato"],
-  music: ["music.svg", "Tocadiscos"],
-  travel: ["travel.svg", "Globo terráqueo"],
-  quotes: ["quotes.svg", "Nota y pluma"],
-  reading: ["books.svg", "Libro"],
-  github: ["codigo.svg", "Disquete"],
-  movies: ["movies.svg", "Proyector de cine"]
-};
+const SHELF_OBJECTS = [
+  { type: "portrait", label: "About", section: "about", asset: "about", alt: "Retrato" },
+  { type: "music", label: "Música", section: "music", asset: "music", alt: "Tocadiscos" },
+  { type: "travel", label: "Viajes", section: "travel", asset: "travel", alt: "Globo terráqueo" },
+  { type: "quotes", label: "Citas", section: "quotes", asset: "quotes", alt: "Nota y pluma" },
+  { type: "reading", label: "Libros", section: "books", asset: "books", alt: "Libro" },
+  { type: "github", label: "Código", section: "codigo", asset: "codigo", alt: "Disquete" },
+  { type: "movies", label: "Películas", section: "movies", asset: "movies", alt: "Proyector de cine" },
+];
 
 function objectImage(type) {
-  const art = OBJECT_ART[type];
-  if (!art) return "";
-  const [file, label] = art;
-  const base = location.pathname.includes("/sections/") || location.pathname.includes("/documents/") ? "../" : "";
-  return `<img src="${base}assets/items/${file}" alt="${label}" loading="lazy" />`;
+  const object = SHELF_OBJECTS.find(item => item.type === type);
+  if (!object) return "";
+  return `<img src="${ROOT_PATH}assets/items/${object.asset}.svg" alt="${object.alt}" loading="lazy" />`;
 }
-
-const SHELF_OBJECTS = [
-    ["portrait", "About", "sections/about.html"],
-    ["music", "Música", "sections/music.html"],
-    ["travel", "Viajes", "sections/travel.html"],
-    ["quotes", "Citas", "sections/quotes.html"],
-    ["reading", "Libros", "sections/books.html"],
-    ["github", "Código", "sections/codigo.html"],
-    ["movies", "Películas", "sections/movies.html"]
-  ];
 
 // Target book counts between object insertions. These increments leave 3–4 books
 // between neighboring objects while placing all seven objects in a 30-book shelf.
@@ -446,37 +446,61 @@ function renderSectionArtwork() {
   });
 }
 
-function objectMarkup([type, label, href]) {
-  const base = location.pathname.includes("/sections/") || location.pathname.includes("/documents/") ? "../" : "";
-  const target = href.startsWith("http") ? href : `${base}${href}`;
-  const tooltip = label.toLocaleLowerCase("es");
-  return `<a class="shelf-object object-${type}" href="${target}">
-      <span class="object-tooltip">${tooltip}</span>
-      <span class="object-art">${objectImage(type)}</span>
-  </a>`;
+function initShelfHoverLabels() {
+  const setVisibility = (shelf, visible) => {
+    const label = shelf?.querySelector(":scope > .hover-label");
+    const image = shelf?.querySelector(":scope > .object-art img");
+    if (!label || !image) return;
+
+    if (!visible) {
+      delete label.dataset.visible;
+      return;
+    }
+
+    label.dataset.visible = "true";
+    requestAnimationFrame(() => {
+      const shelfRect = shelf.getBoundingClientRect();
+      const imageRect = image.getBoundingClientRect();
+      label.style.left = `${imageRect.left - shelfRect.left + imageRect.width / 2}px`;
+      label.style.top = `${imageRect.top - shelfRect.top - label.offsetHeight - 8}px`;
+      label.style.transform = "translateX(-50%)";
+    });
+  };
+
+  document.addEventListener("pointerover", event => {
+    const shelf = event.target.closest(".shelf-object");
+    if (!shelf || (event.relatedTarget && shelf.contains(event.relatedTarget))) return;
+    if (!event.target.closest(".object-art img")) return;
+    setVisibility(shelf, true);
+  });
+
+  document.addEventListener("pointerout", event => {
+    const shelf = event.target.closest(".shelf-object");
+    if (!shelf || (event.relatedTarget && shelf.contains(event.relatedTarget))) return;
+    if (!event.target.closest(".object-art img")) return;
+    setVisibility(shelf, false);
+  });
+
+  document.addEventListener("focusin", event => {
+    setVisibility(event.target.closest(".shelf-object"), true);
+  });
+
+  document.addEventListener("focusout", event => {
+    const shelf = event.target.closest(".shelf-object");
+    if (shelf && (!event.relatedTarget || !shelf.contains(event.relatedTarget))) {
+      setVisibility(shelf, false);
+    }
+  });
 }
 
-function rebalanceShelves(grid) {
-  const shelves = [...grid.querySelectorAll(":scope > .archive-shelf")];
-
-  for (let index = 0; index < shelves.length; index++) {
-    const currentBooks = shelves[index].querySelector(".archive-books");
-    if (!currentBooks) continue;
-
-    while (currentBooks.scrollWidth > currentBooks.clientWidth + 1 && currentBooks.children.length > 1) {
-      let nextShelf = shelves[index + 1];
-      if (!nextShelf) {
-        nextShelf = document.createElement("section");
-        nextShelf.className = "archive-shelf";
-        nextShelf.innerHTML = '<div class="archive-books"></div><div class="archive-plank" aria-hidden="true"></div>';
-        grid.append(nextShelf);
-        shelves.push(nextShelf);
-      }
-
-      const nextBooks = nextShelf.querySelector(".archive-books");
-      nextBooks.prepend(currentBooks.lastElementChild);
-    }
-  }
+function objectMarkup({ type, label, section }) {
+  const target = `${ROOT_PATH}sections/${section}.html`;
+  const tooltip = label.toLocaleLowerCase("es");
+  const displayTooltip = tooltip.charAt(0).toLocaleUpperCase("es") + tooltip.slice(1);
+  return `<a class="shelf-object object-${type}" href="${target}">
+      <span class="hover-label">${displayTooltip}</span>
+      <span class="object-art">${objectImage(type)}</span>
+  </a>`;
 }
 
 function insertHomeObjects() {
@@ -499,20 +523,6 @@ function insertHomeObjects() {
   });
 }
 
-function shelfObjectWidth(type) {
-  const narrow = window.matchMedia("(max-width: 520px)").matches;
-  if (narrow) {
-    if (["music", "movies"].includes(type)) return 240;
-    if (["travel", "reading", "quotes"].includes(type)) return 180;
-    return 120;
-  }
-
-  const clamp = (min, ratio, max) => Math.max(min, Math.min(max, window.innerWidth * ratio));
-  if (["music", "movies"].includes(type)) return clamp(170, .19, 262);
-  if (["travel", "reading", "quotes"].includes(type)) return clamp(132, .14, 196);
-  return clamp(88, .10, 138);
-}
-
 function openParentsOfActiveCategory() {
   const active = document.querySelector(".tree-link.active");
   if (!active) return;
@@ -529,10 +539,24 @@ function openParentsOfActiveCategory() {
   }
 }
 
+function shelfObjectWidth(type) {
+  const narrow = window.matchMedia("(max-width: 520px)").matches;
+  if (narrow) {
+    if (type === "movies") return 240;
+    if (["music", "travel", "reading", "quotes"].includes(type)) return 180;
+    return 120;
+  }
+
+  const clamp = (min, ratio, max) => Math.max(min, Math.min(max, window.innerWidth * ratio));
+  if (type === "movies") return clamp(170, .19, 262);
+  if (["music", "travel", "reading", "quotes"].includes(type)) return clamp(132, .14, 196);
+  return clamp(88, .10, 138);
+}
+
 function updateActiveCategory(slug) {
   const featuredFilter = currentFeaturedFilter();
   document.querySelectorAll(".tree-link").forEach(link => {
-    const linkSlug = slugify(link.hash.replace("#", ""));
+    const linkSlug = slugify(link.hash.slice(1));
     const active = link.classList.contains("feature-filter")
       ? link.dataset.filter === featuredFilter
       : link.classList.contains("category-all")
@@ -559,9 +583,10 @@ function renderArchive(posts) {
   const categoryFiltered = category
     ? posts.filter(post => categoryMatches(post, category))
     : posts;
-  let filtered = query
-    ? categoryFiltered.filter(post => [post.title, post.date, post.description, ...parseTags(post.tags)].join(" ").toLowerCase().includes(query))
-    : categoryFiltered;
+  let filtered = query ? categoryFiltered.filter(post => {
+    const searchable = [post.title, post.date, post.description, ...parseTags(post.tags)];
+    return searchable.join(" ").toLocaleLowerCase("es").includes(query);
+  }) : categoryFiltered;
 
   if (featuredFilter) {
     const filterLink = document.querySelector(`.feature-filter[data-filter="${featuredFilter}"]`);
@@ -594,30 +619,31 @@ function renderArchive(posts) {
   const showObjects = filtered.length >= 30;
   const shelfPadding = window.matchMedia("(max-width: 520px)").matches ? 10 : 18;
   const availableWidth = Math.max(1, grid.clientWidth - shelfPadding);
-  const gap = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--archive-book-gap"));
+  const gap = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--archive-book-gap")) || 0;
   const shelves = [];
   let shelfContents = "";
   let shelfWidth = 0;
   let shelfItems = 0;
   let objectIndex = 0;
   let nextObjectThreshold = OBJECT_BOOK_GAPS[0];
+  const commitShelf = () => {
+    if (!shelfContents) return;
+    shelves.push(`<section class="archive-shelf"><div class="archive-books">${shelfContents}</div><div class="archive-plank" aria-hidden="true"></div></section>`);
+    shelfContents = "";
+    shelfWidth = 0;
+    shelfItems = 0;
+  };
 
   filtered.forEach((post, index) => {
     const title = post.title || "Sin título";
     const dimensions = bookDimensions(title, 190 + ((post.__index * 37) % 90));
     const globalBookNumber = index + 1;
     const hasObject = showObjects && objectIndex < SHELF_OBJECTS.length && globalBookNumber >= nextObjectThreshold;
-    const objectWidth = hasObject ? shelfObjectWidth(SHELF_OBJECTS[objectIndex][0]) : 0;
-    const candidateWidth = shelfWidth
-      + (shelfItems ? gap : 0)
-      + dimensions.width
-      + (hasObject ? gap + objectWidth : 0);
+    const objectWidth = hasObject ? shelfObjectWidth(SHELF_OBJECTS[objectIndex].type) : 0;
+    const bookWidth = shelfWidth + (shelfItems ? gap : 0) + dimensions.width;
 
-    if (shelfItems && candidateWidth > availableWidth) {
-      shelves.push(`<section class="archive-shelf"><div class="archive-books">${shelfContents}</div><div class="archive-plank" aria-hidden="true"></div></section>`);
-      shelfContents = "";
-      shelfWidth = 0;
-      shelfItems = 0;
+    if (shelfItems && bookWidth > availableWidth) {
+      commitShelf();
     }
 
     shelfContents += articleCard(post);
@@ -626,19 +652,22 @@ function renderArchive(posts) {
     shelfItems++;
 
     if (hasObject) {
+      const objectFits = shelfWidth + (shelfItems ? gap : 0) + objectWidth <= availableWidth;
+      if (shelfItems && !objectFits) {
+        commitShelf();
+      }
+
       shelfContents += objectMarkup(SHELF_OBJECTS[objectIndex++]);
-      shelfWidth += objectWidth + gap;
+      if (shelfItems) shelfWidth += gap;
+      shelfWidth += objectWidth;
       shelfItems++;
       nextObjectThreshold += OBJECT_BOOK_GAPS[objectIndex % OBJECT_BOOK_GAPS.length];
     }
   });
 
-  if (shelfContents) {
-    shelves.push(`<section class="archive-shelf"><div class="archive-books">${shelfContents}</div><div class="archive-plank" aria-hidden="true"></div></section>`);
-  }
+  commitShelf();
 
   grid.innerHTML = shelves.join("");
-  rebalanceShelves(grid);
 }
 
 async function initArchive() {
@@ -664,7 +693,7 @@ async function initArchive() {
     let selectedBook = null;
     let detailHideTimer;
     const hoverTitle = document.createElement("div");
-    hoverTitle.className = "archive-book-hover-title";
+    hoverTitle.className = "hover-label";
     hoverTitle.hidden = true;
     hoverTitle.setAttribute("role", "tooltip");
     document.body.append(hoverTitle);
@@ -674,6 +703,7 @@ async function initArchive() {
       if (!title) return;
       hoverTitle.textContent = title;
       hoverTitle.hidden = false;
+      hoverTitle.dataset.visible = "true";
       requestAnimationFrame(() => {
         const bookRect = book.getBoundingClientRect();
         const labelRect = hoverTitle.getBoundingClientRect();
@@ -690,6 +720,7 @@ async function initArchive() {
 
     function hideBookHoverTitle() {
       hoverTitle.hidden = true;
+      delete hoverTitle.dataset.visible;
     }
 
     function postImagePath(post) {
@@ -864,8 +895,10 @@ async function initArchive() {
   }
 }
 
+initTheme();
 insertHomeObjects();
 renderSectionArtwork();
+initShelfHoverLabels();
 
 if (document.body.dataset.page === "archive") {
   initArchive();

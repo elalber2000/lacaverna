@@ -9,9 +9,8 @@ from utils import configure_logging
 
 import logging
 
-configure_logging()
 
-for f in [
+PIPELINE = (
     get_substack_posts,
     fill_embeddings,
     get_doc_images,
@@ -19,6 +18,15 @@ for f in [
     fill_index,
     fill_sections,
     fill_code,
-]:
-    logging.info(f"Running {f.__name__}")
-    f()
+)
+
+
+def main() -> None:
+    configure_logging()
+    for task in PIPELINE:
+        logging.info("Running %s", task.__name__)
+        task()
+
+
+if __name__ == "__main__":
+    main()

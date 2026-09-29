@@ -4,7 +4,7 @@ from html import escape
 
 import pandas as pd
 
-from utils import ROOT_PATH, configure_logging
+from utils import ROOT_PATH, atomic_write_text, configure_logging
 
 configure_logging()
 
@@ -152,8 +152,7 @@ def fill_index() -> None:
     featured_section = render_featured_section(newest_df, popular_df)
     html = replace_between_markers(html, featured_section)
 
-    with INDEX_PATH.open("w", encoding="utf-8") as f:
-        f.write(html)
+    atomic_write_text(INDEX_PATH, html)
 
     logging.info("Filled homepage placeholders: %s", INDEX_PATH)
 

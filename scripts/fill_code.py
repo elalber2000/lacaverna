@@ -5,7 +5,7 @@ import unicodedata
 
 import requests
 
-from utils import ROOT_PATH, configure_logging
+from utils import ROOT_PATH, atomic_write_text, configure_logging
 
 
 configure_logging()
@@ -173,7 +173,7 @@ def fill_code():
         source,
         count=1,
     )
-    CODE_PAGE.write_text(output, encoding="utf-8")
+    atomic_write_text(CODE_PAGE, output)
     logging.info("Updated Código with %s GitHub projects", len(projects))
 
 

@@ -12,7 +12,7 @@ import yaml
 from markdown.extensions import Extension
 from markdown.treeprocessors import Treeprocessor
 
-from utils import ROOT_PATH, configure_logging
+from utils import ROOT_PATH, atomic_write_text, configure_logging
 
 configure_logging()
 
@@ -511,8 +511,7 @@ def generate_docs() -> None:
 
         output_path = HTML_PATH / f"{md_path.stem}.html"
 
-        with output_path.open("w", encoding="utf-8") as f:
-            f.write(html)
+        atomic_write_text(output_path, html)
 
         logging.info("Wrote: %s", output_path)
 

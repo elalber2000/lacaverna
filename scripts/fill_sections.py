@@ -8,7 +8,7 @@ from dataclasses import dataclass
 import requests
 import feedparser
 from dotenv import load_dotenv
-from utils import ROOT_PATH, configure_logging
+from utils import ROOT_PATH, atomic_write_text, configure_logging
 
 
 configure_logging()
@@ -357,7 +357,7 @@ def fill_sections():
         html_path = ROOT_PATH / "sections" / filename
         source = html_path.read_text(encoding="utf-8")
         output = replace_placeholder(source, block[section])
-        html_path.write_text(output, encoding="utf-8")
+        atomic_write_text(html_path, output)
         logging.info("Updated %s section", section)
     
 

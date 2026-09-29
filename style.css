@@ -3,6 +3,17 @@
   --fg: #ffffff;
   --hi: #0d9488;
 
+  /* Shared design tokens. Page skins only override these values. */
+  --font-body: var(--mono);
+  --font-display: "EB Garamond", Georgia, serif;
+  --surface: rgba(255, 255, 255, 0.015);
+  --surface-strong: rgba(23, 23, 23, 0.96);
+  --line: var(--fg-14);
+  --line-strong: var(--fg-24);
+  --accent: var(--hi);
+  --accent-soft: var(--hi-16);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+
   --fg-90: rgba(255, 255, 255, 0.9);
   --fg-72: rgba(255, 255, 255, 0.72);
   --fg-48: rgba(255, 255, 255, 0.48);
@@ -13,7 +24,7 @@
   --x: clamp(0.92rem, 1.8vw, 1.05rem);
   --max: 1180px;
   --pad: clamp(1rem, 4vw, 2rem);
-  --archive-book-gap: -1px;
+  --archive-book-gap: 0px;
   --archive-gold: #d4bd7a;
   --mono: "Monaspace Argon Frozen", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
@@ -37,12 +48,13 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
+  font-family: var(--font-body);
   font-size: var(--x);
   line-height: 1.55;
 }
 
 h1 {
-  font-family: "EB Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: calc(var(--x) * 2);
 }
@@ -104,7 +116,7 @@ ul li::before {
 .bracket-link,
 .bracket-link:visited {
   display: inline;
-  color: var(--hi);
+  color: var(--accent);
   background: transparent;
   text-decoration: none;
 }
@@ -128,7 +140,7 @@ ul li::before {
 .bracket-link:focus-visible,
 .bracket-link:active {
   color: var(--fg);
-  background: var(--hi);
+  background: var(--accent);
   outline: none;
 }
 
@@ -151,8 +163,8 @@ ul li::before {
 }
 
 .panel {
-  border: 1px solid var(--fg-14);
-  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--line);
+  background: var(--surface);
   padding: clamp(1rem, 3vw, 1.5rem);
 }
 
@@ -166,8 +178,8 @@ ul li::before {
   position: sticky;
   top: 0;
   z-index: 20;
-  border-bottom: 1px solid var(--fg-14);
-  background: rgba(23, 23, 23, 0.96);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-strong);
   backdrop-filter: blur(10px);
 }
 
@@ -255,7 +267,7 @@ ul li::before {
 
 .two-col,
 .influence-grid {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
@@ -268,7 +280,8 @@ ul li::before {
   display: grid;
   width: min(100%, 950px);
   height: 170px;
-  place-items: end center;
+  align-items: flex-end;
+  justify-content: center;
   box-sizing: border-box;
   margin: 0 auto 1.25rem;
   padding: 0 1rem .8rem;
@@ -350,12 +363,12 @@ ul li::before {
 
 .showcase-page .influence-title {
   color: #e0dbd1;
-  font: 1rem/1.3 "EB Garamond", Georgia, serif;
+  font: 1rem/1.3 var(--font-display);
 }
 
 .showcase-page .influence-by {
   color: #8d8a82;
-  font: .9rem "EB Garamond", Georgia, serif;
+  font: .9rem var(--font-display);
 }
 
 .showcase-page .influence-rating {
@@ -370,17 +383,7 @@ ul li::before {
   border-left: 2px solid rgba(185, 165, 116, .55);
   background: rgba(255, 255, 255, .025);
   color: #d6d0c5;
-  font: 1.08rem/1.6 "EB Garamond", Georgia, serif;
-}
-
-.code-project-list {
-  display: grid;
-  max-width: 950px;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: .8rem;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
+  font: 1.08rem/1.6 var(--font-display);
 }
 
 .code-project {
@@ -413,7 +416,7 @@ ul li::before {
 
 .code-project-description {
   color: #92949a;
-  font: .95rem/1.4 "EB Garamond", Georgia, serif;
+  font: .95rem/1.4 var(--font-display);
 }
 
 .code-project-empty {
@@ -460,7 +463,7 @@ ul li::before {
   max-width: 540px;
   margin: .8rem 0 0;
   color: #a9a69e;
-  font: 1.1rem/1.45 "EB Garamond", Georgia, serif;
+  font: 1.1rem/1.45 var(--font-display);
 }
 
 .collection-page .section-object {
@@ -555,7 +558,7 @@ ul li::before {
 
 .collection-title {
   overflow-wrap: anywhere;
-  font: 1.08rem/1.2 "EB Garamond", Georgia, serif;
+  font: 1.08rem/1.2 var(--font-display);
 }
 
 .collection-byline {
@@ -646,7 +649,7 @@ ul li::before {
 .code-project-description {
   display: block;
   color: #96958f;
-  font: 1rem/1.4 "EB Garamond", Georgia, serif;
+  font: 1rem/1.4 var(--font-display);
 }
 
 @media (max-width: 760px) {
@@ -1278,7 +1281,7 @@ html[data-theme="light"] {
 
   --fg-90: rgba(23, 23, 23, 0.9);
   --fg-72: rgba(23, 23, 23, 0.72);
-  --fg-48: rgba(23, 23, 23, 0.8);
+  --fg-48: rgba(23, 23, 23, 0.48);
   --fg-24: rgba(23, 23, 23, 0.24);
   --fg-14: rgba(23, 23, 23, 0.14);
   --hi-16: rgba(13, 148, 136, 0.16);
@@ -1337,7 +1340,7 @@ html[data-theme="light"] .article-figure img {
 
 .home-page .ascii-title span,
 .home-page .ascii-title pre {
-  font-family: "EB Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(3.5rem, 9vw, 7.4rem);
   letter-spacing: -0.045em;
@@ -1406,7 +1409,7 @@ html[data-theme="light"] .article-figure img {
 
 .home-page .library-shelf .panel-head h2 {
   color: #a59c8b;
-  font: 1.05rem "EB Garamond", Georgia, serif;
+  font: 1.05rem var(--font-display);
   letter-spacing: 0.02em;
 }
 
@@ -1482,7 +1485,7 @@ html[data-theme="light"] .article-figure img {
   max-height: none;
   overflow: visible;
   color: inherit;
-  font: 0.88rem/1.15 "EB Garamond", Georgia, serif;
+  font: 0.88rem/1.15 var(--font-display);
   overflow-wrap: anywhere;
   white-space: normal;
   writing-mode: vertical-rl;
@@ -1525,6 +1528,12 @@ html[data-theme="light"] .article-figure img {
   --fg-48: rgba(180, 177, 170, 0.58);
   --fg-24: rgba(190, 182, 166, 0.24);
   --fg-14: rgba(190, 182, 166, 0.14);
+  --surface: rgba(255, 255, 255, 0.025);
+  --surface-strong: rgba(9, 10, 12, 0.96);
+  --line: rgba(190, 182, 166, 0.14);
+  --line-strong: rgba(190, 182, 166, 0.24);
+  --accent: #b9a574;
+  --accent-soft: rgba(185, 165, 116, 0.16);
   min-height: 100vh;
   background:
     radial-gradient(ellipse at 76% 18%, rgba(185, 165, 116, 0.04), transparent 43%),
@@ -1578,7 +1587,7 @@ html[data-theme="light"] .article-figure img {
 .library-page .section-head h1,
 .library-page .section-head h2 {
   color: #e8e2d7;
-  font-family: "EB Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
 }
 
@@ -1643,13 +1652,13 @@ html[data-theme="light"] .article-figure img {
 }
 
 .library-page .sidebar h1 {
-  font: 1.25rem "EB Garamond", Georgia, serif;
+  font: 1.25rem var(--font-display);
 }
 
 .library-page .tree-view {
   gap: 0;
   color: #858a92;
-  font: .9rem/1.4 "EB Garamond", Georgia, serif;
+  font: .9rem/1.4 var(--font-display);
 }
 
 .library-page .tree-row {
@@ -1723,7 +1732,7 @@ html[data-theme="light"] .article-figure img {
   gap: .12rem;
   margin: 0 0 .65rem;
   color: #858a92;
-  font: .9rem/1.4 "EB Garamond", Georgia, serif;
+  font: .9rem/1.4 var(--font-display);
 }
 
 .quick-filters .feature-filter {
@@ -1759,7 +1768,7 @@ html[data-theme="light"] .article-figure img {
   outline: none;
   background: #101216;
   color: #e8e2d7;
-  font: .9rem "EB Garamond", Georgia, serif;
+  font: .9rem var(--font-display);
 }
 
 .archive-search:focus {
@@ -1771,7 +1780,7 @@ html[data-theme="light"] .article-figure img {
 }
 
 .library-page .archive-main > .section-head h2 {
-  font: 1.35rem "EB Garamond", Georgia, serif;
+  font: 1.35rem var(--font-display);
 }
 
 .library-page .archive-count,
@@ -1786,7 +1795,7 @@ html[data-theme="light"] .article-figure img {
 .archive-shelf-name {
   margin: 0 0 .65rem .6rem;
   color: #898278 !important;
-  font: 1rem "EB Garamond", Georgia, serif !important;
+  font: 1rem var(--font-display) !important;
 }
 
 .archive-books {
@@ -1924,11 +1933,10 @@ html[data-theme="light"] .article-figure img {
     1.5px 2px 0 #000;
 }
 
-.archive-book-hover-title {
-  position: fixed;
+.hover-label {
+  position: absolute;
   z-index: 200;
   width: max-content;
-  max-width: min(260px, calc(100vw - 1.5rem));
   padding: .4rem .6rem;
   border: 1px solid rgba(217, 191, 120, .72);
   background: rgba(13, 14, 16, .96);
@@ -1936,15 +1944,22 @@ html[data-theme="light"] .article-figure img {
   color: #f0e7d4;
   font: .72rem/1.25 var(--mono);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   text-align: center;
-  transform: translateX(-50%);
-  transition: opacity .14s ease;
+  transition: opacity .14s ease, transform .14s ease;
   white-space: normal;
 }
 
-.archive-book-hover-title:not([hidden]) {
+body > .hover-label {
+  position: fixed;
+  max-width: min(260px, calc(100vw - 1.5rem));
+  transform: translateX(-50%);
+}
+
+.hover-label[data-visible="true"] {
   opacity: 1;
+  visibility: visible;
 }
 
 .book-detail[hidden] { display: none; }
@@ -1985,7 +2000,7 @@ html[data-theme="light"] .article-figure img {
 .book-detail h2 {
   margin: 0 1.6rem .45rem 0;
   color: #f0e7d4;
-  font: 1.5rem/1.15 "EB Garamond", Georgia, serif;
+  font: 1.5rem/1.15 var(--font-display);
 }
 
 .book-detail-image {
@@ -2003,7 +2018,7 @@ html[data-theme="light"] .article-figure img {
 .book-detail-description {
   margin: 0 0 .9rem;
   color: #c6c1b7;
-  font: 1rem/1.4 "EB Garamond", Georgia, serif;
+  font: 1rem/1.4 var(--font-display);
 }
 
 .book-detail-tags {
@@ -2055,7 +2070,7 @@ html[data-theme="light"] .article-figure img {
   background: transparent;
   color: #c7b98f;
   cursor: pointer;
-  font: 1.2rem/1 "EB Garamond", Georgia, serif;
+  font: 1.2rem/1 var(--font-display);
 }
 
 .book-detail-close:hover,
@@ -2090,7 +2105,7 @@ html[data-theme="light"] .article-figure img {
   height: 13px;
   place-items: center;
   color: var(--archive-gold);
-  font: 12px/1 "EB Garamond", Georgia, serif;
+  font: 12px/1 var(--font-display);
   text-decoration: none;
 }
 
@@ -2202,21 +2217,22 @@ html[data-theme="light"] .article-figure img {
 .archive-books .shelf-object,
 .home-page .list-stack .shelf-object {
   position: relative;
-  display: grid;
+  display: flex;
   width: clamp(48px, 8vw, 82px);
   height: 124px;
   flex: 0 0 auto;
-  place-items: end center;
+  align-items: flex-end;
+  justify-content: center;
   color: #c0a977;
   text-decoration: none;
   transition: transform .2s;
 }
 
-.object-shelf .shelf-object:hover,
+.object-shelf .shelf-object:has(.object-art img:hover),
 .object-shelf .shelf-object:focus-visible,
-.archive-books .shelf-object:hover,
+.archive-books .shelf-object:has(.object-art img:hover),
 .archive-books .shelf-object:focus-visible,
-.home-page .list-stack .shelf-object:hover,
+.home-page .list-stack .shelf-object:has(.object-art img:hover),
 .home-page .list-stack .shelf-object:focus-visible {
   color: #d6c59b;
   outline: none;
@@ -2224,10 +2240,11 @@ html[data-theme="light"] .article-figure img {
 }
 
 .object-art {
-  display: grid;
+  display: flex;
   width: 82px;
   height: 152px;
-  place-items: end center;
+  align-items: flex-end;
+  justify-content: center;
   filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .8));
   transition: filter .2s, transform .2s;
 }
@@ -2248,7 +2265,7 @@ html[data-theme="light"] .article-figure img {
   stroke: #fff !important;
 }
 
-.shelf-object:hover .object-art,
+.shelf-object:has(.object-art img:hover) .object-art,
 .shelf-object:focus-visible .object-art {
   filter: drop-shadow(0 0 7px rgba(185, 165, 116, .28)) drop-shadow(0 5px 5px rgba(0, 0, 0, .8));
 }
@@ -2279,11 +2296,9 @@ html[data-theme="light"] .article-figure img {
   transform-origin: bottom center;
 }
 
-.archive-books .shelf-object.object-music,
 .archive-books .shelf-object.object-reading,
 .archive-books .shelf-object.object-movies,
 .archive-books .shelf-object.object-quotes,
-.home-page .list-stack .shelf-object.object-music,
 .home-page .list-stack .shelf-object.object-reading,
 .home-page .list-stack .shelf-object.object-movies,
 .home-page .list-stack .shelf-object.object-quotes {
@@ -2298,6 +2313,10 @@ html[data-theme="light"] .article-figure img {
   transform: scale(3.18);
 }
 
+.archive-books .shelf-object.object-music .object-art {
+  transform: scale(2.9165);
+}
+
 .home-page .list-stack .shelf-object.object-music .object-art,
 .home-page .list-stack .shelf-object.object-reading .object-art,
 .home-page .list-stack .shelf-object.object-movies .object-art,
@@ -2305,10 +2324,16 @@ html[data-theme="light"] .article-figure img {
   transform: scale(3.34);
 }
 
+.home-page .list-stack .shelf-object.object-music .object-art {
+  transform: scale(3.059);
+}
+
 .archive-books .shelf-object.object-travel,
+.archive-books .shelf-object.object-music,
 .archive-books .shelf-object.object-reading,
 .archive-books .shelf-object.object-quotes,
 .home-page .list-stack .shelf-object.object-travel,
+.home-page .list-stack .shelf-object.object-music,
 .home-page .list-stack .shelf-object.object-reading,
 .home-page .list-stack .shelf-object.object-quotes {
   width: clamp(132px, 14vw, 196px);
@@ -2325,36 +2350,6 @@ html[data-theme="light"] .article-figure img {
 .home-page .list-stack .shelf-object.object-reading .object-art,
 .home-page .list-stack .shelf-object.object-quotes .object-art {
   transform: scale(2.505);
-}
-
-.archive-books .object-tooltip,
-.home-page .list-stack .object-tooltip {
-  bottom: 244px;
-}
-
-.object-tooltip {
-  position: absolute;
-  bottom: 154px;
-  left: 50%;
-  z-index: 5;
-  padding: 5px 8px;
-  border: 1px solid #3a3d42;
-  background: #08090b;
-  color: #d6d0c5;
-  font: 9px var(--mono);
-  letter-spacing: .1em;
-  opacity: 0;
-  pointer-events: none;
-  text-transform: lowercase;
-  transform: translate(-50%, 4px);
-  transition: .15s;
-  white-space: nowrap;
-}
-
-.shelf-object:hover .object-tooltip,
-.shelf-object:focus-visible .object-tooltip {
-  opacity: 1;
-  transform: translate(-50%, 0);
 }
 
 .random-dock {
@@ -2453,7 +2448,7 @@ html[data-theme="light"] .article-figure img {
 .oracle-picked {
   margin-top: 5px;
   color: #d9d2c6;
-  font: 15px "EB Garamond", Georgia, serif;
+  font: 15px var(--font-display);
 }
 
 .library-page .timeline-item,
@@ -2532,14 +2527,12 @@ html[data-theme="light"] .article-figure img {
     width: 128px;
     flex-basis: 128px;
   }
-  .archive-books .shelf-object.object-music,
   .archive-books .shelf-object.object-reading,
   .archive-books .shelf-object.object-movies,
   .archive-books .shelf-object.object-quotes {
     width: 240px;
     flex-basis: 240px;
   }
-  .home-page .list-stack .shelf-object.object-music,
   .home-page .list-stack .shelf-object.object-reading,
   .home-page .list-stack .shelf-object.object-movies,
   .home-page .list-stack .shelf-object.object-quotes {
@@ -2547,12 +2540,14 @@ html[data-theme="light"] .article-figure img {
     flex-basis: 260px;
   }
   .archive-books .shelf-object.object-travel,
+  .archive-books .shelf-object.object-music,
   .archive-books .shelf-object.object-reading,
   .archive-books .shelf-object.object-quotes {
     width: 180px;
     flex-basis: 180px;
   }
   .home-page .list-stack .shelf-object.object-travel,
+  .home-page .list-stack .shelf-object.object-music,
   .home-page .list-stack .shelf-object.object-reading,
   .home-page .list-stack .shelf-object.object-quotes {
     width: 195px;

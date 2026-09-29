@@ -1,13 +1,14 @@
 import csv
 import json
 import logging
+from io import StringIO
 from pathlib import Path
 from urllib.parse import urlparse
 
 import feedparser
 from bs4 import BeautifulSoup
 
-from utils import ROOT_PATH, configure_logging
+from utils import ROOT_PATH, atomic_write_text, configure_logging
 
 configure_logging()
 
@@ -154,10 +155,13 @@ def merge_catalog(existing, new_entries):
 def save_posts(path, posts):
     logging.info("Saving %d total entries to %s", len(posts), path)
 
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=FIELDS)
+    with StringIO(newline="") as buffer:
+        writer = csv.DictWriter(buffer, fieldnames=FIELDS)
         writer.writeheader()
         writer.writerows(posts)
+        output = buffer.getvalue()
+
+    atomic_write_text(Path(path), output)
 
 
 def get_substack_posts():
