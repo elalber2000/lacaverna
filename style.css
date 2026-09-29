@@ -2101,11 +2101,14 @@ body > .hover-label {
 .book-symbol {
   position: relative;
   display: grid;
-  width: 13px;
-  height: 13px;
+  width: calc(13px * 1.6);
+  height: calc(13px * 1.6);
+  align-self: center;
+  justify-self: center;
   place-items: center;
   color: var(--archive-gold);
-  font: 12px/1 var(--font-display);
+  font: 500 calc(12px * 1.6)/1 var(--mono);
+  text-align: center;
   text-decoration: none;
 }
 
@@ -2162,7 +2165,12 @@ body > .hover-label {
 }
 
 .book-symbols.wide-symbols .book-symbol {
-  flex: 0 0 13px;
+  flex: 0 0 calc(13px * 1.6);
+  width: calc(13px * 1.6);
+  min-width: calc(13px * 1.6);
+  height: calc(13px * 1.6);
+  min-height: calc(13px * 1.6);
+  font-size: calc(12px * 1.6);
 }
 
 .book-symbol:hover::after,
