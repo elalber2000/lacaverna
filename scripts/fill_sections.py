@@ -282,7 +282,7 @@ def render_collection_items(items, section):
             f'<li class="collection-entry">'
             f'<a class="collection-link" href="{escape(item.url)}"{target}>'
             f'<span class="collection-title">{escape(item.title)}</span>{byline}</a>'
-            f'{rating}<span class="collection-arrow" aria-hidden="true">↗</span></li>'
+            f'{rating}</li>'
         )
     return "\n".join(rows)
 
@@ -310,7 +310,6 @@ def render_cluster(section, icon, title, recent, favourites):
 
 def render_quotes_cluster():
     return f"""      <article class="panel influence-cluster" id="quotes">
-        <h2><span class="mono-icon">❝</span> Citas</h2>
         <div class="quotes-stack">
 {render_quotes()}
         </div>

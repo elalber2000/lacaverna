@@ -760,8 +760,8 @@ async function initArchive() {
         <h2>${escapeHtml(post.title || "Sin título")}</h2>
         ${imagePath ? `<img class="book-detail-image" src="${escapeHtml(imagePath)}" alt="" aria-hidden="true">` : ""}
         <p class="book-detail-description">${escapeHtml(post.description || "Sin descripción.")}</p>
-        ${tags.length ? `<div class="book-detail-tags" aria-label="Categorías">${tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
-        <a class="book-detail-read" href="${escapeHtml(post.link || "#")}">Leer <span aria-hidden="true">↗</span></a>
+        ${tags.length ? `<div class="book-detail-tags" aria-label="Categorías">${tags.map(tag => `<a class="book-detail-tag bracket-link" href="${escapeHtml(homeArchiveHref(slugify(tag)))}">${escapeHtml(tag)}</a>`).join("")}</div>` : ""}
+        <a class="book-detail-read bracket-link" href="${escapeHtml(post.link || "#")}">Leer</a>
       `;
       detail.hidden = false;
       detail.classList.add("show");
