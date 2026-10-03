@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — La Caverna</title>
-  <meta name="description" content="Sobre Sánchez y La Caverna." />
+  <title>Sobre Sánchez — La Caverna</title>
+  <meta name="description" content="Sobre Sánchez: inteligencia artificial, escritura, arte y curiosidad." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../style.css" />
 </head>
 
-<body>
+<body class="library-page showcase-page section-about">
   <header class="site-header">
     <nav class="nav" aria-label="Principal">
       <a class="brand bracket-link" href="../index.html" aria-label="Inicio">
@@ -23,76 +23,79 @@
       <label class="nav-button bracket-link" for="nav-toggle">menu</label>
 
       <div class="nav-links">
-        <a class="bracket-link" href="archive.html">Archivo</a>
-        <a class="bracket-link" href="influences.html">Influencias</a>
-        <a class="bracket-link" href="about.html" aria-current="page">About</a>
+        <a class="bracket-link" href="../index.html#archivo">Archivo</a>
+        <a class="bracket-link" href="about.html">About</a>
         <a class="bracket-link" href="linktree.html">*</a>
       </div>
     </nav>
   </header>
 
   <main class="page">
+    <div class="section-object" data-object-art="portrait" aria-hidden="true"></div>
     <section class="about-hero">
       <h1>Sánchez</h1>
+      <span class="about-motto">Algebra y Fuego</span>
 
       <p class="identity-line">
-        <a class="bracket-link" href="archive.html#tecnologia">programador</a>
+        <a class="bracket-link" href="../index.html#tecnologia">programador</a>
         *
-        <a class="bracket-link" href="archive.html#literatura">escritor</a>
+        <a class="bracket-link" href="../index.html#literatura">escritor</a>
         *
-        <a class="bracket-link" href="archive.html#galeria">artista</a>
+        <a class="bracket-link" href="../index.html#galeria">artista</a>
         *
-        <a class="bracket-link" href="archive.html#filosofia">pensador</a>
+        <a class="bracket-link" href="../index.html#filosofia">polímata</a>
       </p>
+    </section>
 
-      <p class="intro">
-        Aspirante a polímata.
-        Álgebra y Fuego.
-      </p>
+    <section class="about-section about-summary" aria-label="Resumen">
+      <div class="about-copy">
+        <p>Trabajo haciendo Inteligencia Artificial, sobre todo Modelos de Lenguaje y Agentes.</p>
+        <p>Estudié Informática, Matemáticas y Ciencia de Datos. Después pasé a hacer investigación. Ahora implemento Agentes en casos reales para empresas grandes.</p>
+        <p>Fuera de la IA escribo ficción y ensayos, boxeo, cocino, pinto de vez en cuando y sigo aprendiendo un poco de todo.</p>
+        <p>Escribo en mi blog de IA <a class="bracket-link" href="https://parrotsbasilisks.substack.com/">Parrots &amp; Basilisks</a> y en mi blog prosaico <a class="bracket-link" href="https://sancheznoseke.substack.com/">Substack</a>.</p>
       </div>
     </section>
 
-    <section class="timeline" aria-label="Timeline">
-      <article class="timeline-item">
-        <time>2000</time>
-        <div><p>Nací.</p></div>
+    <section class="about-section about-history" aria-label="Cómo he llegado hasta aquí">
+      <div class="timeline" id="timeline" aria-label="Timeline">
+      <article class="timeline-item timeline-gap-long">
+        <time>2000</time><div><p>Nací.</p></div>
       </article>
 
-      <article class="timeline-item">
-        <time>2015</time>
-        <div><p>Escribí mi primer relato.</p></div>
+      <article class="timeline-item timeline-gap-medium">
+        <time>2015</time><div><p>Escribí mi primer relato.</p></div>
       </article>
 
-      <article class="timeline-item">
+      <article class="timeline-item timeline-gap-short">
         <time>2018</time>
         <div>
-          <p>Estudié <a class="bracket-link" href="https://www.fi.upm.es/?id=gradomatematicasinformatica">Informática y Matemáticas</a>.</p>
-          <p>Entré en la asociación teatral <a class="bracket-link" href="https://www.instagram.com/histrionupm/">Histrión</a>.</p>
+          <p>Empecé a estudiar <a class="bracket-link" href="https://www.fi.upm.es/?id=gradomatematicasinformatica">Informática y Matemáticas</a>.</p>
+          <p>Entré en el grupo de teatro universitario <a class="bracket-link" href="https://www.instagram.com/histrionupm/">Histrión</a>.</p>
         </div>
       </article>
 
-      <article class="timeline-item">
+      <article class="timeline-item timeline-gap-medium">
         <time>2019</time>
-        <div><p>Empecé a escribir en la revista <a class="bracket-link" href="https://www.instagram.com/enplanculto/">En Plan Culto</a>.</p></div>
+        <div><p>Empecé a escribir para <a class="bracket-link" href="https://www.instagram.com/enplanculto/">En Plan Culto</a>.</p></div>
       </article>
 
-      <article class="timeline-item">
+      <article class="timeline-item timeline-gap-medium">
         <time>2022</time>
         <div>
-          <p>Fui a vivir a Niza.</p>
-          <p>Estudié el <a class="bracket-link" href="https://www.eurecom.fr/en/node/4779459">master de Ciencia de Datos</a>.</p>
+          <p>Me fui a vivir a Niza.</p>
+          <p>Empecé un <a class="bracket-link" href="https://www.eurecom.fr/en/node/4779459">máster en Ciencia de Datos</a>.</p>
         </div>
       </article>
 
-      <article class="timeline-item">
+      <article class="timeline-item timeline-gap-short">
         <time>2024</time>
         <div>
           <p>Volví a España.</p>
-          <p>Empecé a trabajar en <a class="bracket-link" href="https://www.ailylabs.com/">Ailylabs</a></p>
+          <p>Entré en <a class="bracket-link" href="https://www.ailylabs.com/">AilyLabs</a> como Research Assistant y Data Scientist.</p>
         </div>
       </article>
 
-      <article class="timeline-item">
+      <article class="timeline-item timeline-gap-short">
         <time>2025</time>
         <div>
           <p>Publiqué un <a class="bracket-link" href="https://arxiv.org/abs/2503.11664">paper</a>.</p>
@@ -102,11 +105,12 @@
     <article class="timeline-item">
         <time>2026</time>
         <div>
-          <p>Empecé un <a class="bracket-link" href="https://sancheznoseke.substack.com/">blog</a>.</p>
-          <p>Empecé otro <a class="bracket-link" href="https://parrotsbasilisks.substack.com/">blog (sobre IA)</a>.</p>
-          <p>Empecé a trabajar en <a class="bracket-link" href="https://www.kyndryl.com/es/es">Kyndryl</a></p>
+          <p>Empecé mi <a class="bracket-link" href="https://sancheznoseke.substack.com/">Substack</a>, un blog sobre todo lo que me interesa.</p>
+          <p>Empecé <a class="bracket-link" href="https://parrotsbasilisks.substack.com/">Parrots &amp; Basilisks</a>, mi blog técnico sobre IA.</p>
+          <p>Entré en <a class="bracket-link" href="https://www.kyndryl.com/es/es">Kyndryl</a> como AI Engineer.</p>
         </div>
       </article>
+      </div>
     </section>
   </main>
 
@@ -114,5 +118,6 @@
     <span>La Caverna de</span>
     <span>Sánchez</span>
   </footer>
+  <script src="../script.js"></script>
 </body>
 </html>

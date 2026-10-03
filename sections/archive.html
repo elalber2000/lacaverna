@@ -3,67 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="0; url=../index.html#archivo" />
   <title>Archivo — La Caverna</title>
-  <meta name="description" content="Archivo completo de posts de La Caverna." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/monaspace-font@0.0.2/argon.css" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css" />
 </head>
-
-<body data-page="archive">
-  <header class="site-header">
-    <nav class="nav" aria-label="Principal">
-      <a class="brand bracket-link" href="../index.html" aria-label="Inicio">
-        <img src="../assets/logo.png" alt="La Caverna" class="brand-logo" />
-      </a>
-
-      <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Abrir menú" />
-      <label class="nav-button bracket-link" for="nav-toggle">menu</label>
-
-      <div class="nav-links">
-        <a class="bracket-link" href="archive.html" aria-current="page">Archivo</a>
-        <a class="bracket-link" href="influences.html">Influencias</a>
-        <a class="bracket-link" href="about.html">About</a>
-        <a class="bracket-link" href="linktree.html">*</a>
-      </div>
-    </nav>
-  </header>
-
-  <main class="page archive-layout">
-    <aside class="sidebar" aria-label="Categorías">
-      <div class="sidebar-inner">
-        <h1>Categorías</h1>
-
-        <a class="bracket-link category-all" href="archive.html">
-          todo <span id="count-all">(0)</span>
-        </a>
-
-        <div id="category-tree" class="category-tree tree-view" aria-label="Árbol de categorías"></div>
-      </div>
-    </aside>
-
-    <section class="archive-main">
-      <div class="section-head">
-        <h2 id="archive-title">Todos los archivos</h2>
-        <p id="archive-count" class="muted">Cargando…</p>
-      </div>
-
-      <div id="archive-grid" class="archive-grid" aria-live="polite"></div>
-
-      <noscript>
-        <p class="panel">Activa JavaScript para cargar el archivo desde CSV.</p>
-      </noscript>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <span>La Caverna de</span>
-    <span>Sánchez</span>
-  </footer>
-
-  <script src="../script.js"></script>
+<body>
+  <p>El archivo ahora está en <a href="../index.html#archivo">la página principal</a>.</p>
+  <script>
+    location.replace(`../index.html${location.hash || "#archivo"}`);
+  </script>
 </body>
 </html>
