@@ -728,6 +728,14 @@ async function initArchive() {
       return imagePath.startsWith("../") ? imagePath.slice(3) : imagePath;
     }
 
+    function postLinkPath(post) {
+      const link = String(post?.link || "").trim();
+      // CSV links are also consumed by generated document pages, where
+      // ../documents/... is correct. The archive itself lives at the site
+      // root, so remove that document-relative prefix before using the link.
+      return link.startsWith("../") ? link.slice(3) : link;
+    }
+
     function positionDetail(bookElement) {
       if (!bookElement || !detail) return;
       const bookRect = bookElement.getBoundingClientRect();
@@ -755,13 +763,14 @@ async function initArchive() {
       bookElement?.classList.add("chosen");
       const tags = parseTags(post.tags);
       const imagePath = postImagePath(post);
+      const linkPath = postLinkPath(post);
       detail.innerHTML = `
         <button class="book-detail-close" type="button" aria-label="Cerrar">×</button>
         <h2>${escapeHtml(post.title || "Sin título")}</h2>
         ${imagePath ? `<img class="book-detail-image" src="${escapeHtml(imagePath)}" alt="" aria-hidden="true">` : ""}
         <p class="book-detail-description">${escapeHtml(post.description || "Sin descripción.")}</p>
         ${tags.length ? `<div class="book-detail-tags" aria-label="Categorías">${tags.map(tag => `<a class="book-detail-tag bracket-link" href="${escapeHtml(homeArchiveHref(slugify(tag)))}">${escapeHtml(tag)}</a>`).join("")}</div>` : ""}
-        <a class="book-detail-read bracket-link" href="${escapeHtml(post.link || "#")}">Leer</a>
+        <a class="book-detail-read bracket-link" href="${escapeHtml(linkPath || "#")}">Leer</a>
       `;
       detail.hidden = false;
       detail.classList.add("show");
