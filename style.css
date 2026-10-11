@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
+
 :root {
   --bg: #171717;
   --fg: #ffffff;
@@ -5,7 +7,7 @@
 
   /* Shared design tokens. Page skins only override these values. */
   --font-body: var(--mono);
-  --font-display: "EB Garamond", Georgia, serif;
+  --font-display: "Young Serif", Georgia, serif;
   --surface: rgba(255, 255, 255, 0.015);
   --surface-strong: rgba(23, 23, 23, 0.96);
   --line: var(--fg-14);
