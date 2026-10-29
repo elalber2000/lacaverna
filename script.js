@@ -493,6 +493,74 @@ function initShelfHoverLabels() {
   });
 }
 
+function initQuotesBoard() {
+  const board = document.querySelector(".quotes-board");
+  if (!board) return;
+
+  const cards = [...board.querySelectorAll(".quote-line")];
+  const startingPositions = window.matchMedia("(max-width: 520px)").matches
+    ? [[4, 2], [8, 19], [4, 38], [10, 58], [6, 79]]
+    : [[4, 2], [48, 5], [15, 31], [67, 35], [39, 64]];
+
+  cards.forEach((card, index) => {
+    const length = card.textContent.trim().length;
+    const width = Math.min(34, Math.max(15.5, 15.5 + length / 52));
+    card.style.setProperty("--quote-width", `${width}rem`);
+    card.style.setProperty("--quote-tilt", `${[-1.4, 1.2, -2.1, 1.8, -.8][index % 5]}deg`);
+    card.style.left = `${startingPositions[index][0]}%`;
+    card.style.top = `${startingPositions[index][1]}%`;
+  });
+
+  let drag = null;
+
+  cards.forEach(card => {
+    card.addEventListener("pointerdown", event => {
+      if (event.button !== 0 && event.pointerType === "mouse") return;
+      drag = {
+        card,
+        startX: event.clientX,
+        startY: event.clientY,
+        startLeft: card.offsetLeft,
+        startTop: card.offsetTop
+      };
+      card.classList.add("is-dragging");
+      card.setPointerCapture?.(event.pointerId);
+    });
+
+    card.addEventListener("pointermove", event => {
+      if (!drag || drag.card !== card) return;
+      const maxLeft = Math.max(0, board.clientWidth - card.offsetWidth);
+      const maxTop = Math.max(0, board.clientHeight - card.offsetHeight);
+      const nextLeft = Math.max(0, Math.min(maxLeft, drag.startLeft + event.clientX - drag.startX));
+      const nextTop = Math.max(0, Math.min(maxTop, drag.startTop + event.clientY - drag.startY));
+      card.style.left = `${nextLeft}px`;
+      card.style.top = `${nextTop}px`;
+    });
+
+    const finishDrag = event => {
+      if (!drag || drag.card !== card) return;
+      card.classList.remove("is-dragging");
+      card.releasePointerCapture?.(event.pointerId);
+      drag = null;
+    };
+
+    card.addEventListener("pointerup", finishDrag);
+    card.addEventListener("pointercancel", finishDrag);
+    card.addEventListener("keydown", event => {
+      const movement = {
+        ArrowLeft: [-24, 0], ArrowRight: [24, 0],
+        ArrowUp: [0, -24], ArrowDown: [0, 24]
+      }[event.key];
+      if (!movement) return;
+      event.preventDefault();
+      const maxLeft = Math.max(0, board.clientWidth - card.offsetWidth);
+      const maxTop = Math.max(0, board.clientHeight - card.offsetHeight);
+      card.style.left = `${Math.max(0, Math.min(maxLeft, card.offsetLeft + movement[0]))}px`;
+      card.style.top = `${Math.max(0, Math.min(maxTop, card.offsetTop + movement[1]))}px`;
+    });
+  });
+}
+
 function objectMarkup({ type, label, section }) {
   const target = `${ROOT_PATH}sections/${section}.html`;
   const tooltip = label.toLocaleLowerCase("es");
@@ -908,6 +976,7 @@ initTheme();
 insertHomeObjects();
 renderSectionArtwork();
 initShelfHoverLabels();
+initQuotesBoard();
 
 if (document.body.dataset.page === "archive") {
   initArchive();

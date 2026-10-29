@@ -3126,15 +3126,79 @@ body > .hover-label {
 }
 
 .section-quotes .quotes-stack {
-  gap: 0;
+  position: relative;
+  display: block;
+  min-height: 54rem;
+  padding: clamp(.75rem, 2vw, 1.5rem) 0 3rem;
+  overflow: hidden;
 }
 
 .section-quotes .quote-line {
-  padding: 1rem 0;
-  border-top: 1px solid var(--fg-14);
-  border-left: 0;
-  color: var(--fg-90);
-  font: var(--x)/1.75 var(--mono);
+  --quote-width: 18rem;
+  position: relative;
+  display: block;
+  position: absolute;
+  width: var(--quote-width);
+  min-height: 8rem;
+  margin: 0;
+  padding: clamp(1.45rem, 3vw, 2rem) clamp(1rem, 3vw, 1.6rem) clamp(1.2rem, 3vw, 1.7rem);
+  border: 0 !important;
+  color: #202522;
+  background: #d8c89f;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .27), 0 2px 3px rgba(0, 0, 0, .25);
+  font: clamp(.92rem, 1.2vw, 1.05rem)/1.55 var(--font-display);
+  font-family: var(--mono);
+  text-wrap: pretty;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  transform: rotate(var(--quote-tilt, -1.4deg));
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+
+.section-quotes .quote-text {
+  display: block;
+}
+
+.section-quotes .quote-line cite {
+  display: block;
+  margin-top: 1rem;
+  color: #202522;
+  font: .92rem/1.2 var(--font-display);
+  text-align: right;
+}
+
+.section-quotes .quote-line::before {
+  content: "";
+  position: absolute;
+  top: -.45rem;
+  left: 50%;
+  width: 4.7rem;
+  height: 1.15rem;
+  background: rgba(185, 165, 116, .52);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+  opacity: .8;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.section-quotes .quote-line:nth-child(2n) { --quote-tilt: 1.2deg; background: #c8d2c1; }
+.section-quotes .quote-line:nth-child(3n) { --quote-tilt: -2.1deg; background: #c9c7d5; }
+.section-quotes .quote-line:nth-child(4n) { --quote-tilt: 1.8deg; background: #d7bfa2; }
+
+.section-quotes .quote-line:hover,
+.section-quotes .quote-line:focus-visible {
+  z-index: 2;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, .38), 0 2px 3px rgba(0, 0, 0, .25);
+  outline: none;
+  transform: translateY(-5px) rotate(var(--quote-tilt, -1.4deg));
+}
+
+.section-quotes .quote-line.is-dragging {
+  z-index: 10;
+  cursor: grabbing;
+  opacity: .8;
+  transition: none;
+  transform: translate(var(--drag-x, 0px), var(--drag-y, 0px)) rotate(var(--quote-tilt, -1.4deg)) scale(1.025);
 }
 
 @media (max-width: 520px) {
@@ -3151,5 +3215,15 @@ body > .hover-label {
 
   .article-figure {
     margin-bottom: calc(var(--x) * 1.8);
+  }
+
+  .section-quotes .quotes-stack {
+    min-height: 70rem;
+    padding-top: 1rem;
+  }
+
+  .section-quotes .quote-line {
+    width: min(var(--quote-width), calc(100% - 1rem));
+    min-height: 0;
   }
 }
