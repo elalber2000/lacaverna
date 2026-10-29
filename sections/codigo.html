@@ -32,10 +32,77 @@
       <section class="collection-group code-project-group">
         <ul class="collection-list code-project-list" aria-label="Proyectos principales">
       <!-- PLACEHOLDER_START -->
-      <li class="collection-entry"><div class="code-project-info"><span class="collection-title">Asimov</span><span class="code-project-description">Neuro-symbolic adversarially generated AI axioms</span></div><div class="code-project-actions"><a class="code-project-button" href="https://github.com/elalber2000/asimov" target="_blank" rel="noopener noreferrer">GitHub</a><a class="code-project-button" href="https://parrotsbasilisks.substack.com/p/asimov-neurosymbolic-adversarial" target="_blank" rel="noopener noreferrer">Blog</a></div></li>
-      <li class="collection-entry"><div class="code-project-info"><span class="collection-title">StopSlop</span><span class="code-project-description">Chrome extension to detect and avoid slop websites using FastText + custom features</span></div><div class="code-project-actions"><a class="code-project-button" href="https://github.com/elalber2000/stop_slop" target="_blank" rel="noopener noreferrer">GitHub</a><a class="code-project-button" href="https://parrotsbasilisks.substack.com/p/stopslop-detecting-slop-with-a-5kb" target="_blank" rel="noopener noreferrer">Blog</a></div></li>
-      <li class="collection-entry"><div class="code-project-info"><span class="collection-title">MiniSnowflake</span><span class="code-project-description">A lightweight Snowflake-style architecture built on parallel DuckDB instances</span></div><div class="code-project-actions"><a class="code-project-button" href="https://github.com/elalber2000/mini_snowflake" target="_blank" rel="noopener noreferrer">GitHub</a></div></li>
-      <li class="collection-entry"><div class="code-project-info"><span class="collection-title">ProseSteering</span><span class="code-project-description">A mechanistic interpretability project exploring activation steering for high-prose writing</span></div><div class="code-project-actions"><a class="code-project-button" href="https://github.com/elalber2000/prose-steering" target="_blank" rel="noopener noreferrer">GitHub</a><a class="code-project-button" href="https://parrotsbasilisks.substack.com/p/searching-for-high-prose-in-qwen25" target="_blank" rel="noopener noreferrer">Blog</a></div></li>
+      <li class="collection-entry"><div class="code-project-info"><span class="collection-title">Asimov</span><span class="code-project-description">Neuro-symbolic adversarially generated AI axioms</span><pre class="code-ascii"><span class="ascii-frame"><span class="ascii-hot">(!)</span>
+ |
+[A]──[B]
+ |    |
+[C]──[D]</span><span class="ascii-frame"><span class="ascii-hot">[E]</span>
+ |
+[A]──[B]
+ |    |
+[C]──[D]</span><span class="ascii-frame">[E]
+ |
+[A]──[B]
+ |    |
+[C]──[D]</span><span class="ascii-frame">[E]
+ |
+[A]──[B]──<span class="ascii-hot">(!)</span>
+ |    |
+[C]──[D]</span><span class="ascii-frame">[E]
+ |
+[A]──[B]──<span class="ascii-hot">[F]</span>
+ |    |    |
+[C]──[D]</span></pre></div><div class="code-project-actions"><a class="code-project-button" href="https://github.com/elalber2000/asimov" target="_blank" rel="noopener noreferrer">GitHub</a><a class="code-project-button" href="https://parrotsbasilisks.substack.com/p/asimov-neurosymbolic-adversarial" target="_blank" rel="noopener noreferrer">Blog</a></div></li>
+      <li class="collection-entry"><div class="code-project-info"><span class="collection-title">StopSlop</span><span class="code-project-description">Chrome extension to detect and avoid slop websites using FastText + custom features</span><pre class="code-ascii"><span class="ascii-frame">&lt;html&gt; / &lt;iframe&gt; / BEST DEAL
+              │
+          SCORE 0.00</span><span class="ascii-frame">&lt;html&gt; / <span class="ascii-hot">[[&lt;iframe&gt;]]</span>
+              │
+          SCORE <span class="ascii-hot">0.18</span>  ██░░░░░░░░</span><span class="ascii-frame">&lt;html&gt; / <span class="ascii-hot">[[&lt;iframe&gt;]]</span> / <span class="ascii-hot">[[BEST DEAL]]</span>
+              │
+          SCORE <span class="ascii-hot">0.39</span>  ████░░░░░░</span><span class="ascii-frame">&lt;html&gt; / <span class="ascii-hot">[[&lt;iframe&gt;]]</span> / <span class="ascii-hot">[[BEST DEAL]]</span> / <span class="ascii-hot">[[Click here]]</span>
+              │
+          SCORE <span class="ascii-hot">0.67</span>  ███████░░░</span><span class="ascii-frame">&lt;html&gt; / <span class="ascii-hot">[[&lt;iframe&gt;]]</span> / <span class="ascii-hot">[[BEST DEAL]]</span> / <span class="ascii-hot">[[Click here]]</span>
+              │
+          SCORE <span class="ascii-hot">0.86</span>  █████████░
+             <span class="ascii-hot">[ SLOP! ]</span></span></pre></div><div class="code-project-actions"><a class="code-project-button" href="https://github.com/elalber2000/stop_slop" target="_blank" rel="noopener noreferrer">GitHub</a><a class="code-project-button" href="https://parrotsbasilisks.substack.com/p/stopslop-detecting-slop-with-a-5kb" target="_blank" rel="noopener noreferrer">Blog</a></div></li>
+      <li class="collection-entry"><div class="code-project-info"><span class="collection-title">MiniSnowflake</span><span class="code-project-description">A lightweight Snowflake-style architecture built on parallel DuckDB instances</span><pre class="code-ascii code-ascii-minisnowflake"><span class="ascii-frame">┌──────────┐
+│ ▪ ▪ ▪ ▪  │
+└──────────┘
+
+┌──────────┐
+│ ▪ ▪ ▪ ▪  │
+└──────────┘</span><span class="ascii-frame">SELECT department, AVG(salary)
+
+┌──────────┐ ─→ [W1]
+│ ▪ ▪ ▪ ▪  │
+└──────────┘ ─→ [W2]
+
+┌──────────┐ ─→ [W3]</span><span class="ascii-frame">[W1] ──┐
+        ├──→ <span class="ascii-hot">[REDUCE 1]</span>
+[W2] ──┘
+
+[W3] ─────→ [REDUCE 2]</span><span class="ascii-frame">[REDUCE 1] ──┐
+              ├──→ <span class="ascii-hot">[FINAL REDUCE]</span>
+[REDUCE 2] ──┘</span><span class="ascii-frame">┌─────────────┐
+│ <span class="ascii-hot">query result</span>│
+│ avg = 42.7  │
+└─────────────┘</span></pre></div><div class="code-project-actions"><a class="code-project-button" href="https://github.com/elalber2000/mini_snowflake" target="_blank" rel="noopener noreferrer">GitHub</a></div></li>
+      <li class="collection-entry"><div class="code-project-info"><span class="collection-title">ProseSteering</span><span class="code-project-description">A mechanistic interpretability project exploring activation steering for high-prose writing</span><pre class="code-ascii"><span class="ascii-frame">┌─────────────┐
+│    MODEL    │
+└─────────────┘</span><span class="ascii-frame">low prose ─────────→ high prose
+                         ┌─────────────┐
+                         │    MODEL    │
+                         └─────────────┘</span><span class="ascii-frame">low prose ───── + α ───→ high prose
+                         ┌─────────────┐
+                         │    MODEL α→ │
+                         └─────────────┘</span><span class="ascii-frame">                         ┌─────────────┐
+                         │    MODEL α→ │
+                         └─────────────┘
+                              ↑
+                         prompt</span><span class="ascii-frame">                         ┌─────────────┐
+                         │    MODEL α→ │
+                         └─────────────┘
+                  "Write about the street" ─→</span></pre></div><div class="code-project-actions"><a class="code-project-button" href="https://github.com/elalber2000/prose-steering" target="_blank" rel="noopener noreferrer">GitHub</a><a class="code-project-button" href="https://parrotsbasilisks.substack.com/p/searching-for-high-prose-in-qwen25" target="_blank" rel="noopener noreferrer">Blog</a></div></li>
       <!-- PLACEHOLDER_END -->
         </ul>
       </section>

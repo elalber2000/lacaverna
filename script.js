@@ -561,6 +561,275 @@ function initQuotesBoard() {
   });
 }
 
+function initMusicPlayer() {
+  const playlistElement = document.querySelector("#music-playlist");
+  if (!playlistElement) return;
+
+  const disc = document.querySelector("#music-disc");
+  const tonearm = document.querySelector(".tonearm");
+  const titleElement = document.querySelector("#music-title");
+  const authorElement = document.querySelector("#music-author");
+  const statusElement = document.querySelector("#music-status");
+  const playButton = document.querySelector("#music-play");
+  const pauseButton = document.querySelector("#music-pause");
+  let playlist = [];
+  let currentIndex = 0;
+  let controller = null;
+  let spotifyApi = null;
+  let transitionTimer;
+  let transitionActive = false;
+
+  const spotifyUrl = url => {
+    try {
+      const parsed = new URL(url);
+      return parsed.hostname === "open.spotify.com" && parsed.pathname.includes("/track/") ? url : "";
+    } catch {
+      return "";
+    }
+  };
+
+  const spotifyUri = url => {
+    const match = String(url || "").match(/\/track\/([A-Za-z0-9]+)/);
+    return match ? `spotify:track:${match[1]}` : "";
+  };
+
+  const setStatus = value => {
+    if (statusElement) statusElement.textContent = value;
+  };
+
+  const setDiscState = (state, { paused = false, controlsPlaying = state === "is-playing" } = {}) => {
+    const hasState = state && disc?.classList.contains(state);
+    if (disc && !hasState) {
+      disc.classList.remove("is-playing", "is-fast-forward", "is-fast-reverse");
+      if (state) disc.classList.add(state);
+    } else if (disc) {
+      disc.classList.remove(...["is-playing", "is-fast-forward", "is-fast-reverse"].filter(name => name !== state));
+    }
+    if (disc) disc.style.animationPlayState = paused ? "paused" : "running";
+    if (tonearm) tonearm.style.animationPlayState = paused ? "paused" : "running";
+    if (playButton) playButton.hidden = controlsPlaying;
+    if (pauseButton) pauseButton.hidden = !controlsPlaying;
+  };
+
+  const renderPlaylist = () => {
+    playlistElement.innerHTML = playlist.length
+      ? playlist.map((song, index) => `
+          <li class="music-track${index === currentIndex ? " is-current" : ""}" data-track-index="${index}" tabindex="0" role="button">
+            <div class="music-track-info">
+              <span class="music-track-title">${escapeHtml(song.title)}</span>
+              <span class="music-track-author">${escapeHtml(song.author)}</span>
+            </div>
+          </li>
+        `).join("")
+      : `<li class="music-playlist-empty">No hay canciones todavía.</li>`;
+  };
+
+  const showCurrentSong = () => {
+    const song = playlist[currentIndex];
+    if (!song) return;
+    if (titleElement) titleElement.textContent = song.title;
+    if (authorElement) authorElement.textContent = song.author;
+    playlistElement.querySelectorAll(".music-track").forEach((track, index) => {
+      track.classList.toggle("is-current", index === currentIndex);
+    });
+  };
+
+  const loadCurrentSong = autoplay => {
+    const song = playlist[currentIndex];
+    if (!song || !spotifyUrl(song.url) || !controller) return;
+    showCurrentSong();
+    controller.loadEntity(spotifyUri(song.url));
+    if (autoplay) {
+      controller.play();
+      setStatus("REPRODUCIENDO");
+    } else setStatus("EN PAUSA");
+  };
+
+  const createPlayer = () => {
+    if (controller || !spotifyApi || !playlist.length) return;
+    spotifyApi.createController(
+      document.querySelector("#spotify-player"),
+      { width: 200, height: 152, uri: spotifyUri(playlist[currentIndex].url) },
+      embedController => {
+        controller = embedController;
+        controller.addListener("ready", () => {
+          showCurrentSong();
+          setStatus("EN PAUSA");
+        });
+        controller.addListener("playback_started", () => {
+          if (!transitionActive) setDiscState("is-playing");
+          setStatus("REPRODUCIENDO");
+        });
+        controller.addListener("playback_update", event => {
+          if (transitionActive) return;
+          if (event?.data?.isPaused) {
+            setDiscState("is-playing", { paused: true, controlsPlaying: false });
+            setStatus("EN PAUSA");
+          } else if (event?.data?.isBuffering === false) {
+            setDiscState("is-playing");
+            setStatus("REPRODUCIENDO");
+          }
+        });
+      }
+    );
+  };
+
+  const advanceTrack = direction => {
+    if (!playlist.length) return;
+    clearTimeout(transitionTimer);
+    const nextIndex = (currentIndex + direction + playlist.length) % playlist.length;
+    const state = direction > 0 ? "is-fast-forward" : "is-fast-reverse";
+    transitionActive = true;
+    setDiscState(state);
+    setStatus(direction > 0 ? "AVANZANDO" : "RETROCEDIENDO");
+    if (controller) {
+      currentIndex = nextIndex;
+      renderPlaylist();
+      loadCurrentSong(true);
+    }
+    transitionTimer = setTimeout(() => {
+      transitionActive = false;
+      showCurrentSong();
+      setDiscState("is-playing");
+    }, 520);
+  };
+
+  const selectTrack = index => {
+    if (index === currentIndex) {
+      clearTimeout(transitionTimer);
+      transitionActive = false;
+      loadCurrentSong(true);
+      return;
+    }
+    clearTimeout(transitionTimer);
+    const direction = index > currentIndex ? 1 : -1;
+    transitionActive = true;
+    setDiscState(direction > 0 ? "is-fast-forward" : "is-fast-reverse");
+    setStatus(direction > 0 ? "AVANZANDO" : "RETROCEDIENDO");
+    if (controller) {
+      currentIndex = index;
+      renderPlaylist();
+      loadCurrentSong(true);
+    }
+    transitionTimer = setTimeout(() => {
+      transitionActive = false;
+      showCurrentSong();
+      setDiscState("is-playing");
+    }, 520);
+  };
+
+  const handleAction = action => {
+    if (!controller) return;
+    if (action === "play") {
+      controller.play();
+      setDiscState("is-playing");
+    }
+    if (action === "pause") {
+      controller.pause();
+      setDiscState("is-playing", { paused: true, controlsPlaying: false });
+    }
+    if (action === "previous") advanceTrack(-1);
+    if (action === "next") advanceTrack(1);
+  };
+
+  playlistElement.addEventListener("click", event => {
+    const track = event.target.closest(".music-track");
+    if (!track) return;
+    selectTrack(Number(track.dataset.trackIndex));
+  });
+
+  playlistElement.addEventListener("keydown", event => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    const track = event.target.closest(".music-track");
+    if (!track) return;
+    event.preventDefault();
+    selectTrack(Number(track.dataset.trackIndex));
+  });
+
+  document.querySelectorAll("[data-music-action]").forEach(button => {
+    button.addEventListener("click", () => handleAction(button.dataset.musicAction));
+  });
+
+  window.onSpotifyIframeApiReady = api => {
+    spotifyApi = api;
+    createPlayer();
+  };
+  renderPlaylist();
+
+  fetch(`${ROOT_PATH}playlist.json`)
+    .then(response => {
+      if (!response.ok) throw new Error(`No se pudo cargar ${ROOT_PATH}playlist.json`);
+      return response.json();
+    })
+    .then(items => {
+      playlist = Array.isArray(items)
+        ? items.filter(song => song && song.title && song.author && spotifyUrl(song.url))
+        : [];
+      renderPlaylist();
+      showCurrentSong();
+      createPlayer();
+    })
+    .catch(error => {
+      playlistElement.innerHTML = `<li class="music-playlist-empty">No se pudieron cargar las canciones.</li>`;
+      setStatus("ERROR DE CANCIONES");
+      console.error(error);
+    });
+}
+
+async function initCodeAnimations() {
+  const containers = [...document.querySelectorAll(".code-ascii")];
+  const animationOrder = ["asimov", "stopslop", "minisnowflake", "prosesteering"];
+  if (!containers.length) return;
+
+  try {
+    const response = await fetch(`${ROOT_PATH}animations.txt`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`No se pudo cargar ${ROOT_PATH}animations.txt`);
+
+    const source = await response.text();
+    source.split("{animation_sep}").forEach(block => {
+      const lines = block.split("\n");
+      while (lines.length && !lines[0].trim()) lines.shift();
+      const header = lines.shift()?.trim() || "";
+      if (!header.startsWith("[") || !header.endsWith("]")) return;
+
+      const key = header.slice(1, -1).trim().toLowerCase().replace(/[^a-z0-9]/g, "");
+      const frames = lines
+        .join("\n")
+        .split("{line_sep}")
+        .map(frame => frame.replace(/\r/g, ""))
+        .filter(frame => frame.trim());
+      const container = document.querySelector(`.code-ascii-${key}`)
+        || containers[animationOrder.indexOf(key)];
+      if (!container || !frames.length) return;
+
+      const frameStep = 1.7;
+      container.innerHTML = frames
+        .map(frame => `<span class="ascii-frame">${frame}</span>`)
+        .join("");
+
+      const renderedFrames = [...container.querySelectorAll(".ascii-frame")];
+      let currentFrame = 0;
+      const showFrame = index => {
+        renderedFrames.forEach((frame, frameIndex) => {
+          frame.classList.toggle("is-active", frameIndex === index);
+        });
+      };
+
+      clearInterval(container._codeAnimationTimer);
+      container.classList.add("is-code-live");
+      showFrame(currentFrame);
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        container._codeAnimationTimer = setInterval(() => {
+          currentFrame = (currentFrame + 1) % renderedFrames.length;
+          showFrame(currentFrame);
+        }, frameStep * 1000);
+      }
+    });
+  } catch (error) {
+    console.warn("No se pudieron cargar las animaciones de Código.", error);
+  }
+}
+
 function objectMarkup({ type, label, section }) {
   const target = `${ROOT_PATH}sections/${section}.html`;
   const tooltip = label.toLocaleLowerCase("es");
@@ -977,6 +1246,11 @@ insertHomeObjects();
 renderSectionArtwork();
 initShelfHoverLabels();
 initQuotesBoard();
+initMusicPlayer();
+
+if (document.body.classList.contains("section-codigo")) {
+  initCodeAnimations();
+}
 
 if (document.body.dataset.page === "archive") {
   initArchive();

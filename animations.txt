@@ -1,0 +1,230 @@
+[asimov]
+
+
+    [A]──[B]
+     |    |
+    [C]──[D]
+{line_sep}
+    <span class="ascii-hot">(!)</span>
+     |
+    [A]──[B]
+     |    |
+    [C]──[D]
+{line_sep}
+    <span class="ascii-hot">[E]</span>
+     |
+    [A]──[B]
+     |    |
+    [C]──[D]
+{line_sep}
+    [E]
+     |
+    [A]──[B]
+     |    |
+    [C]──[D]
+{line_sep}
+    [E]
+     |
+    [A]──[B]──<span class="ascii-hot">(!)</span>
+     |    |
+    [C]──[D]
+{line_sep}
+    [E]
+     |
+    [A]──[B]──<span class="ascii-hot">[F]</span>
+     |    |
+    [C]──[D]
+{line_sep}
+    [E]
+     |
+    [A]──[B]──[F]
+     |    |
+    [C]──[D]
+{animation_sep}
+[stopslop]
+┌──────────────────────────────┐
+│ &lt;html&gt;                       │
+│   &lt;iframe src="ad.html"&gt;     │
+│   &lt;h1&gt;BEST DEAL EVER&lt;/h1&gt;    │
+│   Click here                 │
+└──────────────────────────────┘
+              │
+              ▼
+          SCORE 0.00
+{line_sep}
+┌──────────────────────────────┐
+│ &lt;html&gt;                       │
+│   <span class="ascii-hot">[&lt;iframe src="ad.html"&gt;]</span>   │
+│   &lt;h1&gt;BEST DEAL EVER&lt;/h1&gt;    │
+│   Click here                 │
+└──────────────────────────────┘
+              │
+              ▼
+          SCORE 0.18  ██░░░░░░░░
+{line_sep}
+┌──────────────────────────────┐
+│ &lt;html&gt;                       │
+│   [&lt;iframe src="ad.html"&gt;]   │
+│   &lt;h1&gt;<span class="ascii-hot">[BEST DEAL EVER]</span>&lt;/h1&gt;  │
+│   Click here                 │
+└──────────────────────────────┘
+              │
+              ▼
+          SCORE 0.39  ████░░░░░░
+{line_sep}
+┌──────────────────────────────┐
+│ &lt;html&gt;                       │
+│   [&lt;iframe src="ad.html"&gt;]   │
+│   &lt;h1&gt;[BEST DEAL EVER]&lt;/h1&gt;  │
+│   <span class="ascii-hot">[Click here]</span>               │
+└──────────────────────────────┘
+              │
+              ▼
+          SCORE 0.67  ███████░░░
+{line_sep}
+┌──────────────────────────────┐
+│ &lt;html&gt;                       │
+│   [&lt;iframe src="ad.html"&gt;]   │
+│   &lt;h1&gt;[BEST DEAL EVER]&lt;/h1&gt;  │
+│   [Click here]               │
+└──────────────────────────────┘
+              │
+              ▼
+          SCORE 0.67  ███████░░░  <span class="ascii-hot"> SLOP! </span>
+{animation_sep}
+[minisnowflake]
+
+
+
+┌─────────┐
+│ ▪ ▪ ▪ ▪ │  shard_0
+├─────────┤
+│ ▪ ▪ ▪ ▪ │  shard_1
+├─────────┤
+│ ▪ ▪ ▪ ▪ │  shard_2
+└─────────┘
+{line_sep}
+
+
+
+┌─────────┐
+│ ▪ ▪ ▪ ▪ │
+├─────────┤
+│ ▪ ▪ ▪ ▪ │
+├─────────┤
+│ ▪ ▪ ▪ ▪ │
+└─────────┘
+{line_sep}
+             <span class="ascii-hot">query</span>
+               │
+               ▼
+┌─────────┐
+│ ▪ ▪ ▪ ▪ │
+├─────────┤
+│ ▪ ▪ ▪ ▪ │
+├─────────┤
+│ ▪ ▪ ▪ ▪ │
+└─────────┘
+{line_sep}
+             query
+               │
+               ▼
+┌─────────┐
+│ ▪ ▪ ▪ ▪ │ ─→ <span class="ascii-hot">[M0]</span>
+├─────────┤
+│ ▪ ▪ ▪ ▪ │ ─→ <span class="ascii-hot">[M1]</span>
+├─────────┤
+│ ▪ ▪ ▪ ▪ │ ─→ <span class="ascii-hot">[M2]</span>
+└─────────┘
+{line_sep}
+             query
+               │
+               ▼
+┌─────────┐
+│ ▪ ▪ ▪ ▪ │ ─→ [M0] ──┐
+├─────────┤           ├──→ <span class="ascii-hot">[R0]</span>
+│ ▪ ▪ ▪ ▪ │ ─→ [M1] ──┘
+├─────────┤
+│ ▪ ▪ ▪ ▪ │ ─→ [M2]
+└─────────┘
+{line_sep}
+             query
+               │
+               ▼
+┌─────────┐
+│ ▪ ▪ ▪ ▪ │ ─→ [M0] ──┐
+├─────────┤           ├──→ [R0] ──┐
+│ ▪ ▪ ▪ ▪ │ ─→ [M1] ──┘           ├──→ <span class="ascii-hot">[R1]</span>
+├─────────┤                       |
+│ ▪ ▪ ▪ ▪ │ ─→ [M2] ──────────────┘
+└─────────┘
+{line_sep}
+             query
+               │
+               ▼
+┌─────────┐
+│ ▪ ▪ ▪ ▪ │ ─→ [M0] ──┐
+├─────────┤           ├──→ [R0] ──┐
+│ ▪ ▪ ▪ ▪ │ ─→ [M1] ──┘           ├──→ [R1] ─→ <span class="ascii-hot">result</span>
+├─────────┤                       |
+│ ▪ ▪ ▪ ▪ │ ─→ [M2] ──────────────┘
+└─────────┘
+{animation_sep}
+[prosesteering]
+
+
+
+     ┌─────────────┐
+     │    MODEL    │
+     └─────────────┘
+{line_sep}
+  <span class="ascii-hot">It</span>
+<span class="ascii-hot">started</span>
+<span class="ascii-hot">raining</span>
+     ┌─────────────┐
+     │    MODEL    │
+     └─────────────┘
+{line_sep}
+  It              <span class="ascii-hot">Raindrops</span>
+started            <span class="ascii-hot">graced</span>
+raining           <span class="ascii-hot">the dusk</span>
+     ┌─────────────┐
+     │    MODEL    │
+     └─────────────┘
+{line_sep}
+  It              Raindrops
+started    ───→    graced
+raining           the dusk
+     ┌─────────────┐
+     │    MODEL    │
+     └─────────────┘
+     {line_sep}
+
+           ───→
+            <span class="ascii-hot">+α</span>
+     ┌─────────────┐
+     │    MODEL    │
+     └─────────────┘
+{line_sep}
+          <span class="ascii-hot">prompt</span>
+           ───→
+            +α
+     ┌─────────────┐
+     │    MODEL    │
+     └─────────────┘
+{line_sep}
+
+           ───→
+            +α 
+     ┌─────────────┐
+     │    MODEL    │
+     └─────────────┘
+         <span class="ascii-hot">response</span>
+{line_sep}
+           ───→
+            +α 
+     ┌─────────────┐
+     │    MODEL    │
+     └─────────────┘
+           ───→ <span class="ascii-hot">high prose response</span>
+{line_sep}
