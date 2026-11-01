@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
+@font-face {
+  font-family: "Michelangelus";
+  src: url("/fonts/Michelangelus-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --bg: #171717;
@@ -7,7 +13,7 @@
 
   /* Shared design tokens. Page skins only override these values. */
   --font-body: var(--mono);
-  --font-display: "Young Serif", Georgia, serif;
+  --font-display: "Michelangelus", Georgia, serif;
   --surface: rgba(255, 255, 255, 0.015);
   --surface-strong: rgba(23, 23, 23, 0.96);
   --line: var(--fg-14);
