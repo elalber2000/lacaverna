@@ -1,3 +1,6 @@
+@import url('https://cdn.jsdelivr.net/npm/monaspace-font@0.0.2/argon.css');
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif:wght@400&display=swap');
+
 @font-face {
   font-family: "Michelangelus";
   src: url("/fonts/Michelangelus-Regular.ttf") format("truetype");
@@ -13,7 +16,7 @@
 
   /* Shared design tokens. Page skins only override these values. */
   --font-body: var(--mono);
-  --font-display: "Michelangelus", Georgia, serif;
+  --font-display: "Young Serif", Georgia, serif;
   --surface: rgba(255, 255, 255, 0.015);
   --surface-strong: rgba(23, 23, 23, 0.96);
   --line: var(--fg-14);
@@ -2279,6 +2282,7 @@ body > .hover-label {
   position: fixed;
   max-width: min(260px, calc(100vw - 1.5rem));
   transform: translateX(-50%);
+  font-family: var(--mono);
 }
 
 .hover-label[data-visible="true"] {
