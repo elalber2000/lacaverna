@@ -1599,17 +1599,36 @@ html[data-theme="light"] {
   --hi-16: rgba(13, 148, 136, 0.16);
 }
 
-html[data-theme="light"] .site-header {
+/* Article pages share the library shell, but still honor the theme switch. */
+html[data-theme="light"] body:has(.article-page) {
+  --bg: #ffffff;
+  --fg: #171717;
+  --hi: #064640;
+  --fg-90: rgba(23, 23, 23, 0.9);
+  --fg-72: rgba(23, 23, 23, 0.72);
+  --fg-48: rgba(23, 23, 23, 0.48);
+  --fg-24: rgba(23, 23, 23, 0.24);
+  --fg-14: rgba(23, 23, 23, 0.14);
+  --surface: rgba(23, 23, 23, 0.015);
+  --surface-strong: rgba(255, 255, 255, 0.96);
+  --line: var(--fg-14);
+  --line-strong: var(--fg-24);
+  --accent: var(--hi);
+  --accent-soft: var(--hi-16);
+  background: #ffffff;
+}
+
+html[data-theme="light"] body:has(.article-page) .site-header {
   background: rgba(255, 255, 255, 0.96);
 }
 
-html[data-theme="light"] .panel,
-html[data-theme="light"] .linktree-card {
+html[data-theme="light"] body:has(.article-page) .panel,
+html[data-theme="light"] body:has(.article-page) .linktree-card {
   background: rgba(23, 23, 23, 0.015);
 }
 
-html[data-theme="light"] .archive-image,
-html[data-theme="light"] .article-figure img {
+html[data-theme="light"] body:has(.article-page) .archive-image,
+html[data-theme="light"] body:has(.article-page) .article-figure img {
   background: #eeeeee;
 }
 
