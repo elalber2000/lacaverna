@@ -3163,6 +3163,14 @@ body > .hover-label {
   filter: none;
 }
 
+/* Keep book artwork's original pixels unchanged across theme switches. */
+.section-books .section-object img,
+.section-books .book-spread-art {
+  filter: none !important;
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+
 @media (max-width: 520px) {
   .section-movies .collection-masthead,
   .section-books .collection-masthead,
