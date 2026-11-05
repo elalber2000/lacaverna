@@ -3169,6 +3169,8 @@ body > .hover-label {
   filter: none !important;
   mix-blend-mode: normal;
   opacity: 1;
+  forced-color-adjust: none;
+  isolation: isolate;
 }
 
 @media (max-width: 520px) {
