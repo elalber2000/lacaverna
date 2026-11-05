@@ -3171,6 +3171,7 @@ body > .hover-label {
   opacity: 1;
   forced-color-adjust: none;
   isolation: isolate;
+  color-scheme: only light;
 }
 
 @media (max-width: 520px) {
