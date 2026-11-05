@@ -2253,6 +2253,34 @@ html[data-theme="light"] body:has(.article-page) .article-figure img {
   color: #e8e2d7;
 }
 
+/* Archive book overlays keep their original palette in either theme. */
+.archive-book-link,
+.archive-book-link:hover,
+.archive-book-link:focus-visible {
+  color: #e8e2d7 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  opacity: 1 !important;
+  -webkit-appearance: none;
+  appearance: none;
+  filter: none !important;
+  mix-blend-mode: normal;
+  color-scheme: only dark;
+  forced-color-adjust: none;
+}
+
+.archive-book-link .archive-book-title {
+  color: #e8e2d7 !important;
+  -webkit-text-fill-color: #e8e2d7;
+}
+
+.archive-book-image {
+  filter: none !important;
+  mix-blend-mode: normal;
+  forced-color-adjust: none;
+}
+
 .archive-book-title {
   position: absolute;
   inset: 28px 5px calc(var(--symbol-zone, var(--book-width, 53px)) + 8px);
