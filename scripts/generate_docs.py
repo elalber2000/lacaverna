@@ -27,6 +27,7 @@ LOMB_PATH = ROOT / "assets" / "lombardics.yaml"
 PostMetadata = dict[str, str]
 
 LOMB_BR_SENTINEL = "\ue000LOMB_BR\ue000"
+LOMB_SPACE_SENTINEL = "\ue000LOMB_SPACE\ue000"
 INDENT_SPACE_SENTINEL = "\ue000LC_INDENT_SPACE\ue000"
 INDENT_TAB_SENTINEL = "\ue000LC_INDENT_TAB\ue000"
 TAB_WIDTH = 4
@@ -115,7 +116,11 @@ def load_lombardics() -> dict[str, str]:
 
     # Use a sentinel first so Markdown does not escape literal HTML.
     return {
-        str(key): str(value).replace("\n", LOMB_BR_SENTINEL)
+        str(key): (
+            str(value)
+            .replace(" ", LOMB_SPACE_SENTINEL)
+            .replace("\n", LOMB_BR_SENTINEL)
+        )
         for key, value in raw_lomb.items()
     }
 
@@ -424,6 +429,7 @@ def md_to_html(md_text: str, lomb: dict[str, str]) -> str:
     return (
         html
         .replace(LOMB_BR_SENTINEL, "</br>")
+        .replace(LOMB_SPACE_SENTINEL, "&nbsp;")
         .replace(INDENT_SPACE_SENTINEL, "&nbsp;")
         .replace(INDENT_TAB_SENTINEL, "&nbsp;" * TAB_WIDTH)
     )
