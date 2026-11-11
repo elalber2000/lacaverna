@@ -300,10 +300,13 @@ def render_quotes():
 def render_cluster(section, icon, title, recent, favourites):
     groups = (("Nuevos", recent), ("Favoritos", favourites))
     columns = []
-    for label, items in groups:
+    for index, (label, items) in enumerate(groups):
+        content = f"""<header class="collection-group-heading"><h2>{label}</h2></header>
+  <ol class="collection-list">{render_collection_items(items, section)}</ol>"""
+        if section == "books" and index == 0:
+            content = f'<div class="left-page-content">\n  {content}\n  </div>'
         columns.append(f"""<section class="collection-group">
-  <header class="collection-group-heading"><h2>{label}</h2></header>
-  <ol class="collection-list">{render_collection_items(items, section)}</ol>
+  {content}
 </section>""")
     return "\n".join(columns)
 
@@ -322,8 +325,10 @@ def render_block(limit):
     music = safe_fetch("music", lambda: recent_music(limit))
 
     return {
-        "books": render_cluster("books", "", "Libros", books, FAVOURITE_BOOKS),
-        "movies": render_cluster("movies", "", "Películas", movies, FAVOURITE_MOVIES),
+        # Keep the last generated content when an external feed is temporarily
+        # unavailable or returns no entries.
+        "books": render_cluster("books", "", "Libros", books, FAVOURITE_BOOKS) if books else None,
+        "movies": render_cluster("movies", "", "Películas", movies, FAVOURITE_MOVIES) if movies else None,
         "music": render_cluster("music", "", "Música", music, FAVOURITE_MUSIC),
         "quotes": render_quotes_cluster(),
     }
@@ -355,6 +360,19 @@ def fill_sections():
     for section, filename in pages.items():
         html_path = ROOT_PATH / "sections" / filename
         source = html_path.read_text(encoding="utf-8")
+        if START not in source or END not in source:
+            logging.warning(
+                "Skipping %s: placeholder markers not found; preserving the page.",
+                html_path,
+            )
+            continue
+        if block[section] is None:
+            logging.warning(
+                "Skipping %s: no fresh %s entries were available; preserving the page.",
+                html_path,
+                section,
+            )
+            continue
         output = replace_placeholder(source, block[section])
         atomic_write_text(html_path, output)
         logging.info("Updated %s section", section)
